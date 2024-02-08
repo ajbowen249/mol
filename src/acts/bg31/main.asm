@@ -8,7 +8,6 @@
     ret
 
 #include "../../common/common.asm"
-#include "./constants.asm"
 #include "./global_data.asm"
 #include "./screen_1.asm"
 #include "./screen_2.asm"
@@ -25,28 +24,28 @@ main:
 show_sheets:
     ld (party_size), a
 
-    ld hl, test_character1
+    ld hl, party_player_1
     call character_sheet_ui
 
     ld a, (party_size)
     cp a, 2
     jp m, sheets_done
 
-    ld hl, test_character2
+    ld hl, party_player_2
     call character_sheet_ui
 
     ld a, (party_size)
     cp a, 3
     jp m, sheets_done
 
-    ld hl, test_character3
+    ld hl, party_player_3
     call character_sheet_ui
 
     ld a, (party_size)
     cp a, 4
     jp m, sheets_done
 
-    ld hl, test_character4
+    ld hl, party_player_4
     call character_sheet_ui
 
 sheets_done:
