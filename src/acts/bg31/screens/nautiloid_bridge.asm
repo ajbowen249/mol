@@ -1,3 +1,5 @@
+#define screen_id_nautiloid_bridge 2
+
 .local
 screen_2_data:
 screen_2_background:
@@ -9,12 +11,7 @@ screen_2_background:
 .asciz "│               ∩∩ │"
 .asciz "│     α            │"
 .asciz "└──────────────────┘"
-screen_2_title: .asciz "Test Room 2"
-.db 0
-.db 0
-.db 0
-.db 0
-.db 0
+screen_2_title: .asciz "Nautiloid Bridge"
 .db 0
 .db 0
 .db 0
@@ -37,7 +34,7 @@ screen_2_interact_callback: .dw on_interact
 
 empty_prompt: .db 0
 
-screen_2::
+nautiloid_bridge::
     ld hl, player_party
     ld a, (party_size)
     ld bc, screen_2_data
@@ -52,7 +49,7 @@ get_interaction_prompt:
 on_interact:
     ld a, ec_door
     ld (last_screen_exit_code), a
-    ld a, 0
+    ld a, screen_id_nautiloid
     ld (last_screen_exit_argument), a
 
     ld a, 1

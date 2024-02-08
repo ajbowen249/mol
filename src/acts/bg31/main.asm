@@ -9,8 +9,7 @@
 
 #include "../../common/common.asm"
 #include "./global_data.asm"
-#include "./screen_1.asm"
-#include "./screen_2.asm"
+#include "./screens/screen_table.asm"
 
 main:
     call seed_random
@@ -50,23 +49,28 @@ show_sheets:
 
 sheets_done:
 
-screen_loop:
-    call screen_1
+    ld a, ec_door
+    ld (last_screen_exit_code), a
+    ld a, screen_id_nautiloid
+    ld (last_screen_exit_argument), a
 
+screen_loop:
     ld a, (last_screen_exit_code)
 
-    cp a, ec_npc
-    jp z, test_npc_battle
+    cp a, ec_door
+    call z, run_room
 
-    call screen_2
-    ; screen 2 only has a door at the moment
     jp screen_loop
 
-test_npc_battle:
-    ld hl, player_party
-    ld a, (party_size)
-    ld bc, monster_badger
-    ld d, 1
-    call battle_ui
-    jp screen_loop
+    ret
+
+run_room:
+    ld a, (last_screen_exit_argument)
+    ld b, 2
+    ld hl, screen_table
+    call get_array_item
+    ld bc, (hl)
+    ld hl, bc
+    call call_hl
+
     ret
