@@ -1,33 +1,23 @@
-#define screen_id_wilderness 5
+#define screen_id_goblin_camp_entrance 7
 
 .local
 screen_data:
 screen_background:
-.asciz "~~~ ~~~~~~~~~~~~~~~~"
-.asciz "~                  ~"
+.asciz "~~~~~~~~│ │~~~~~~~~~"
+.asciz "▓▓▓▓▓▓▓▓│ │▓▓▓▓▓▓▓▓▓"
+.asciz "▓▓▓▓▓▓▓▓│ │▓▓▓▓▓▓▓▓▓"
+.asciz "~~~~~~~~│ │~~~~~~~~~"
 .asciz "~                  ~"
 .asciz "~                   "
 .asciz "~                  ~"
-.asciz "                   ~"
-.asciz "~                  ~"
 .asciz "~~~~~~~~~~~~~~~~~~~~"
-screen_title: .asciz "Wilderness"
-.db 0
-.db 0
-.db 0
-.db 0
-.db 0
-.db 0
-.db 0
-.db 0
-.db 0
-.db 0
+screen_title: .asciz "Goblin Camp Entrance"
 screen_start_x: .db 19 ; 1-indexed since it's screen coordinates!
-screen_start_y: .db 4
+screen_start_y: .db 6
 screen_interactables:
-    DEFINE_INTERACTABLE to_environs, in_door, $01, 4, 20
-    DEFINE_INTERACTABLE to_goblin_camp_entrance, in_door, $01, 6, 1
-    DEFINE_INTERACTABLE to_risen_road, in_door, $01, 1, 4
+    DEFINE_INTERACTABLE to_wilderness, in_door, $01, 6, 20
+    DEFINE_INTERACTABLE to_goblin_camp, in_door, $01, 1, 10
+    DEFINE_INTERACTABLE blank_3, 0, 0, 0, 0
     DEFINE_INTERACTABLE blank_4, 0, 0, 0, 0
     DEFINE_INTERACTABLE blank_5, 0, 0, 0, 0
     DEFINE_INTERACTABLE blank_6, 0, 0, 0, 0
@@ -38,7 +28,7 @@ screen_interactables:
 screen_get_interaction_prompt: .dw get_interaction_prompt
 screen_interact_callback: .dw on_interact
 
-wilderness::
+goblin_camp_entrance::
     ld hl, player_party
     ld a, (party_size)
     ld bc, screen_data
@@ -52,36 +42,25 @@ get_interaction_prompt:
 
 on_interact:
     cp a, 0
-    jp z, exit_to_environs
+    jp z, exit_to_wilderness
 
     cp a, 1
-    jp z, exit_to_goblin_camp_entrance
-
-    cp a, 2
-    jp z, exit_to_risen_road
+    jp z, exit_to_goblin_camp
 
     ret
 
-exit_to_environs:
+exit_to_wilderness:
     ld a, ec_door
     ld (last_screen_exit_code), a
-    ld a, screen_id_emerald_grove_environs
+    ld a, screen_id_wilderness
     ld (last_screen_exit_argument), a
     ld a, 1
     ret
 
-exit_to_goblin_camp_entrance:
+exit_to_goblin_camp:
     ld a, ec_door
     ld (last_screen_exit_code), a
-    ld a, screen_id_goblin_camp_entrance
-    ld (last_screen_exit_argument), a
-    ld a, 1
-    ret
-
-exit_to_risen_road:
-    ld a, ec_door
-    ld (last_screen_exit_code), a
-    ld a, screen_id_risen_road
+    ld a, screen_id_goblin_camp
     ld (last_screen_exit_argument), a
     ld a, 1
     ret
