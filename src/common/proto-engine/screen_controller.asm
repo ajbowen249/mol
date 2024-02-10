@@ -44,3 +44,17 @@ set_screen_exit_conditions::
     ld (last_screen_exit_argument), a
     ret
 .endlocal
+
+.local
+; Stores exit code A with argument B and sets A to 1 to flag exit from exploration_ui
+flag_exploration_exit_with_conditions::
+    call set_screen_exit_conditions
+    ld a, 1
+    ret
+.endlocal
+
+.macro EXIT_EXPLORATION &EXIT_CODE, &EXIT_ARG
+    ld a, &EXIT_CODE
+    ld b, &EXIT_ARG
+    call flag_exploration_exit_with_conditions
+.endm

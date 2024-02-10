@@ -53,24 +53,15 @@ on_interact:
     ret
 
 exit_to_wilderness:
-    ld a, ec_door
-    ld b, screen_id_wilderness
-    call set_screen_exit_conditions
-    ld a, 1
+    EXIT_EXPLORATION ec_door, screen_id_wilderness
     ret
 
 exit_to_crash_site:
-    ld a, ec_door
-    ld b, screen_id_crash_site
-    call set_screen_exit_conditions
-    ld a, 1
+    EXIT_EXPLORATION ec_door, screen_id_crash_site
     ret
 
 exit_to_grove:
-    ld a, ec_door
-    ld b, screen_id_emerald_grove
-    call set_screen_exit_conditions
-    ld a, 1
+    EXIT_EXPLORATION ec_door, screen_id_emerald_grove
     ret
 
 .endlocal

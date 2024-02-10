@@ -58,10 +58,7 @@ on_interact:
     ret
 
 door_interact:
-    ld a, ec_door
-    ld b, screen_id_nautiloid_bridge
-    call set_screen_exit_conditions
-    ld a, 1
+    EXIT_EXPLORATION ec_door, screen_id_nautiloid_bridge
     ret
 
 .endlocal

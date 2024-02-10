@@ -69,10 +69,7 @@ exit_door:
     ret
 
 navigate:
-    ld a, ec_door
-    ld b, screen_id_crash_site
-    call set_screen_exit_conditions
-    ld a, 1
+    EXIT_EXPLORATION ec_door, screen_id_crash_site
     ret
 
 .endlocal
