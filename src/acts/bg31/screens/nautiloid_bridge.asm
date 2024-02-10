@@ -63,19 +63,15 @@ on_interact:
 
 exit_door:
     ld a, ec_door
-    ld (last_screen_exit_code), a
-    ld a, screen_id_nautiloid
-    ld (last_screen_exit_argument), a
-
+    ld b, screen_id_nautiloid
+    call set_screen_exit_conditions
     ld a, 1
     ret
 
 navigate:
     ld a, ec_door
-    ld (last_screen_exit_code), a
-    ld a, screen_id_crash_site
-    ld (last_screen_exit_argument), a
-
+    ld b, screen_id_crash_site
+    call set_screen_exit_conditions
     ld a, 1
     ret
 

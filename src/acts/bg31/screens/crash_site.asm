@@ -52,10 +52,8 @@ get_interaction_prompt:
 
 on_interact:
     ld a, ec_door
-    ld (last_screen_exit_code), a
-    ld a, screen_id_emerald_grove_environs
-    ld (last_screen_exit_argument), a
-
+    ld b, screen_id_emerald_grove_environs
+    call set_screen_exit_conditions
     ld a, 1
     ret
 

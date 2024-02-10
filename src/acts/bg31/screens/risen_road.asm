@@ -54,9 +54,8 @@ on_interact:
 
 exit_to_wilderness:
     ld a, ec_door
-    ld (last_screen_exit_code), a
-    ld a, screen_id_wilderness
-    ld (last_screen_exit_argument), a
+    ld b, screen_id_wilderness
+    call set_screen_exit_conditions
     ld a, 1
     ret
 

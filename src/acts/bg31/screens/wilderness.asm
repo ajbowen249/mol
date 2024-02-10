@@ -64,25 +64,22 @@ on_interact:
 
 exit_to_environs:
     ld a, ec_door
-    ld (last_screen_exit_code), a
-    ld a, screen_id_emerald_grove_environs
-    ld (last_screen_exit_argument), a
+    ld b, screen_id_emerald_grove_environs
+    call set_screen_exit_conditions
     ld a, 1
     ret
 
 exit_to_goblin_camp_entrance:
     ld a, ec_door
-    ld (last_screen_exit_code), a
-    ld a, screen_id_goblin_camp_entrance
-    ld (last_screen_exit_argument), a
+    ld b, screen_id_goblin_camp_entrance
+    call set_screen_exit_conditions
     ld a, 1
     ret
 
 exit_to_risen_road:
     ld a, ec_door
-    ld (last_screen_exit_code), a
-    ld a, screen_id_risen_road
-    ld (last_screen_exit_argument), a
+    ld b, screen_id_risen_road
+    call set_screen_exit_conditions
     ld a, 1
     ret
 

@@ -49,28 +49,12 @@ show_sheets:
 
 sheets_done:
 
-    ld a, ec_door
-    ld (last_screen_exit_code), a
-    ld a, screen_id_nautiloid
-    ld (last_screen_exit_argument), a
-
-screen_loop:
-    ld a, (last_screen_exit_code)
-
-    cp a, ec_door
-    call z, run_room
-
-    jp screen_loop
-
-    ret
-
-run_room:
-    ld a, (last_screen_exit_argument)
-    ld b, 2
     ld hl, screen_table
-    call get_array_item
-    ld bc, (hl)
-    ld hl, bc
-    call call_hl
+    call configure_screen_controller
 
+    ld a, ec_door
+    ld b, screen_id_nautiloid
+    call set_screen_exit_conditions
+
+    call run_screen_controller
     ret
