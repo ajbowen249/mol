@@ -17,7 +17,7 @@ screen_start_y: .db 7
 screen_interactables:
     DEFINE_INTERACTABLE to_crash_site, in_door, $01, 8, 14
     DEFINE_INTERACTABLE to_wilderness, in_door, $01, 4, 1
-    DEFINE_INTERACTABLE blank_3, 0, 0, 0, 0
+    DEFINE_INTERACTABLE to_grove, in_door, $01, 1, 4
     DEFINE_INTERACTABLE blank_4, 0, 0, 0, 0
     DEFINE_INTERACTABLE blank_5, 0, 0, 0, 0
     DEFINE_INTERACTABLE blank_6, 0, 0, 0, 0
@@ -47,6 +47,9 @@ on_interact:
     cp a, 1
     jp z, exit_to_wilderness
 
+    cp a, 2
+    jp z, exit_to_grove
+
     ret
 
 exit_to_wilderness:
@@ -59,6 +62,13 @@ exit_to_wilderness:
 exit_to_crash_site:
     ld a, ec_door
     ld b, screen_id_crash_site
+    call set_screen_exit_conditions
+    ld a, 1
+    ret
+
+exit_to_grove:
+    ld a, ec_door
+    ld b, screen_id_emerald_grove
     call set_screen_exit_conditions
     ld a, 1
     ret
