@@ -1,6 +1,5 @@
 .macro ORIGIN_CHARACTER_LAEZEL &LABEL
-    ; TODO: Add way to extend the race option text
-    DEFINE_PLAYER &LABEL, 17, 13, 14, 11, 12, 8, race_human, class_fighter, 1, "Lae'zel"
+    DEFINE_PLAYER &LABEL, 17, 13, 14, 11, 12, 8, race_githyanki, class_fighter, 1, "Lae'zel"
 .db 0
 .db 0
 .db 0
@@ -21,8 +20,7 @@
 .endm
 
 .macro ORIGIN_CHARACTER_KARLACH &LABEL
-    ; TODO: Tiefling is SRD, but DDE lacks the text
-    DEFINE_PLAYER &LABEL, 17, 13, 14, 11, 12, 8, race_human, class_barbarian, 1, "Karlach"
+    DEFINE_PLAYER &LABEL, 17, 13, 14, 11, 12, 8, race_tiefling, class_barbarian, 1, "Karlach"
 .db 0
 .db 0
 .db 0

@@ -5,5 +5,6 @@
 #define in_button 32
 
 #define race_githyanki 10
+race_githyanki_label: .asciz "Githyanki"
 
 empty_prompt: .db 0

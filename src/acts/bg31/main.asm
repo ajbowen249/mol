@@ -13,6 +13,7 @@
 
 main:
     call seed_random
+    call register_races
 
     ld hl, player_party
     call party_wizard
