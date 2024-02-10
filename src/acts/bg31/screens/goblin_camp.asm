@@ -6,7 +6,7 @@ nautiloid_background:
 .asciz "┌──────────────────┐"
 .asciz "│                  │"
 .asciz "│                  │"
-.asciz "│                  │"
+.asciz "│H                 │"
 .asciz "│                  │"
 .asciz "│                  │"
 .asciz "│                  │"
@@ -25,7 +25,7 @@ nautiloid_start_x: .db 10 ; 1-indexed since it's screen coordinates!
 nautiloid_start_y: .db 7
 nautiloid_interactables:
     DEFINE_INTERACTABLE to_goblin_camp_entrance, in_door, $01, 8, 10
-    DEFINE_INTERACTABLE blank_2, 0, 0, 0, 0
+    DEFINE_INTERACTABLE underdark_ladder, in_button, 0, 4, 2
     DEFINE_INTERACTABLE blank_3, 0, 0, 0, 0
     DEFINE_INTERACTABLE blank_4, 0, 0, 0, 0
     DEFINE_INTERACTABLE blank_5, 0, 0, 0, 0
@@ -44,17 +44,32 @@ goblin_camp::
     call exploration_ui
     ret
 
+underdark_ladder_prompt: .asciz "Ladder to Underdark"
+
 get_interaction_prompt:
+    cp a, 1
+    jp nz, empty
+    ld hl, underdark_ladder_prompt
+    ret
+
+empty:
     ld hl, empty_prompt
     ret
 
 on_interact:
     cp a, 0
-    jp z, door_interact
+    jp z, exit_to_camp
+
+    cp a, 1
+    jp z, exit_to_underdark
     ret
 
-door_interact:
+exit_to_camp:
     EXIT_EXPLORATION ec_door, screen_id_goblin_camp_entrance
+    ret
+
+exit_to_underdark:
+    EXIT_EXPLORATION ec_door, screen_id_underdark
     ret
 
 .endlocal

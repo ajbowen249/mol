@@ -7,6 +7,7 @@
 #include "./goblin_camp_entrance.asm"
 #include "./goblin_camp.asm"
 #include "./emerald_grove.asm"
+#include "./underdark.asm"
 
 screen_table:
 .dw 0
@@ -19,3 +20,4 @@ screen_table:
 .dw goblin_camp_entrance
 .dw goblin_camp
 .dw emerald_grove
+.dw underdark
