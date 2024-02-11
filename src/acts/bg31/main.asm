@@ -10,6 +10,7 @@
 #include "../../common/common.asm"
 #include "./global_data.asm"
 #include "./screens/screen_table.asm"
+#include "./encounters/encounter_table.asm"
 
 main:
     call seed_random
@@ -51,6 +52,9 @@ show_sheets:
 sheets_done:
 
     ld hl, screen_table
+    ld bc, encounter_table
+    ld de, player_party
+    ld a, (party_size)
     call configure_screen_controller
 
     ld a, ec_door
