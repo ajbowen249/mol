@@ -3,14 +3,14 @@
 .local
 nautiloid_data:
 nautiloid_background:
-.asciz "┌──────────────────┐"
-.asciz "│                  │"
-.asciz "│                  │"
-.asciz "│                   "
-.asciz "│                  │"
-.asciz "│                  │"
-.asciz "│                  │"
-.asciz "└──────────────────┘"
+.asciz " ██◤   ◥████◤   ◥██ "
+.asciz " █◤     ◥██◤     ◥█ "
+.asciz " ◤       ◥◤       ◥ "
+.asciz "                  ▐ "
+.asciz "                  ▐ "
+.asciz " ◣       ◢◣       ◢ "
+.asciz " █◣     ◢██◣     ◢█ "
+.asciz " ██◣   ◢████◣   ◢██ "
 nautiloid_title: .asciz "Nautiloid"
 .db 0
 .db 0
@@ -23,7 +23,7 @@ nautiloid_title: .asciz "Nautiloid"
 .db 0
 .db 0
 .db 0
-nautiloid_start_x: .db 10 ; 1-indexed since it's screen coordinates!
+nautiloid_start_x: .db 16 ; 1-indexed since it's screen coordinates!
 nautiloid_start_y: .db 4
 nautiloid_interactables:
     DEFINE_INTERACTABLE door_1, in_door, $01, 4, 20
