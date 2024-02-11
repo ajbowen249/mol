@@ -3,25 +3,25 @@
 .local
 screen_data:
 screen_background:
-.asciz "┌──────────────────┐"
-.asciz "│                  │"
-.asciz "│                  │"
-.asciz "                 ∩ │"
-.asciz "│                  │"
-.asciz "│                  │"
-.asciz "│                  │"
-.asciz "└──────────────────┘"
+.asciz "███████████████████ "
+.asciz "███◤             ◥█ "
+.asciz "██◤               ◥ "
+.asciz "█◤∩                 "
+.asciz "█◣                  "
+.asciz "██◣               ◢ "
+.asciz "███◣             ◢█ "
+.asciz "███████████████████ "
 screen_title: .asciz "Nautiloid Bridge"
 .db 0
 .db 0
 .db 0
 .db 0
-screen_start_x: .db 2 ; 1-indexed since it's screen coordinates!
+screen_start_x: .db 18 ; 1-indexed since it's screen coordinates!
 screen_start_y: .db 4
 screen_interactables:
-    DEFINE_INTERACTABLE door_1, in_door, $01, 4, 1
-    DEFINE_INTERACTABLE navigation_button, in_button, 0, 4, 18
-    DEFINE_INTERACTABLE blank_3, 0, 0, 0, 0
+    DEFINE_INTERACTABLE door_1, in_door, $01, 4, 19
+    DEFINE_INTERACTABLE door_2, in_door, $01, 5, 19
+    DEFINE_INTERACTABLE navigation_button, in_button, 0, 4, 3
     DEFINE_INTERACTABLE blank_4, 0, 0, 0, 0
     DEFINE_INTERACTABLE blank_5, 0, 0, 0, 0
     DEFINE_INTERACTABLE blank_6, 0, 0, 0, 0
@@ -43,7 +43,7 @@ nautiloid_bridge::
     ret
 
 get_interaction_prompt:
-    cp a, 1
+    cp a, 2
     jp z, nav_prompt
     ld hl, empty_prompt
     ret
@@ -57,6 +57,9 @@ on_interact:
     jp z, exit_door
 
     cp a, 1
+    jp z, exit_door
+
+    cp a, 2
     jp z, navigate
 
     ret
