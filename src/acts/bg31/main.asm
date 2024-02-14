@@ -9,6 +9,7 @@
 
 #include "../../common/common.asm"
 #include "./global_data.asm"
+#include "./dialog/dialog.asm"
 #include "./screens/screen_table.asm"
 #include "./encounters/encounter_table.asm"
 

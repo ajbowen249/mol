@@ -12,7 +12,7 @@ APP_OUTPUT_FILES := $(foreach app, $(APP_NAMES), $(BUILD_DIR)/$(app).hex)
 
 all: $(APP_OUTPUT_FILES)
 
-$(BUILD_DIR)/%.hex: $(SRC_DIR)/**/*.asm $(SRC_DIR)/**/**/*.asm
+$(BUILD_DIR)/%.hex: $(SRC_DIR)/**/*.asm $(SRC_DIR)/**/**/*.asm $(SRC_DIR)/**/**/**/*.asm
 	@mkdir -p $(BUILD_DIR)
 	$(ZASM) --8080 -x $(patsubst %.hex,%/main.asm,$(subst build,src/acts,$@)) -o $@
 
