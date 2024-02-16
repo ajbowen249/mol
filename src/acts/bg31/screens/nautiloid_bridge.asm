@@ -4,12 +4,12 @@
 screen_data:
 screen_background:
 .asciz "███████████████████ "
-.asciz "███◤             ◥█ "
-.asciz "██◤               ◥ "
+.asciz "███◤      \     /◥█ "
+.asciz "██◤        \───/  ◥ "
 .asciz "█◤∩                 "
-.asciz "█◣                  "
-.asciz "██◣               ◢ "
-.asciz "███◣             ◢█ "
+.asciz "█◣    αα            "
+.asciz "██◣        /───\  ◢ "
+.asciz "███◣      /     \◢█ "
 .asciz "███████████████████ "
 screen_title: .asciz "Nautiloid Bridge"
 .db 0
@@ -22,8 +22,8 @@ screen_interactables:
     DEFINE_INTERACTABLE door_1, in_door, $01, 4, 19
     DEFINE_INTERACTABLE door_2, in_door, $01, 5, 19
     DEFINE_INTERACTABLE navigation_button, in_button, 0, 4, 3
-    DEFINE_INTERACTABLE blank_4, 0, 0, 0, 0
-    DEFINE_INTERACTABLE blank_5, 0, 0, 0, 0
+    DEFINE_INTERACTABLE trigger_mf_convo_1, in_door, $01, 4, 12
+    DEFINE_INTERACTABLE trigger_mf_convo_2, in_door, $01, 5, 12
     DEFINE_INTERACTABLE blank_6, 0, 0, 0, 0
     DEFINE_INTERACTABLE blank_7, 0, 0, 0, 0
     DEFINE_INTERACTABLE blank_8, 0, 0, 0, 0
@@ -32,7 +32,7 @@ screen_interactables:
 screen_get_interaction_prompt: .dw get_interaction_prompt
 screen_interact_callback: .dw on_interact
 
-navigation_prompt: .asciz "Navigation Console"
+navigation_prompt: .asciz "Transponder"
 
 nautiloid_bridge::
     ld hl, player_party
@@ -62,6 +62,12 @@ on_interact:
     cp a, 2
     jp z, navigate
 
+    cp a, 3
+    jp z, mindflayer_dialog
+
+    cp a, 4
+    jp z, mindflayer_dialog
+
     ret
 
 exit_door:
@@ -73,6 +79,10 @@ exit_door:
 
 navigate:
     EXIT_EXPLORATION ec_door, screen_id_crash_site
+    ret
+
+mindflayer_dialog:
+    call dialog_mindflayer_captain
     ret
 
 .endlocal
