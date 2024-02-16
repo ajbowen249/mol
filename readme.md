@@ -1,5 +1,6 @@
 # Mol
 
+![demo](/gh_media/demo_2.gif)
 ![demo](/gh_media/environment_demo.gif)
 
 Mol is a Baldur's Gate 3 Demake for the Tandy TRS-80 Model 100, built on the [Dungeon Delver Engine](https://github.com/ajbowen249/dungeon-delver-engine).
