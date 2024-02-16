@@ -2,6 +2,7 @@
 #include "./constants.asm"
 #include "./origin_characters.asm"
 #include "./party.asm"
+#include "./game_state.asm"
 
 .local
 register_races::

@@ -39,6 +39,8 @@ nautiloid_interactables:
 nautiloid_get_interaction_prompt: .dw get_interaction_prompt
 nautiloid_interact_callback: .dw on_interact
 
+interactable_us_loc:: .dw us
+
 nautiloid::
     ld hl, player_party
     ld a, (party_size)
