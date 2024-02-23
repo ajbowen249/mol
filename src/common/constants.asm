@@ -8,3 +8,5 @@
 race_githyanki_label: .asciz "Githyanki"
 
 empty_prompt: .db 0
+
+str_fight: .asciz "Fight"

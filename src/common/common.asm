@@ -3,9 +3,15 @@
 #include "./origin_characters.asm"
 #include "./party.asm"
 #include "./game_state.asm"
+#include "./monsters.asm"
 
 .local
-register_races::
+register_campaign_extras::
+    call register_races
+    call register_monsters
+    ret
+
+register_races:
     ld hl, opt_campaign_race
     ld a, race_githyanki
     ld (hl), a
