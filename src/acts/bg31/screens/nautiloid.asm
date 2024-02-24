@@ -8,7 +8,7 @@ nautiloid_background:
 .asciz "◤       ◥█◤       ◥ "
 .asciz "                  ▐ "
 .asciz "                  ▐ "
-.asciz "◣  ╔╗   ◢█◣       ◢ "
+.asciz "◣  ▛▜   ◢█◣       ◢ "
 .asciz "█◣     ◢███◣     ◢█ "
 .asciz "██◣   ◢█████◣   ◢██ "
 nautiloid_title: .asciz "Nautiloid"

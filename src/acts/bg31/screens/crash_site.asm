@@ -3,9 +3,9 @@
 .local
 screen_data:
 screen_background:
-.asciz "┌─────┐~~~~~~ ~~~~~~"
+.asciz "┌─────┐~~~~~ ~~~~~~~"
 .asciz "│     \         ~   "
-.asciz "│      \        ╔   "
+.asciz "│      \        ▛   "
 .asciz "│      │        ▐~  "
 .asciz "└─\               ▄ "
 .asciz "  └────~~~~~~~~~~~~~"
@@ -25,7 +25,7 @@ screen_title: .asciz "Crash Site"
 screen_start_x: .db 2 ; 1-indexed since it's screen coordinates!
 screen_start_y: .db 2
 screen_interactables:
-    DEFINE_INTERACTABLE to_grove, in_door, $01, 1, 14
+    DEFINE_INTERACTABLE to_grove, in_door, $01, 1, 13
     DEFINE_INTERACTABLE blank_1, 0, 0, 0, 0
     DEFINE_INTERACTABLE blank_3, 0, 0, 0, 0
     DEFINE_INTERACTABLE blank_4, 0, 0, 0, 0
