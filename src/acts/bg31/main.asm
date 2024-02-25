@@ -1,7 +1,7 @@
 ; Dungeon Delver Engine Test Campaign
 ; This is a CRPG built on the Dungeon Delver Engine
 
-.org $C000
+.org $B200
 
 ; Keep this at the top; this is the entry point
     call main
