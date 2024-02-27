@@ -38,51 +38,10 @@ screen_get_interaction_prompt: .dw get_interaction_prompt
 screen_interact_callback: .dw on_interact
 
 goblin_camp::
-    ld a, (killed_dror_ragzlin)
-    cp a, 0
-    jp z, check_gut
+    CLEAR_INTERACTABLE_IF_FLAG killed_dror_ragzlin, int_dror_ragzlin, screen_background
+    CLEAR_INTERACTABLE_IF_FLAG killed_priestess_gut, int_priestess_gut, screen_background
+    CLEAR_INTERACTABLE_IF_FLAG killed_minthara, int_minthara, screen_background
 
-    ld a, 0
-    ld (int_dror_ragzlin_row), a
-    ld (int_dror_ragzlin_col), a
-
-    ld hl, screen_background
-    ld bc, 30
-    add hl, bc
-    ld a, " "
-    ld (hl), a
-
-check_gut:
-    ld a, (killed_priestess_gut)
-    cp a, 0
-    jp z, check_minthara
-
-    ld a, 0
-    ld (int_priestess_gut_row), a
-    ld (int_priestess_gut_col), a
-
-    ld hl, screen_background
-    ld bc, 66
-    add hl, bc
-    ld a, " "
-    ld (hl), a
-
-check_minthara:
-    ld a, (killed_minthara)
-    cp a, 0
-    jp z, run_ui
-
-    ld a, 0
-    ld (int_minthara_row), a
-    ld (int_minthara_col), a
-
-    ld hl, screen_background
-    ld bc, 38
-    add hl, bc
-    ld a, " "
-    ld (hl), a
-
-run_ui:
     ld hl, player_party
     ld a, (party_size)
     ld bc, screen_data

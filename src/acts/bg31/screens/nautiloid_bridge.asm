@@ -35,26 +35,8 @@ screen_interact_callback: .dw on_interact
 navigation_prompt: .asciz "Transponder"
 
 nautiloid_bridge::
-    ld a, (killed_zhalk)
-    cp a, 0
-    jp z, run_ui
+    CLEAR_INTERACTABLE_IF_FLAG killed_zhalk, int_zhalk_fight, screen_background
 
-    ld a, 0
-    ld (int_zhalk_fight_row), a
-    ld (int_zhalk_fight_col), a
-
-    ld hl, screen_background
-    ld bc, 91
-    add hl, bc
-    ld a, " "
-    ld (hl), a
-
-    ld a, 4
-    ld (screen_start_y), a
-    ld a, 7
-    ld (screen_start_x), a
-
-run_ui:
     ld hl, player_party
     ld a, (party_size)
     ld bc, screen_data
@@ -117,6 +99,11 @@ mindflayer_dialog:
     ret
 
 zhalk_fight:
+    ld a, 4
+    ld (screen_start_y), a
+    ld a, 7
+    ld (screen_start_x), a
+
     EXIT_EXPLORATION ec_encounter, encounter_id_nautiloid_zhalk
     ret
 

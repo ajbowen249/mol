@@ -59,7 +59,7 @@ sheets_done:
     call configure_screen_controller
 
     ld a, ec_door
-    ld b, screen_id_goblin_camp
+    ld b, screen_id_nautiloid_bridge
     call set_screen_exit_conditions
 
     call run_screen_controller
