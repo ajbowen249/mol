@@ -4,7 +4,7 @@
 screen_data:
 screen_background:
 .asciz "┌──────────────────┐"
-.asciz "│        α         │"
+.asciz "│        α       α │"
 .asciz "│                  │"
 .asciz "│H α               │"
 .asciz "│                  │"
@@ -28,7 +28,7 @@ screen_interactables:
     DEFINE_INTERACTABLE underdark_ladder, in_button, 0, 4, 2
     DEFINE_INTERACTABLE int_dror_ragzlin, in_npc, 0, 2, 10
     DEFINE_INTERACTABLE int_priestess_gut, in_npc, 0, 4, 4
-    DEFINE_INTERACTABLE blank_5, 0, 0, 0, 0
+    DEFINE_INTERACTABLE int_minthara, in_npc, 0, 2, 18
     DEFINE_INTERACTABLE blank_6, 0, 0, 0, 0
     DEFINE_INTERACTABLE blank_7, 0, 0, 0, 0
     DEFINE_INTERACTABLE blank_8, 0, 0, 0, 0
@@ -55,7 +55,7 @@ goblin_camp::
 check_gut:
     ld a, (killed_priestess_gut)
     cp a, 0
-    jp z, run_ui
+    jp z, check_minthara
 
     ld a, 0
     ld (int_priestess_gut_row), a
@@ -63,6 +63,21 @@ check_gut:
 
     ld hl, screen_background
     ld bc, 66
+    add hl, bc
+    ld a, " "
+    ld (hl), a
+
+check_minthara:
+    ld a, (killed_minthara)
+    cp a, 0
+    jp z, run_ui
+
+    ld a, 0
+    ld (int_minthara_row), a
+    ld (int_minthara_col), a
+
+    ld hl, screen_background
+    ld bc, 38
     add hl, bc
     ld a, " "
     ld (hl), a
@@ -84,6 +99,9 @@ get_interaction_prompt:
     jp z, talk_prompt
 
     cp a, 3
+    jp z, talk_prompt
+
+    cp a, 4
     jp z, talk_prompt
 
     ld hl, empty_prompt
@@ -109,6 +127,9 @@ on_interact:
 
     cp a, 3
     jp z, gut_interact
+
+    cp a, 4
+    jp z, minthara_interact
     ret
 
 exit_to_camp:
@@ -135,6 +156,15 @@ gut_interact:
     ld (screen_start_x), a
 
     EXIT_EXPLORATION ec_encounter, encounter_id_priestess_gut
+    ret
+
+minthara_interact:
+    ld a, 3
+    ld (screen_start_y), a
+    ld a, 18
+    ld (screen_start_x), a
+
+    EXIT_EXPLORATION ec_encounter, encounter_id_minthara
     ret
 
 .endlocal
