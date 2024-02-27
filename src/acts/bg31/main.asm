@@ -17,40 +17,8 @@ main:
     call seed_random
     call register_campaign_extras
 
-    ld hl, player_party
-    call party_wizard
-    cp a, 0
-    jp nz, show_sheets
     ld a, 4
-
-show_sheets:
     ld (party_size), a
-
-    ld hl, party_player_1
-    call character_sheet_ui
-
-    ld a, (party_size)
-    cp a, 2
-    jp m, sheets_done
-
-    ld hl, party_player_2
-    call character_sheet_ui
-
-    ld a, (party_size)
-    cp a, 3
-    jp m, sheets_done
-
-    ld hl, party_player_3
-    call character_sheet_ui
-
-    ld a, (party_size)
-    cp a, 4
-    jp m, sheets_done
-
-    ld hl, party_player_4
-    call character_sheet_ui
-
-sheets_done:
 
     ld hl, screen_table
     ld bc, encounter_table
@@ -58,8 +26,9 @@ sheets_done:
     ld a, (party_size)
     call configure_screen_controller
 
+    ld a, (last_room)
+    ld b, a
     ld a, ec_door
-    ld b, screen_id_nautiloid_bridge
     call set_screen_exit_conditions
 
     call run_screen_controller

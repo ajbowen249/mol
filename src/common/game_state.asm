@@ -1,3 +1,13 @@
+player_party:
+    ORIGIN_CHARACTER_LAEZEL player_character
+    ORIGIN_CHARACTER_SHADOWHEART party_member_2
+    ORIGIN_CHARACTER_GALE party_member_3
+    ORIGIN_CHARACTER_KARLACH party_member_4
+
+party_size: .db 0
+
+last_room: .db screen_id_nautiloid
+
 freed_us: .db 0
 killed_zhalk: .db 0
 killed_dror_ragzlin: .db 0
