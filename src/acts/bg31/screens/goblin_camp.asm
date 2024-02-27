@@ -3,14 +3,14 @@
 .local
 screen_data:
 screen_background:
-.asciz "┌──────────────────┐"
-.asciz "│        α       α │"
-.asciz "│                  │"
-.asciz "│H α               │"
-.asciz "│                  │"
-.asciz "│                  │"
-.asciz "│                  │"
-.asciz "└──────── ─────────┘"
+.asciz "◢██████████████████◣"
+.asciz "█─┬──┐  ┌─┐  │   α █"
+.asciz "█H│  │  │α│  │     █"
+.asciz "█─┘  │       │  ┌──█"
+.asciz "█α       ────┘    ⌂█"
+.asciz "█    │          │ α█"
+.asciz "◥████████ █████████◤"
+.asciz "       ◥█ █◤        "
 screen_title: .asciz "Goblin Camp"
 .db 0
 .db 0
@@ -25,9 +25,9 @@ screen_start_x: .db 10 ; 1-indexed since it's screen coordinates!
 screen_start_y: .db 7
 screen_interactables:
     DEFINE_INTERACTABLE to_goblin_camp_entrance, in_door, $01, 8, 10
-    DEFINE_INTERACTABLE underdark_ladder, in_button, 0, 4, 2
-    DEFINE_INTERACTABLE int_dror_ragzlin, in_npc, 0, 2, 10
-    DEFINE_INTERACTABLE int_priestess_gut, in_npc, 0, 4, 4
+    DEFINE_INTERACTABLE underdark_ladder, in_button, 0, 3, 2
+    DEFINE_INTERACTABLE int_dror_ragzlin, in_npc, 0, 3, 10
+    DEFINE_INTERACTABLE int_priestess_gut, in_npc, 0, 5, 2
     DEFINE_INTERACTABLE int_minthara, in_npc, 0, 2, 18
     DEFINE_INTERACTABLE blank_6, 0, 0, 0, 0
     DEFINE_INTERACTABLE blank_7, 0, 0, 0, 0
@@ -41,6 +41,8 @@ goblin_camp::
     CLEAR_INTERACTABLE_IF_FLAG killed_dror_ragzlin, int_dror_ragzlin, screen_background
     CLEAR_INTERACTABLE_IF_FLAG killed_priestess_gut, int_priestess_gut, screen_background
     CLEAR_INTERACTABLE_IF_FLAG killed_minthara, int_minthara, screen_background
+
+    CLEAR_GRAPHIC_IF_FLAG killed_priestess_gut, 3, 3, screen_background
 
     ld hl, player_party
     ld a, (party_size)
@@ -100,7 +102,7 @@ exit_to_underdark:
     ret
 
 dror_interact:
-    ld a, 3
+    ld a, 4
     ld (screen_start_y), a
     ld a, 10
     ld (screen_start_x), a
@@ -109,9 +111,9 @@ dror_interact:
     ret
 
 gut_interact:
-    ld a, 4
-    ld (screen_start_y), a
     ld a, 5
+    ld (screen_start_y), a
+    ld a, 3
     ld (screen_start_x), a
 
     EXIT_EXPLORATION ec_encounter, encounter_id_priestess_gut
