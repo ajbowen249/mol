@@ -6,7 +6,7 @@ screen_background:
 .asciz "┌──────────────────┐"
 .asciz "│        α         │"
 .asciz "│                  │"
-.asciz "│H                 │"
+.asciz "│H α               │"
 .asciz "│                  │"
 .asciz "│                  │"
 .asciz "│                  │"
@@ -27,7 +27,7 @@ screen_interactables:
     DEFINE_INTERACTABLE to_goblin_camp_entrance, in_door, $01, 8, 10
     DEFINE_INTERACTABLE underdark_ladder, in_button, 0, 4, 2
     DEFINE_INTERACTABLE int_dror_ragzlin, in_npc, 0, 2, 10
-    DEFINE_INTERACTABLE blank_4, 0, 0, 0, 0
+    DEFINE_INTERACTABLE int_priestess_gut, in_npc, 0, 4, 4
     DEFINE_INTERACTABLE blank_5, 0, 0, 0, 0
     DEFINE_INTERACTABLE blank_6, 0, 0, 0, 0
     DEFINE_INTERACTABLE blank_7, 0, 0, 0, 0
@@ -40,7 +40,7 @@ screen_interact_callback: .dw on_interact
 goblin_camp::
     ld a, (killed_dror_ragzlin)
     cp a, 0
-    jp z, run_ui
+    jp z, check_gut
 
     ld a, 0
     ld (int_dror_ragzlin_row), a
@@ -52,10 +52,20 @@ goblin_camp::
     ld a, " "
     ld (hl), a
 
-    ld a, 3
-    ld (screen_start_y), a
-    ld a, 10
-    ld (screen_start_x), a
+check_gut:
+    ld a, (killed_priestess_gut)
+    cp a, 0
+    jp z, run_ui
+
+    ld a, 0
+    ld (int_priestess_gut_row), a
+    ld (int_priestess_gut_col), a
+
+    ld hl, screen_background
+    ld bc, 66
+    add hl, bc
+    ld a, " "
+    ld (hl), a
 
 run_ui:
     ld hl, player_party
@@ -71,6 +81,9 @@ get_interaction_prompt:
     jp z, ladder_prompt
 
     cp a, 2
+    jp z, talk_prompt
+
+    cp a, 3
     jp z, talk_prompt
 
     ld hl, empty_prompt
@@ -93,6 +106,9 @@ on_interact:
 
     cp a, 2
     jp z, dror_interact
+
+    cp a, 3
+    jp z, gut_interact
     ret
 
 exit_to_camp:
@@ -104,7 +120,21 @@ exit_to_underdark:
     ret
 
 dror_interact:
+    ld a, 3
+    ld (screen_start_y), a
+    ld a, 10
+    ld (screen_start_x), a
+
     EXIT_EXPLORATION ec_encounter, encounter_id_dror_ragzlin
+    ret
+
+gut_interact:
+    ld a, 4
+    ld (screen_start_y), a
+    ld a, 5
+    ld (screen_start_x), a
+
+    EXIT_EXPLORATION ec_encounter, encounter_id_priestess_gut
     ret
 
 .endlocal
