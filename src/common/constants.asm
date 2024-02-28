@@ -9,6 +9,7 @@ race_githyanki_label: .asciz "Githyanki"
 
 empty_prompt: .db 0
 
+str_investigate: .asciz "Investigate"
 str_fight: .asciz "Fight"
 str_talk: .asciz "Talk"
 str_attack: .asciz "Attack!"

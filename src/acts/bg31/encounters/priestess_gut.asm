@@ -4,19 +4,28 @@
 name_override: .asciz "Gut"
 
 encounter_priestess_gut::
+    ld hl, monster_goblin
+    ld bc, enemy_player_1
+    ld a, pl_data_size
+    call copy_hl_bc
+
     ld hl, name_override
-    ld bc, monster_goblin_name
+    ld bc, enemy_player_1_name
     ld a, 10
     call copy_hl_bc
 
     ld a, 5
-    ld (monster_goblin_level), a
+    ld (enemy_player_1_level), a
 
-    ld hl, (screen_controller_party)
-    ld a, (screen_controller_party_size)
-    ld bc, monster_goblin
-    ld d, 1
-    call battle_ui
+    ld hl, monster_goblin
+    ld bc, enemy_player_2
+    ld a, pl_data_size
+    call copy_hl_bc
+
+    ld a, 2
+    ld (enemy_party_size), a
+
+    call start_encounter
     cp a, 0
     jp z, end
 

@@ -1,3 +1,4 @@
+#include "./common.asm"
 #include "./commander_zhalk.asm"
 #include "./dror_ragzlin.asm"
 #include "./priestess_gut.asm"

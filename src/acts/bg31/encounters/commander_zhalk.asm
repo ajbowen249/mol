@@ -1,22 +1,31 @@
 #define encounter_id_nautiloid_zhalk 1
 
 .local
-name_override: .asciz "Cmdr Zhalk"
+zhalk_name: .asciz "Cmdr Zhalk"
 
 encounter_commander_zhalk::
-    ld hl, name_override
-    ld bc, monster_class_cambion_name
+    ld hl, monster_class_cambion
+    ld bc, enemy_player_1
+    ld a, pl_data_size
+    call copy_hl_bc
+
+    ld hl, zhalk_name
+    ld bc, enemy_player_1_name
     ld a, 10
     call copy_hl_bc
 
     ld a, 8
-    ld (monster_class_cambion_level), a
+    ld (enemy_player_1_level), a
 
-    ld hl, (screen_controller_party)
-    ld a, (screen_controller_party_size)
-    ld bc, monster_class_cambion
-    ld d, 1
-    call battle_ui
+    ld hl, monster_class_cambion
+    ld bc, enemy_player_2
+    ld a, pl_data_size
+    call copy_hl_bc
+
+    ld a, 2
+    ld (enemy_party_size), a
+
+    call start_encounter
     cp a, 0
     jp z, end
 
