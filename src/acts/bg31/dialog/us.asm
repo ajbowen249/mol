@@ -135,8 +135,7 @@ us_end:
     ret
 
 display_result:
-    call rom_kyread
-    jp z, display_result
+    call await_any_keypress
     call clear_exploration_message_area
     ret
 .endlocal

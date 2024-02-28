@@ -14,9 +14,7 @@ dialog_mindflayer_captain::
     PRINT_AT_LOCATION 6, 21, intro_1_line_5
     PRINT_AT_LOCATION 7, 21, intro_1_line_6
 
-read_loop:
-    call rom_kyread
-    jp z, read_loop
+    call await_any_keypress
     call clear_exploration_message_area
     ret
 .endlocal

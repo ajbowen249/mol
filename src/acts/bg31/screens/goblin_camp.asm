@@ -107,7 +107,13 @@ dror_interact:
     ld a, 10
     ld (screen_start_x), a
 
+    call dialog_dror_ragzlin
+    cp a, 0
+    jp z, dror_done
+
     EXIT_EXPLORATION ec_encounter, encounter_id_dror_ragzlin
+
+dror_done:
     ret
 
 gut_interact:

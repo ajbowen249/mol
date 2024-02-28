@@ -11,3 +11,5 @@ empty_prompt: .db 0
 
 str_fight: .asciz "Fight"
 str_talk: .asciz "Talk"
+str_attack: .asciz "Attack!"
+str_turn_away: .asciz "Turn away"
