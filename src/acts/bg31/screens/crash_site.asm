@@ -37,6 +37,7 @@ screen_interactables:
     DEFINE_INTERACTABLE blank_10, 0, 0, 0, 0
 screen_get_interaction_prompt: .dw get_interaction_prompt
 screen_interact_callback: .dw on_interact
+screen_menu_callback: .dw pause_menu
 
 crash_site::
     ld hl, player_party

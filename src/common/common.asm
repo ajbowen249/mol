@@ -3,6 +3,7 @@
 #include "./origin_characters.asm"
 #include "./game_state.asm"
 #include "./monsters.asm"
+#include "./pause_menu.asm"
 
 .local
 register_campaign_extras::

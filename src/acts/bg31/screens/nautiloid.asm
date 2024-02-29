@@ -38,6 +38,7 @@ nautiloid_interactables:
     DEFINE_INTERACTABLE blank_10, 0, 0, 0, 0
 nautiloid_get_interaction_prompt: .dw get_interaction_prompt
 nautiloid_interact_callback: .dw on_interact
+screen_menu_callback: .dw pause_menu
 
 interactable_us_loc:: .dw us
 
