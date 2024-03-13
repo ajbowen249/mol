@@ -3,25 +3,26 @@
 #define dgut_opt_attack 2
 #define dgut_opt_turn_away 0
 
-#define ask_question_wisdom_req 10
+dialog_intro_1:
+.asciz "'Now, here's someone"
+.asciz "special. The"
+.asciz "Absolute has touched"
+.asciz "you, hasn't she?'"
+.asciz "asks Gut, the"
+.asciz "Goblin Priestess."
 
-dialog_intro_1_line_1: .asciz "'Now, here's someone"
-dialog_intro_1_line_2: .asciz "special. The"
-dialog_intro_1_line_3: .asciz "Absolute has touched"
-dialog_intro_1_line_4: .asciz "you, hasn't she?'"
-dialog_intro_1_line_5: .asciz "asks Gut, the"
-dialog_intro_1_line_6: .asciz "Goblin Priestess."
-
-dialog_intro_2_line_1: .asciz "She means to mark"
-dialog_intro_2_line_2: .asciz "your flesh as a sign"
-dialog_intro_2_line_3: .asciz "of devotion."
+dialog_intro_2:
+.asciz "She means to mark"
+.asciz "your flesh as a sign"
+.asciz "of devotion."
 
 label_allow_brand: .asciz "Allow it"
 
-dialog_brand_result_1: .asciz "She brands your arm,"
-dialog_brand_result_2: .asciz "and in the pain, you"
-dialog_brand_result_3: .asciz "feel her tadpole"
-dialog_brand_result_4: .asciz "commune with yours."
+dialog_brand_result:
+.asciz "She brands your arm,"
+.asciz "and in the pain, you"
+.asciz "feel her tadpole"
+.asciz "commune with yours."
 
 priestess_gut_root:
 .db dgut_opt_allow_brand
@@ -40,19 +41,12 @@ interact_choice: .db 0
 
 ; returns non-zero in A if the player should start battle
 dialog_priestess_gut::
-    PRINT_AT_LOCATION 2, 21, dialog_intro_1_line_1
-    PRINT_AT_LOCATION 3, 21, dialog_intro_1_line_2
-    PRINT_AT_LOCATION 4, 21, dialog_intro_1_line_3
-    PRINT_AT_LOCATION 5, 21, dialog_intro_1_line_4
-    PRINT_AT_LOCATION 6, 21, dialog_intro_1_line_5
-    PRINT_AT_LOCATION 7, 21, dialog_intro_1_line_6
+    BLOCK_PRINT dialog_intro_1, 6, 21, 2
     call stub_menu
 
     call clear_exploration_message_area
 
-    PRINT_AT_LOCATION 2, 21, dialog_intro_2_line_1
-    PRINT_AT_LOCATION 3, 21, dialog_intro_2_line_2
-    PRINT_AT_LOCATION 4, 21, dialog_intro_2_line_3
+    BLOCK_PRINT dialog_intro_2, 3, 21, 2
 
     ld a, 3
     ld hl, priestess_gut_root
@@ -79,10 +73,7 @@ allow_brand:
     ld (have_brand_of_the_absolute), a
 
     call clear_exploration_message_area
-    PRINT_AT_LOCATION 2, 21, dialog_brand_result_1
-    PRINT_AT_LOCATION 3, 21, dialog_brand_result_2
-    PRINT_AT_LOCATION 4, 21, dialog_brand_result_3
-    PRINT_AT_LOCATION 5, 21, dialog_brand_result_4
+    BLOCK_PRINT dialog_brand_result, 4, 21, 2
 
     call await_any_keypress
     call clear_exploration_message_area

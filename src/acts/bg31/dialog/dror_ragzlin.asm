@@ -5,34 +5,39 @@
 
 #define ask_question_wisdom_req 10
 
-dialog_intro_1_line_1: .asciz "Dror Ragzlin, the"
-dialog_intro_1_line_2: .asciz "Hobgoblin leader of"
-dialog_intro_1_line_3: .asciz "this camp, glares at"
-dialog_intro_1_line_4: .asciz "the corpse of a Mind"
-dialog_intro_1_line_5: .asciz "flayer. 'True Soul,'"
-dialog_intro_1_line_6: .asciz "he regards you."
+dialog_intro_1:
+.asciz "Dror Ragzlin, the"
+.asciz "Hobgoblin leader of"
+.asciz "this camp, glares at"
+.asciz "the corpse of a Mind"
+.asciz "flayer. 'True Soul,'"
+.asciz "he regards you."
 
-dialog_intro_2_line_1: .asciz "He nods toward the"
-dialog_intro_2_line_2: .asciz "corpse, and asks,"
-dialog_intro_2_line_3: .asciz "telepathically, 'You"
-dialog_intro_2_line_4: .asciz "ever talk to a dead"
-dialog_intro_2_line_5: .asciz "squid? Now's your"
-dialog_intro_2_line_6: .asciz "chance.'"
+dialog_intro_2:
+.asciz "He nods toward the"
+.asciz "corpse, and asks,"
+.asciz "telepathically, 'You"
+.asciz "ever talk to a dead"
+.asciz "squid? Now's your"
+.asciz "chance.'"
 
-dialog_root_prompt_1: .asciz "You regognize the"
-dialog_root_prompt_2: .asciz "Mindflayer from the"
-dialog_root_prompt_3: .asciz "ship you escaped."
+dialog_root_prompt:
+.asciz "You regognize the"
+.asciz "Mindflayer from the"
+.asciz "ship you escaped."
 
 label_ask_corpse: .asciz "[W] Ask a question"
 
-dialog_ask_success_1: .asciz "You and Dror speak"
-dialog_ask_success_2: .asciz "until the spell"
-dialog_ask_success_3: .asciz "wears off."
+dialog_ask_success:
+.asciz "You and Dror speak"
+.asciz "until the spell"
+.asciz "wears off."
 
-dialog_ask_fail_1: .asciz "Your questions raise"
-dialog_ask_fail_2: .asciz "suspicion in Dror's"
-dialog_ask_fail_3: .asciz "mind, and he orders"
-dialog_ask_fail_4: .asciz "an attack!"
+dialog_ask_fail:
+.asciz "Your questions raise"
+.asciz "suspicion in Dror's"
+.asciz "mind, and he orders"
+.asciz "an attack!"
 
 dror_ragzlin_root:
 .db ddror_opt_attack
@@ -49,33 +54,19 @@ dror_ragzlin_root:
 
 interact_choice: .db 0
 
-
-
 ; returns non-zero in A if the player should start battle
 dialog_dror_ragzlin::
-    PRINT_AT_LOCATION 2, 21, dialog_intro_1_line_1
-    PRINT_AT_LOCATION 3, 21, dialog_intro_1_line_2
-    PRINT_AT_LOCATION 4, 21, dialog_intro_1_line_3
-    PRINT_AT_LOCATION 5, 21, dialog_intro_1_line_4
-    PRINT_AT_LOCATION 6, 21, dialog_intro_1_line_5
-    PRINT_AT_LOCATION 7, 21, dialog_intro_1_line_6
+    BLOCK_PRINT dialog_intro_1, 6, 21, 2
     call stub_menu
 
     call clear_exploration_message_area
 
-    PRINT_AT_LOCATION 2, 21, dialog_intro_2_line_1
-    PRINT_AT_LOCATION 3, 21, dialog_intro_2_line_2
-    PRINT_AT_LOCATION 4, 21, dialog_intro_2_line_3
-    PRINT_AT_LOCATION 5, 21, dialog_intro_2_line_4
-    PRINT_AT_LOCATION 6, 21, dialog_intro_2_line_5
-    PRINT_AT_LOCATION 7, 21, dialog_intro_2_line_6
+    BLOCK_PRINT dialog_intro_2, 6, 21, 2
     call stub_menu
 
     call clear_exploration_message_area
 
-    PRINT_AT_LOCATION 2, 21, dialog_root_prompt_1
-    PRINT_AT_LOCATION 3, 21, dialog_root_prompt_2
-    PRINT_AT_LOCATION 4, 21, dialog_root_prompt_3
+    BLOCK_PRINT dialog_root_prompt, 3, 21, 2
 
     ld a, 3
     ld hl, dror_ragzlin_root
@@ -109,10 +100,7 @@ try_ask_question:
     jp nz, ask_success
 
     call await_any_keypress
-    PRINT_AT_LOCATION 2, 21, dialog_ask_fail_1
-    PRINT_AT_LOCATION 3, 21, dialog_ask_fail_2
-    PRINT_AT_LOCATION 4, 21, dialog_ask_fail_3
-    PRINT_AT_LOCATION 5, 21, dialog_ask_fail_4
+    BLOCK_PRINT dialog_ask_fail, 4, 21, 2
 
     call await_any_keypress
     ld a, 1
@@ -120,9 +108,7 @@ try_ask_question:
 
 ask_success:
     call await_any_keypress
-    PRINT_AT_LOCATION 2, 21, dialog_ask_success_1
-    PRINT_AT_LOCATION 3, 21, dialog_ask_success_2
-    PRINT_AT_LOCATION 4, 21, dialog_ask_success_3
+    BLOCK_PRINT dialog_ask_success, 3, 21, 2
 
     ld a, 1
     ld (helped_dror_question), a
