@@ -27,8 +27,7 @@ label_ask_corpse: .asciz "[W] Ask a question"
 
 dialog_ask_success_1: .asciz "You and Dror speak"
 dialog_ask_success_2: .asciz "until the spell"
-dialog_ask_success_3: .asciz "wears off, but learn"
-dialog_ask_success_4: .asciz "nothing useful."
+dialog_ask_success_3: .asciz "wears off."
 
 dialog_ask_fail_1: .asciz "Your questions raise"
 dialog_ask_fail_2: .asciz "suspicion in Dror's"
@@ -50,13 +49,7 @@ dror_ragzlin_root:
 
 interact_choice: .db 0
 
-stub_menu:
-    ld a, 1
-    ld hl, opt_stub
-    ld b, 21
-    ld c, 8
-    call menu_ui
-    ret
+
 
 ; returns non-zero in A if the player should start battle
 dialog_dror_ragzlin::
@@ -130,7 +123,9 @@ ask_success:
     PRINT_AT_LOCATION 2, 21, dialog_ask_success_1
     PRINT_AT_LOCATION 3, 21, dialog_ask_success_2
     PRINT_AT_LOCATION 4, 21, dialog_ask_success_3
-    PRINT_AT_LOCATION 5, 21, dialog_ask_success_4
+
+    ld a, 1
+    ld (helped_dror_question), a
 
     call await_any_keypress
     call clear_exploration_message_area

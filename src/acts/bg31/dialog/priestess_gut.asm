@@ -38,14 +38,6 @@ priestess_gut_root:
 
 interact_choice: .db 0
 
-stub_menu:
-    ld a, 1
-    ld hl, opt_stub
-    ld b, 21
-    ld c, 8
-    call menu_ui
-    ret
-
 ; returns non-zero in A if the player should start battle
 dialog_priestess_gut::
     PRINT_AT_LOCATION 2, 21, dialog_intro_1_line_1

@@ -138,7 +138,13 @@ minthara_interact:
     ld a, 18
     ld (screen_start_x), a
 
+    call dialog_minthara
+    cp a, 0
+    jp z, minthara_done
+
     EXIT_EXPLORATION ec_encounter, encounter_id_minthara
+
+minthara_done:
     ret
 
 .endlocal
