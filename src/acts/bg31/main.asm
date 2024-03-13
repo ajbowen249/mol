@@ -14,6 +14,9 @@
 #include "./encounters/encounter_table.asm"
 
 main:
+    ld a, 0
+    ld (dde_should_exit), a
+
     call seed_random
     call register_campaign_extras
 
@@ -32,4 +35,6 @@ main:
     call set_screen_exit_conditions
 
     call run_screen_controller
+
+    call rom_clear_screen
     ret

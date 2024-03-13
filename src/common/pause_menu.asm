@@ -3,10 +3,12 @@
 .local
 #define opt_resume 0
 #define opt_party 1
+#define opt_exit_game 2
 
 menu_label: .asciz "Pause"
 opt_resume_label: .asciz "Resume"
 opt_party_label: .asciz "Party"
+opt_exit_game_label: .asciz "Exit Game"
 
 menu:
 .db opt_resume
@@ -17,7 +19,11 @@ menu:
 .db default_options_flags
 .dw opt_party_label
 
-#define pause_menu_options 2
+.db opt_exit_game
+.db default_options_flags
+.dw opt_exit_game_label
+
+#define pause_menu_options 3
 
 pause_menu::
     call rom_clear_screen
@@ -31,10 +37,19 @@ pause_menu::
 
     cp a, opt_party
     jp z, show_party_menu
+
+    cp a, opt_exit_game
+    jp z, exit_game
+
     ret
 
 show_party_menu:
     call party_menu
+    ret
+
+exit_game:
+    ld a, 1
+    ld (dde_should_exit), a
     ret
 
 .endlocal
