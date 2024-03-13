@@ -1,7 +1,7 @@
 .local
-#define opt_attack 1
-#define opt_ask_question 2
-#define opt_turn_away 0
+#define ddror_opt_attack 1
+#define ddror_opt_ask_question 2
+#define ddror_opt_turn_away 0
 
 #define ask_question_wisdom_req 10
 
@@ -36,15 +36,15 @@ dialog_ask_fail_3: .asciz "mind, and he orders"
 dialog_ask_fail_4: .asciz "an attack!"
 
 dror_ragzlin_root:
-.db opt_attack
+.db ddror_opt_attack
 .db default_options_flags
 .dw str_attack
 
-.db opt_ask_question
+.db ddror_opt_ask_question
 .db default_options_flags
 .dw label_ask_corpse
 
-.db opt_turn_away
+.db ddror_opt_turn_away
 .db default_options_flags
 .dw str_turn_away
 
@@ -90,10 +90,10 @@ dialog_dror_ragzlin::
     ld c, 5
     call menu_ui
 
-    cp a, opt_attack
+    cp a, ddror_opt_attack
     jp z, attack_dror
 
-    cp a, opt_ask_question
+    cp a, ddror_opt_ask_question
     jp z, try_ask_question
 
     call clear_exploration_message_area

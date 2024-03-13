@@ -123,7 +123,13 @@ gut_interact:
     ld a, 3
     ld (screen_start_x), a
 
+    call dialog_priestess_gut
+    cp a, 0
+    jp z, gut_done
+
     EXIT_EXPLORATION ec_encounter, encounter_id_priestess_gut
+
+gut_done:
     ret
 
 minthara_interact:
