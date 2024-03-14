@@ -104,6 +104,8 @@ show_grove_response:
 .asciz "there.'"
 
 show_grove:
+    ld a, 1
+    ld (minthara_started_attack), a
     call clear_exploration_message_area
     BLOCK_PRINT show_grove_response, 2, 21, 2
 

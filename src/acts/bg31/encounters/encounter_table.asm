@@ -3,6 +3,7 @@
 #include "./dror_ragzlin.asm"
 #include "./priestess_gut.asm"
 #include "./minthara.asm"
+#include "./goblins_at_the_gate.asm"
 
 encounter_table:
 .dw 0
@@ -10,3 +11,4 @@ encounter_table:
 .dw encounter_dror_ragzlin
 .dw encounter_priestess_gut
 .dw encounter_minthara
+.dw encounter_goblins_at_the_gate

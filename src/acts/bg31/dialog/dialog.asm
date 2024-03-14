@@ -3,3 +3,4 @@
 #include "./dror_ragzlin.asm"
 #include "./priestess_gut.asm"
 #include "./minthara.asm"
+#include "./goblins_at_the_gate.asm"
