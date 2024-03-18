@@ -4,11 +4,11 @@
 screen_data:
 screen_background:
 .asciz "◢██████████████████◣"
-.asciz "█─┬──┐  ┌─┐  │   α █"
-.asciz "█H│  │  │α│  │     █"
+.asciz "█─┬──┐  ┌─┐  │   왓 █"
+.asciz "█H│  │  │왓│  │     █"
 .asciz "█─┘  │       │  ┌──█"
-.asciz "█α       ────┘    ⌂█"
-.asciz "█    │          │ α█"
+.asciz "█왓       ────┘    ⌂█"
+.asciz "█    │          │ 옷█"
 .asciz "◥████████ █████████◤"
 .asciz "       ◥█ █◤        "
 screen_title: .asciz "Goblin Camp"

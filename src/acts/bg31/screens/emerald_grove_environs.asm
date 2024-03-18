@@ -4,7 +4,7 @@
 screen_data:
 screen_background:
 .asciz "~~~█~~~~~~~~~~#▜▓▓▓▓"
-.asciz "~~ααα     ~~~##▝▀▜▓▓"
+.asciz "~~왓왓왓     ~~~##▝▀▜▓▓"
 .asciz "~            ~~##▐▓▓"
 .asciz "              ~##▐▓▓"
 .asciz "~             ~##▐█▓"

@@ -7,7 +7,7 @@ screen_background:
 .asciz "███◤      \     /◥█ "
 .asciz "██◤        \───/  ◥ "
 .asciz "█◤∩                 "
-.asciz "█◣    αα            "
+.asciz "█◣    왓왓            "
 .asciz "██◣        /───\  ◢ "
 .asciz "███◣      /     \◢█ "
 .asciz "███████████████████ "
