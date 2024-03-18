@@ -4,3 +4,4 @@
 #include "./priestess_gut.asm"
 #include "./minthara.asm"
 #include "./goblins_at_the_gate.asm"
+#include "./zevlor_after_gag.asm"

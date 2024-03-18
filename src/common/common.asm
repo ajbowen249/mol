@@ -2,6 +2,7 @@
 #include "./constants.asm"
 #include "./origin_characters.asm"
 #include "./game_state.asm"
+#include "./game_state_helpers.asm"
 #include "./monsters.asm"
 #include "./pause_menu.asm"
 
