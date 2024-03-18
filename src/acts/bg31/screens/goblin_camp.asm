@@ -39,11 +39,7 @@ screen_interact_callback: .dw on_interact
 screen_menu_callback: .dw pause_menu
 
 goblin_camp::
-    CLEAR_INTERACTABLE_IF_FLAG killed_dror_ragzlin, int_dror_ragzlin, screen_background
-    CLEAR_INTERACTABLE_IF_FLAG killed_priestess_gut, int_priestess_gut, screen_background
-    CLEAR_INTERACTABLE_IF_FLAG killed_minthara, int_minthara, screen_background
-
-    CLEAR_GRAPHIC_IF_FLAG killed_priestess_gut, 3, 3, screen_background
+    call check_game_state
 
     ld hl, player_party
     ld a, (party_size)
@@ -130,6 +126,7 @@ gut_interact:
     EXIT_EXPLORATION ec_encounter, encounter_id_priestess_gut
 
 gut_done:
+    call check_game_state
     ret
 
 minthara_interact:
@@ -145,6 +142,15 @@ minthara_interact:
     EXIT_EXPLORATION ec_encounter, encounter_id_minthara
 
 minthara_done:
+    ret
+
+check_game_state:
+    CLEAR_INTERACTABLE_IF_FLAG killed_dror_ragzlin, int_dror_ragzlin, screen_background
+    CLEAR_INTERACTABLE_IF_FLAG killed_priestess_gut, int_priestess_gut, screen_background
+    CLEAR_INTERACTABLE_IF_FLAG killed_minthara, int_minthara, screen_background
+
+    CLEAR_GRAPHIC_IF_FLAG killed_priestess_gut, 3, 3, screen_background
+    CLEAR_GRAPHIC_IF_FLAG have_brand_of_the_absolute, 3, 3, screen_background
     ret
 
 .endlocal

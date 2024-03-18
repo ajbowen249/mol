@@ -6,7 +6,7 @@ player_party:
 
 party_size: .db 0
 
-last_room: .db screen_id_emerald_grove
+last_room: .db screen_id_goblin_camp
 
 freed_us: .db 0
 killed_zhalk: .db 0
