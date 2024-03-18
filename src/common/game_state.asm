@@ -14,10 +14,11 @@ killed_zhalk: .db 0
 killed_goblins_at_the_gate: .db 0
 
 spoke_with_zevlor_after_gag: .db 0
+kagha_interaction_complete: .db 0
 
 killed_dror_ragzlin: .db 0
 helped_dror_question: .db 0
 killed_priestess_gut: .db 0
-killed_minthara: .db 0
 have_brand_of_the_absolute: .db 0
+killed_minthara: .db 0
 minthara_started_attack: .db 0

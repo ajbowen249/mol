@@ -24,7 +24,7 @@ screen_start_y: .db 7
 screen_interactables:
     DEFINE_INTERACTABLE to_environs, in_door, $01, 8, 4
     DEFINE_INTERACTABLE int_zevlor_auto_dialog, in_npc, $01, 5, 4
-    DEFINE_INTERACTABLE blank_3, 0, 0, 0, 0
+    DEFINE_INTERACTABLE int_kagha, in_npc, 0, 6, 6
     DEFINE_INTERACTABLE blank_4, 0, 0, 0, 0
     DEFINE_INTERACTABLE blank_5, 0, 0, 0, 0
     DEFINE_INTERACTABLE blank_6, 0, 0, 0, 0
@@ -47,7 +47,14 @@ emerald_grove::
     ret
 
 get_interaction_prompt:
+    cp a, 2
+    jp z, talk_prompt
+
     ld hl, empty_prompt
+    ret
+
+talk_prompt:
+    ld hl, str_talk
     ret
 
 on_interact:
@@ -56,6 +63,9 @@ on_interact:
 
     cp a, 1
     jp z, auto_talk_zevlor
+
+    cp a, 2
+    jp z, talk_kahga
 
     ret
 
@@ -66,6 +76,10 @@ exit_to_environs:
 auto_talk_zevlor:
     call dialog_zevlor_after_gag
     call check_game_state
+    ret
+
+talk_kahga:
+    call dialog_kagha
     ret
 
 check_game_state:
