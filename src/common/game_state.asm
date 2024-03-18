@@ -15,6 +15,7 @@ killed_goblins_at_the_gate: .db 0
 
 spoke_with_zevlor_after_gag: .db 0
 kagha_interaction_complete: .db 0
+defeated_grove: .db 0
 
 killed_dror_ragzlin: .db 0
 helped_dror_question: .db 0

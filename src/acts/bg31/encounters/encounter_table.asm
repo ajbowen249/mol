@@ -4,6 +4,7 @@
 #include "./priestess_gut.asm"
 #include "./minthara.asm"
 #include "./goblins_at_the_gate.asm"
+#include "./grove_leaders.asm"
 
 encounter_table:
 .dw 0
@@ -12,3 +13,4 @@ encounter_table:
 .dw encounter_priestess_gut
 .dw encounter_minthara
 .dw encounter_goblins_at_the_gate
+.dw encounter_grove_leaders

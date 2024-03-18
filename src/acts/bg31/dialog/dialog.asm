@@ -6,3 +6,4 @@
 #include "./goblins_at_the_gate.asm"
 #include "./zevlor_after_gag.asm"
 #include "./kagha.asm"
+#include "./grove_attack.asm"
