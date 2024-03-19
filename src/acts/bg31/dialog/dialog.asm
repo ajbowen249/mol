@@ -7,3 +7,4 @@
 #include "./zevlor_after_gag.asm"
 #include "./kagha.asm"
 #include "./grove_attack.asm"
+#include "./grymforge_guard.asm"

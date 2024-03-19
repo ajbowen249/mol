@@ -6,7 +6,7 @@ player_party:
 
 party_size: .db 0
 
-last_room: .db screen_id_goblin_camp
+last_room: .db screen_id_underdark
 
 freed_us: .db 0
 killed_zhalk: .db 0
@@ -23,3 +23,5 @@ killed_priestess_gut: .db 0
 have_brand_of_the_absolute: .db 0
 killed_minthara: .db 0
 minthara_started_attack: .db 0
+
+killed_nere: .db 0
