@@ -22,7 +22,7 @@ dialog_intro_2:
 .asciz "chance.'"
 
 dialog_root_prompt:
-.asciz "You regognize the"
+.asciz "You recognize the"
 .asciz "Mindflayer from the"
 .asciz "ship you escaped."
 

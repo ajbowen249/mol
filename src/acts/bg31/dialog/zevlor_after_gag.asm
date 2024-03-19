@@ -11,7 +11,7 @@ dialog_2:
 .asciz "They are refugees,"
 .asciz "seeking temporary"
 .asciz "shelter in the grove"
-.asciz "as they excape the"
+.asciz "as they escape the"
 .asciz "destruction of their"
 .asciz "home city, Elturel."
 
