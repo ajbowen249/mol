@@ -80,4 +80,32 @@
         "you to inform the",
         "Druid leader, Kagha."
     ],
+
+    "kagha_dialog_1": [
+        "Kagha, self-named",
+        "First Druid, regards",
+        "you coldly."
+    ],
+    "kagha_dialog_leaders_alive_1": [
+        "We're about to enact",
+        "the Rite of Thorns",
+        "and seal the grove,",
+        "so these followers",
+        "of the Absolute can",
+        "not harm us."
+    ],
+    "kagha_dialog_leaders_alive_2": [
+        "If you defeat their",
+        "three generals, we",
+        "will stop. Else, I",
+        "suggest you leave."
+    ],
+    "kagha_dialog_leaders_dead": [
+        "Kagha calls off the",
+        "rite. That evening,",
+        "a group of Teiflings",
+        "and Druids join your",
+        "camp to revel in the",
+        "goblins' defeat."
+    ],
 }
