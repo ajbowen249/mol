@@ -131,4 +131,37 @@
         "feel her tadpole",
         "commune with yours."
     ],
+
+    "dror_ragzlin_dialog_intro_1": [
+        "Dror Ragzlin, the",
+        "Hobgoblin leader of",
+        "this camp, glares at",
+        "the corpse of a Mind",
+        "flayer. 'True Soul,'",
+        "he regards you."
+    ],
+    "dror_ragzlin_dialog_intro_2": [
+        "He nods toward the",
+        "corpse, and asks,",
+        "telepathically, 'You",
+        "ever talk to a dead",
+        "squid? Now's your",
+        "chance.'"
+    ],
+    "dror_ragzlin_dialog_root_prompt": [
+        "You recognize the",
+        "Mindflayer from the",
+        "ship you escaped."
+    ],
+    "dror_ragzlin_dialog_ask_success": [
+        "You and Dror speak",
+        "until the spell",
+        "wears off."
+    ],
+    "dror_ragzlin_dialog_ask_fail": [
+        "Your questions raise",
+        "suspicion in Dror's",
+        "mind, and he orders",
+        "an attack!"
+    ],
 }

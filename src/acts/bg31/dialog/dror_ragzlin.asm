@@ -5,39 +5,7 @@
 
 #define ask_question_wisdom_req 10
 
-dialog_intro_1:
-.asciz "Dror Ragzlin, the"
-.asciz "Hobgoblin leader of"
-.asciz "this camp, glares at"
-.asciz "the corpse of a Mind"
-.asciz "flayer. 'True Soul,'"
-.asciz "he regards you."
-
-dialog_intro_2:
-.asciz "He nods toward the"
-.asciz "corpse, and asks,"
-.asciz "telepathically, 'You"
-.asciz "ever talk to a dead"
-.asciz "squid? Now's your"
-.asciz "chance.'"
-
-dialog_root_prompt:
-.asciz "You recognize the"
-.asciz "Mindflayer from the"
-.asciz "ship you escaped."
-
 label_ask_corpse: .asciz "[W] Ask a question"
-
-dialog_ask_success:
-.asciz "You and Dror speak"
-.asciz "until the spell"
-.asciz "wears off."
-
-dialog_ask_fail:
-.asciz "Your questions raise"
-.asciz "suspicion in Dror's"
-.asciz "mind, and he orders"
-.asciz "an attack!"
 
 dror_ragzlin_root:
 .db ddror_opt_attack
@@ -56,17 +24,17 @@ interact_choice: .db 0
 
 ; returns non-zero in A if the player should start battle
 dialog_dror_ragzlin::
-    BLOCK_PRINT dialog_intro_1, 6, 21, 2
+    BLOCK_PRINT dror_ragzlin_dialog_intro_1, 21, 2
     call stub_menu
 
     call clear_exploration_message_area
 
-    BLOCK_PRINT dialog_intro_2, 6, 21, 2
+    BLOCK_PRINT dror_ragzlin_dialog_intro_2, 21, 2
     call stub_menu
 
     call clear_exploration_message_area
 
-    BLOCK_PRINT dialog_root_prompt, 3, 21, 2
+    BLOCK_PRINT dror_ragzlin_dialog_root_prompt, 21, 2
 
     ld a, 3
     ld hl, dror_ragzlin_root
@@ -100,7 +68,7 @@ try_ask_question:
     jp nz, ask_success
 
     call await_any_keypress
-    BLOCK_PRINT dialog_ask_fail, 4, 21, 2
+    BLOCK_PRINT dror_ragzlin_dialog_ask_fail, 21, 2
 
     call await_any_keypress
     ld a, 1
@@ -108,7 +76,7 @@ try_ask_question:
 
 ask_success:
     call await_any_keypress
-    BLOCK_PRINT dialog_ask_success, 3, 21, 2
+    BLOCK_PRINT dror_ragzlin_dialog_ask_success, 21, 2
 
     ld a, 1
     ld (helped_dror_question), a
