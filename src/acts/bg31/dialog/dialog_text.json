@@ -191,4 +191,37 @@
         "Zevlor and Kagha",
         "stand against you."
     ],
+
+    "grymforge_guard_dialog_intro_1": [
+        "A Duergar dwarf",
+        "stands at the path",
+        "to the Shadow-Cursed",
+        "Lands. 'You'll need",
+        "protection to go any",
+        "farther,' he says."
+    ],
+    "grymforge_guard_dialog_intro_2": [
+        "'Some of our miners",
+        "and a True Soul were",
+        "trapped in an",
+        "accident. Free them,",
+        "and we'll give you a",
+        "Moon Lantern.'"
+    ],
+    "grymforge_guard_dialog_help_1": [
+        "You follow the guard",
+        "into this fortress,",
+        "the Grymforge. Once",
+        "inside, and with the",
+        "help of explosives,",
+        "everyone is freed."
+    ],
+    "grymforge_guard_dialog_help_2": [
+        "The True Soul, Nere,",
+        "berates the enslaved",
+        "gnomes, killing some",
+        "in his rage. He then",
+        "orders an attack on",
+        "your party."
+    ]
 }
