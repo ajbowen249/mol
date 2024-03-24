@@ -108,4 +108,27 @@
         "camp to revel in the",
         "goblins' defeat."
     ],
+
+    "gut_dialog_intro_1": [
+        "'Now, here's someone",
+        "special. The",
+        "Absolute has touched",
+        "you, hasn't she?'",
+        "asks Gut, the",
+        "Goblin Priestess."
+    ],
+    "gut_dialog_intro_2": [
+        "She means to mark",
+        "your flesh as a sign",
+        "of devotion."
+    ],
+    "gut_label_allow_brand": [
+        "Allow it"
+    ],
+    "gut_dialog_brand_result": [
+        "She brands your arm,",
+        "and in the pain, you",
+        "feel her tadpole",
+        "commune with yours."
+    ],
 }
