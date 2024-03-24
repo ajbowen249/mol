@@ -30,4 +30,14 @@
         "transponder! I'll",
         "hold them off.'"
     ],
+
+    "gag_dialog_intro_1": [
+        "A cadre of Goblins",
+        "is attacking a group",
+        "of Tieflings and",
+        "Druids."
+    ],
+    "gag_dialog_intro_2": [
+        "Will you intervene?"
+    ],
 }

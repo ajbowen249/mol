@@ -2,14 +2,6 @@
 #define gag_opt_attack 1
 #define gag_opt_turn_away 2
 
-dialog_intro_1:
-.asciz "A cadre of Goblins"
-.asciz "is attacking a group"
-.asciz "of Tieflings and"
-.asciz "Druids."
-
-dialog_intro_2: .asciz "Will you intervene?"
-
 goblins_at_the_gate_menu:
 .db gag_opt_attack
 .db default_options_flags
@@ -21,12 +13,12 @@ goblins_at_the_gate_menu:
 
 ; returns non-zero in A if the player should start battle
 dialog_goblins_at_the_gate::
-    BLOCK_PRINT dialog_intro_1, 4, 21, 2
+    BLOCK_PRINT gag_dialog_intro_1, 21, 2
     call stub_menu
 
     call clear_exploration_message_area
 
-    PRINT_AT_LOCATION 2, 21, dialog_intro_2
+    BLOCK_PRINT gag_dialog_intro_2, 21, 2
 
     ld a, 2
     ld hl, goblins_at_the_gate_menu
