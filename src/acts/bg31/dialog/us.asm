@@ -5,31 +5,9 @@ us_interaction_header: .asciz "Operating Table"
 #define opt_us_root_smash_skull 2
 #define opt_us_root_leave_alone 0
 
-dialog_us_intro_1:
-.asciz "You see an elf on"
-.asciz "the table with his"
-.asciz "brain exposed."
-
-dialog_us_intro_2:
-.asciz "In your mind, you"
-.asciz "hear it cry, 'Free"
-.asciz "Us!'"
-
 label_prise_free: .asciz "[D]Gently prise it"
 label_smash_skull: .asciz "[S]Smash the skull"
 label_leave_alone: .asciz "Leave it alone"
-
-dialog_us_outro_fail:
-.asciz "'Aaahhhh!'"
-.asciz "The creature's"
-.asciz "thoughts fade away."
-
-dialog_us_outro_success:
-.asciz "'Thank you!'"
-.asciz "A brain with legs"
-.asciz "emerges from the"
-.asciz "skull, and scampers"
-.asciz "ahead."
 
 us_root:
 .db opt_us_root_extract_brain
@@ -47,7 +25,7 @@ us_root:
 interact_choice: .db 0
 
 dialog_us::
-    BLOCK_PRINT dialog_us_intro_1, 3, 21, 2
+    BLOCK_PRINT us_dialog_intro_1, 21, 2
 
     ld a, 1
     ld hl, opt_stub
@@ -57,7 +35,7 @@ dialog_us::
 
     call clear_exploration_message_area
 
-    BLOCK_PRINT dialog_us_intro_2, 3, 21, 2
+    BLOCK_PRINT us_dialog_intro_2, 21, 2
 
     ld a, 3
     ld hl, us_root
@@ -109,12 +87,12 @@ free_success:
     ld a, 1
     ld (freed_us), a
     call display_result
-    BLOCK_PRINT dialog_us_outro_success, 5, 21, 2
+    BLOCK_PRINT us_dialog_outro_success, 21, 2
     jp us_end
 
 free_fail:
     call display_result
-    BLOCK_PRINT dialog_us_outro_fail, 3, 21, 2
+    BLOCK_PRINT us_dialog_outro_fail, 21, 2
 
 us_end:
     ; blank our the interactable

@@ -4,13 +4,8 @@
 #define opt_minthara_turn_away 2
 #define opt_minthara_show_grove 3
 
-minthara_intro:
-.asciz "Minthara, the Drow"
-.asciz "General, greets you"
-.asciz "as a True Soul."
-
 dialog_minthara::
-    BLOCK_PRINT minthara_intro, 3, 21, 2
+    BLOCK_PRINT minthara_intro, 21, 2
     call stub_menu
 
     call clear_exploration_message_area
@@ -27,8 +22,6 @@ dialog_minthara::
 
     ret
 
-minthara_distrust_line: .asciz "'I don't trust you.'"
-
 distrust_menu:
 .db opt_minthara_attack
 .db default_options_flags
@@ -39,7 +32,7 @@ distrust_menu:
 .dw str_turn_away
 
 minthara_distrust:
-    PRINT_AT_LOCATION 2, 21, minthara_distrust_line
+    BLOCK_PRINT minthara_distrust_line, 21, 2
 
     ld a, 2
     ld hl, distrust_menu
@@ -54,11 +47,6 @@ minthara_distrust:
 
     ld a, 0
     ret
-
-minthara_trust_dialog:
-.asciz "'We're ready to"
-.asciz "destroy the Druids."
-.asciz "Where is the grove?'"
 
 show_grove_label: .asciz "Show her on the map"
 
@@ -76,7 +64,7 @@ trust_menu:
 .dw str_turn_away
 
 minthara_trust:
-    BLOCK_PRINT minthara_trust_dialog, 3, 21, 2
+    BLOCK_PRINT minthara_trust_dialog, 21, 2
 
     ld a, 3
     ld hl, trust_menu
@@ -99,15 +87,11 @@ attack:
     ld a, 1
     ret
 
-show_grove_response:
-.asciz "'Thank you. Meet us"
-.asciz "there.'"
-
 show_grove:
     ld a, 1
     ld (minthara_started_attack), a
     call clear_exploration_message_area
-    BLOCK_PRINT show_grove_response, 2, 21, 2
+    BLOCK_PRINT minthara_show_grove_response, 21, 2
 
     call await_any_keypress
     call clear_exploration_message_area

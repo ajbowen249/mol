@@ -1,0 +1,227 @@
+{
+    "us_dialog_intro_1": [
+        "You see an elf on",
+        "the table with his",
+        "brain exposed."
+    ],
+    "us_dialog_intro_2": [
+        "In your mind, you",
+        "hear it cry, 'Free",
+        "Us!'"
+    ],
+    "us_dialog_outro_fail": [
+        "'Aaahhhh!'",
+        "The creature's",
+        "thoughts fade away."
+    ],
+    "us_dialog_outro_success": [
+        "'Thank you!'",
+        "A brain with legs",
+        "emerges from the",
+        "skull, and scampers",
+        "ahead."
+    ],
+
+    "mindflayer_captain_intro": [
+        "You see a mindflayer",
+        "locked in combat",
+        "with a Cambion.",
+        "'Get to the",
+        "transponder! I'll",
+        "hold them off.'"
+    ],
+
+    "gag_dialog_intro_1": [
+        "A cadre of Goblins",
+        "is attacking a group",
+        "of Tieflings and",
+        "Druids."
+    ],
+    "gag_dialog_intro_2": [
+        "Will you intervene?"
+    ],
+
+    "zevlor_dialog_1": [
+        "You are greeted by a",
+        "Tiefling named",
+        "Zevlor, who thanks",
+        "you for your help.",
+        "He tells you of his",
+        "group's struggle."
+    ],
+    "zevlor_dialog_2": [
+        "They are refugees,",
+        "seeking temporary",
+        "shelter in the grove",
+        "as they escape the",
+        "destruction of their",
+        "home city, Elturel."
+    ],
+    "zevlor_dialog_3": [
+        "The grove is home to",
+        "the druids. Some of",
+        "them are kind, or at",
+        "least sympathetic.",
+        "Others are less so."
+    ],
+    "zevlor_dialog_leaders_alive": [
+        "The goblins at the",
+        "gate came from a",
+        "camp to the west. If",
+        "their leaders aren't",
+        "killed, the Druids",
+        "will seal the Grove."
+    ],
+    "zevlor_dialog_leaders_dead": [
+        "You tell Zevlor of",
+        "the three generals",
+        "you defeated at the",
+        "Goblin camp. He asks",
+        "you to inform the",
+        "Druid leader, Kagha."
+    ],
+
+    "kagha_dialog_1": [
+        "Kagha, self-named",
+        "First Druid, regards",
+        "you coldly."
+    ],
+    "kagha_dialog_leaders_alive_1": [
+        "We're about to enact",
+        "the Rite of Thorns",
+        "and seal the grove,",
+        "so these followers",
+        "of the Absolute can",
+        "not harm us."
+    ],
+    "kagha_dialog_leaders_alive_2": [
+        "If you defeat their",
+        "three generals, we",
+        "will stop. Else, I",
+        "suggest you leave."
+    ],
+    "kagha_dialog_leaders_dead": [
+        "Kagha calls off the",
+        "rite. That evening,",
+        "a group of Teiflings",
+        "and Druids join your",
+        "camp to revel in the",
+        "goblins' defeat."
+    ],
+
+    "gut_dialog_intro_1": [
+        "'Now, here's someone",
+        "special. The",
+        "Absolute has touched",
+        "you, hasn't she?'",
+        "asks Gut, the",
+        "Goblin Priestess."
+    ],
+    "gut_dialog_intro_2": [
+        "She means to mark",
+        "your flesh as a sign",
+        "of devotion."
+    ],
+    "gut_label_allow_brand": [
+        "Allow it"
+    ],
+    "gut_dialog_brand_result": [
+        "She brands your arm,",
+        "and in the pain, you",
+        "feel her tadpole",
+        "commune with yours."
+    ],
+
+    "dror_ragzlin_dialog_intro_1": [
+        "Dror Ragzlin, the",
+        "Hobgoblin leader of",
+        "this camp, glares at",
+        "the corpse of a Mind",
+        "flayer. 'True Soul,'",
+        "he regards you."
+    ],
+    "dror_ragzlin_dialog_intro_2": [
+        "He nods toward the",
+        "corpse, and asks,",
+        "telepathically, 'You",
+        "ever talk to a dead",
+        "squid? Now's your",
+        "chance.'"
+    ],
+    "dror_ragzlin_dialog_root_prompt": [
+        "You recognize the",
+        "Mindflayer from the",
+        "ship you escaped."
+    ],
+    "dror_ragzlin_dialog_ask_success": [
+        "You and Dror speak",
+        "until the spell",
+        "wears off."
+    ],
+    "dror_ragzlin_dialog_ask_fail": [
+        "Your questions raise",
+        "suspicion in Dror's",
+        "mind, and he orders",
+        "an attack!"
+    ],
+
+    "minthara_intro": [
+        "Minthara, the Drow",
+        "General, greets you",
+        "as a True Soul."
+    ],
+    "minthara_distrust_line": [
+        "'I don't trust you.'"
+    ],
+    "minthara_trust_dialog": [
+        "'We're ready to",
+        "destroy the Druids.",
+        "Where is the grove?'"
+    ],
+    "minthara_show_grove_response": [
+        "'Thank you. Meet us",
+        "there.'"
+    ],
+
+    "grove_attack_dialog": [
+        "The goblins and the",
+        "Generals have begun",
+        "their attack. As",
+        "they kill and raze,",
+        "Zevlor and Kagha",
+        "stand against you."
+    ],
+
+    "grymforge_guard_dialog_intro_1": [
+        "A Duergar dwarf",
+        "stands at the path",
+        "to the Shadow-Cursed",
+        "Lands. 'You'll need",
+        "protection to go any",
+        "farther,' he says."
+    ],
+    "grymforge_guard_dialog_intro_2": [
+        "'Some of our miners",
+        "and a True Soul were",
+        "trapped in an",
+        "accident. Free them,",
+        "and we'll give you a",
+        "Moon Lantern.'"
+    ],
+    "grymforge_guard_dialog_help_1": [
+        "You follow the guard",
+        "into this fortress,",
+        "the Grymforge. Once",
+        "inside, and with the",
+        "help of explosives,",
+        "everyone is freed."
+    ],
+    "grymforge_guard_dialog_help_2": [
+        "The True Soul, Nere,",
+        "berates the enslaved",
+        "gnomes, killing some",
+        "in his rage. He then",
+        "orders an attack on",
+        "your party."
+    ]
+}

@@ -3,26 +3,7 @@
 #define dgut_opt_attack 2
 #define dgut_opt_turn_away 0
 
-dialog_intro_1:
-.asciz "'Now, here's someone"
-.asciz "special. The"
-.asciz "Absolute has touched"
-.asciz "you, hasn't she?'"
-.asciz "asks Gut, the"
-.asciz "Goblin Priestess."
-
-dialog_intro_2:
-.asciz "She means to mark"
-.asciz "your flesh as a sign"
-.asciz "of devotion."
-
 label_allow_brand: .asciz "Allow it"
-
-dialog_brand_result:
-.asciz "She brands your arm,"
-.asciz "and in the pain, you"
-.asciz "feel her tadpole"
-.asciz "commune with yours."
 
 priestess_gut_root:
 .db dgut_opt_allow_brand
@@ -41,12 +22,12 @@ interact_choice: .db 0
 
 ; returns non-zero in A if the player should start battle
 dialog_priestess_gut::
-    BLOCK_PRINT dialog_intro_1, 6, 21, 2
+    BLOCK_PRINT gut_dialog_intro_1, 21, 2
     call stub_menu
 
     call clear_exploration_message_area
 
-    BLOCK_PRINT dialog_intro_2, 3, 21, 2
+    BLOCK_PRINT gut_dialog_intro_2, 21, 2
 
     ld a, 3
     ld hl, priestess_gut_root
@@ -73,7 +54,7 @@ allow_brand:
     ld (have_brand_of_the_absolute), a
 
     call clear_exploration_message_area
-    BLOCK_PRINT dialog_brand_result, 4, 21, 2
+    BLOCK_PRINT gut_dialog_brand_result, 21, 2
 
     call await_any_keypress
     call clear_exploration_message_area
