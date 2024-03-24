@@ -40,4 +40,44 @@
     "gag_dialog_intro_2": [
         "Will you intervene?"
     ],
+
+    "zevlor_dialog_1": [
+        "You are greeted by a",
+        "Tiefling named",
+        "Zevlor, who thanks",
+        "you for your help.",
+        "He tells you of his",
+        "group's struggle."
+    ],
+    "zevlor_dialog_2": [
+        "They are refugees,",
+        "seeking temporary",
+        "shelter in the grove",
+        "as they escape the",
+        "destruction of their",
+        "home city, Elturel."
+    ],
+    "zevlor_dialog_3": [
+        "The grove is home to",
+        "the druids. Some of",
+        "them are kind, or at",
+        "least sympathetic.",
+        "Others are less so."
+    ],
+    "zevlor_dialog_leaders_alive": [
+        "The goblins at the",
+        "gate came from a",
+        "camp to the west. If",
+        "their leaders aren't",
+        "killed, the Druids",
+        "will seal the Grove."
+    ],
+    "zevlor_dialog_leaders_dead": [
+        "You tell Zevlor of",
+        "the three generals",
+        "you defeated at the",
+        "Goblin camp. He asks",
+        "you to inform the",
+        "Druid leader, Kagha."
+    ],
 }
