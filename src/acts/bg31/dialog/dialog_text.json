@@ -1,2 +1,24 @@
 {
+    "us_dialog_intro_1": [
+        "You see an elf on",
+        "the table with his",
+        "brain exposed."
+    ],
+    "us_dialog_intro_2": [
+        "In your mind, you",
+        "hear it cry, 'Free",
+        "Us!'"
+    ],
+    "us_dialog_outro_fail": [
+        "'Aaahhhh!'",
+        "The creature's",
+        "thoughts fade away."
+    ],
+    "us_dialog_outro_success": [
+        "'Thank you!'",
+        "A brain with legs",
+        "emerges from the",
+        "skull, and scampers",
+        "ahead."
+    ],
 }
