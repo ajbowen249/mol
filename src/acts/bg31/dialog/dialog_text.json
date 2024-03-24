@@ -164,4 +164,22 @@
         "mind, and he orders",
         "an attack!"
     ],
+
+    "minthara_intro": [
+        "Minthara, the Drow",
+        "General, greets you",
+        "as a True Soul."
+    ],
+    "minthara_distrust_line": [
+        "'I don't trust you.'"
+    ],
+    "minthara_trust_dialog": [
+        "'We're ready to",
+        "destroy the Druids.",
+        "Where is the grove?'"
+    ],
+    "minthara_show_grove_response": [
+        "'Thank you. Meet us",
+        "there.'"
+    ],
 }
