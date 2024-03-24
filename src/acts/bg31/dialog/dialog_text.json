@@ -182,4 +182,13 @@
         "'Thank you. Meet us",
         "there.'"
     ],
+
+    "grove_attack_dialog": [
+        "The goblins and the",
+        "Generals have begun",
+        "their attack. As",
+        "they kill and raze,",
+        "Zevlor and Kagha",
+        "stand against you."
+    ],
 }
