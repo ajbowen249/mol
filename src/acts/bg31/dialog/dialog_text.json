@@ -21,4 +21,13 @@
         "skull, and scampers",
         "ahead."
     ],
+
+    "mindflayer_captain_intro": [
+        "You see a mindflayer",
+        "locked in combat",
+        "with a Cambion.",
+        "'Get to the",
+        "transponder! I'll",
+        "hold them off.'"
+    ],
 }
