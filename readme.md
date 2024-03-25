@@ -21,7 +21,7 @@ As a final shameless plug, if this _does_ get the attention of the right compani
 
 ## Building
 
-This project uses [zasm](https://k1.spdns.de/Develop/Projects/zasm/Documentation/index.html) and [make](https://www.gnu.org/software/make/manual/make.html), and assumes `zasm` is in your `PATH`. First, pull down the engine with `git submodule update --init`, and then build with `make`. The campaign is split up into acts, and each act should yield a `bg3<act>.hex` file under `build`. Currently, only the first act exists.
+This project uses [zasm](https://k1.spdns.de/Develop/Projects/zasm/Documentation/index.html), [make](https://www.gnu.org/software/make/manual/make.html), and [python 3](https://www.python.org/), and assumes all are in your `PATH`. First, pull down the engine with `git submodule update --init`, and then build with `make`. The campaign is split up into acts, and each act should yield a `bg3<act>.hex` file under `build`. Currently, only the first act exists.
 
 ## Running
 
