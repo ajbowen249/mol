@@ -7,6 +7,7 @@
     call main
     ret
 
+#include "../../../build/generated/bg31/compressed_text.asm"
 #include "../../common/common.asm"
 #include "./global_data.asm"
 #include "./dialog/dialog.asm"

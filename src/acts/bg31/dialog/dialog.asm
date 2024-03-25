@@ -1,5 +1,3 @@
-#include "../../../../build/generated/bg31/compressed_text.asm"
-
 #include "./us.asm"
 #include "./mindflayer_captain.asm"
 #include "./dror_ragzlin.asm"
