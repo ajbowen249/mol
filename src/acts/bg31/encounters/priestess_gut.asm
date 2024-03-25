@@ -1,15 +1,13 @@
 #define encounter_id_priestess_gut 3
 
 .local
-name_override: .asciz "Gut"
-
 encounter_priestess_gut::
     ld hl, monster_goblin
     ld bc, enemy_player_1
     ld a, pl_data_size
     call copy_hl_bc
 
-    ld hl, name_override
+    ld hl, gut_name
     ld bc, enemy_player_1_name
     ld a, 10
     call copy_hl_bc

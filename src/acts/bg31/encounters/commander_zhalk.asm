@@ -1,15 +1,13 @@
 #define encounter_id_nautiloid_zhalk 1
 
 .local
-zhalk_name: .asciz "Cmdr Zhalk"
-
 encounter_commander_zhalk::
     ld hl, monster_class_cambion
     ld bc, enemy_player_1
     ld a, pl_data_size
     call copy_hl_bc
 
-    ld hl, zhalk_name
+    ld hl, zhalk_combat_name
     ld bc, enemy_player_1_name
     ld a, 10
     call copy_hl_bc

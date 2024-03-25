@@ -226,5 +226,11 @@
         "in his rage. He then",
         "orders an attack on",
         "your party."
-    ]
+    ],
+
+    "zhalk_combat_name": "Cmdr Zhalk",
+    "dror_combat_name": "D. Ragzlin",
+    "minthara_name": "Minthara",
+    "nere_name": "Nere",
+    "gut_name": "Gut"
 }

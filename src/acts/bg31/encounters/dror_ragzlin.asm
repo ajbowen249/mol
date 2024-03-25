@@ -1,15 +1,13 @@
 #define encounter_id_dror_ragzlin 2
 
 .local
-dror_name: .asciz "D. Ragzlin"
-
 encounter_dror_ragzlin::
     ld hl, monster_hobgoblin
     ld bc, enemy_player_1
     ld a, pl_data_size
     call copy_hl_bc
 
-    ld hl, dror_name
+    ld hl, dror_combat_name
     ld bc, enemy_player_1_name
     ld a, 10
     call copy_hl_bc
