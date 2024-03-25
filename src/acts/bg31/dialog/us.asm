@@ -1,26 +1,20 @@
 .local
-us_interaction_header: .asciz "Operating Table"
-
 #define opt_us_root_extract_brain 1
 #define opt_us_root_smash_skull 2
 #define opt_us_root_leave_alone 0
 
-label_prise_free: .asciz "[D]Gently prise it"
-label_smash_skull: .asciz "[S]Smash the skull"
-label_leave_alone: .asciz "Leave it alone"
-
 us_root:
 .db opt_us_root_extract_brain
 .db default_options_flags
-.dw label_prise_free
+.dw us_label_prise_free
 
 .db opt_us_root_smash_skull
 .db default_options_flags
-.dw label_smash_skull
+.dw us_label_smash_skull
 
 .db opt_us_root_leave_alone
 .db default_options_flags
-.dw label_leave_alone
+.dw us_label_leave_alone
 
 interact_choice: .db 0
 

@@ -48,12 +48,10 @@ minthara_distrust:
     ld a, 0
     ret
 
-show_grove_label: .asciz "Show her on the map"
-
 trust_menu:
 .db opt_minthara_show_grove
 .db default_options_flags
-.dw show_grove_label
+.dw minthara_show_grove_label
 
 .db opt_minthara_attack
 .db default_options_flags

@@ -3,12 +3,10 @@
 #define dgut_opt_attack 2
 #define dgut_opt_turn_away 0
 
-label_allow_brand: .asciz "Allow it"
-
 priestess_gut_root:
 .db dgut_opt_allow_brand
 .db default_options_flags
-.dw label_allow_brand
+.dw gut_label_allow_brand
 
 .db dgut_opt_attack
 .db default_options_flags

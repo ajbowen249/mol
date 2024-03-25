@@ -9,6 +9,9 @@
         "hear it cry, 'Free",
         "Us!'"
     ],
+    "us_label_prise_free": "[D]Gently prise it",
+    "us_label_smash_skull": "[S]Smash the skull",
+    "us_label_leave_alone": "Leave it alone",
     "us_dialog_outro_fail": [
         "'Aaahhhh!'",
         "The creature's",
@@ -122,9 +125,7 @@
         "your flesh as a sign",
         "of devotion."
     ],
-    "gut_label_allow_brand": [
-        "Allow it"
-    ],
+    "gut_label_allow_brand": "Allow it",
     "gut_dialog_brand_result": [
         "She brands your arm,",
         "and in the pain, you",
@@ -153,6 +154,7 @@
         "Mindflayer from the",
         "ship you escaped."
     ],
+    "dror_ragzlin_dialog_label_ask_corpse": "[W] Ask a question",
     "dror_ragzlin_dialog_ask_success": [
         "You and Dror speak",
         "until the spell",
@@ -178,6 +180,7 @@
         "destroy the Druids.",
         "Where is the grove?'"
     ],
+    "minthara_show_grove_label": "Show her on the map",
     "minthara_show_grove_response": [
         "'Thank you. Meet us",
         "there.'"
@@ -223,5 +226,11 @@
         "in his rage. He then",
         "orders an attack on",
         "your party."
-    ]
+    ],
+
+    "zhalk_combat_name": "Cmdr Zhalk",
+    "dror_combat_name": "D. Ragzlin",
+    "minthara_name": "Minthara",
+    "nere_name": "Nere",
+    "gut_name": "Gut"
 }

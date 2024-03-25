@@ -1,15 +1,13 @@
 #define encounter_id_minthara 4
 
 .local
-name_override: .asciz "Minthara"
-
 encounter_minthara::
     ld hl, monster_drow_elf
     ld bc, enemy_player_1
     ld a, pl_data_size
     call copy_hl_bc
 
-    ld hl, name_override
+    ld hl, minthara_name
     ld bc, enemy_player_1_name
     ld a, 10
     call copy_hl_bc

@@ -5,8 +5,6 @@
 
 #define ask_question_wisdom_req 10
 
-label_ask_corpse: .asciz "[W] Ask a question"
-
 dror_ragzlin_root:
 .db ddror_opt_attack
 .db default_options_flags
@@ -14,7 +12,7 @@ dror_ragzlin_root:
 
 .db ddror_opt_ask_question
 .db default_options_flags
-.dw label_ask_corpse
+.dw dror_ragzlin_dialog_label_ask_corpse
 
 .db ddror_opt_turn_away
 .db default_options_flags
