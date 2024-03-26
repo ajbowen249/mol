@@ -9,4 +9,10 @@
 
     "cambion_class_label": "Cambion",
     "party_menu_label": "Party",
+    "opt_exit_label": "Exit",
+
+    "pause_menu_label": "Pause",
+    "opt_resume_label": "Resume",
+    "opt_party_label": "Party",
+    "opt_exit_game_label": "Exit Game"
 }

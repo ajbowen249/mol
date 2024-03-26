@@ -14,12 +14,44 @@
 #include "./screens/screen_table.asm"
 #include "./encounters/encounter_table.asm"
 
+logo_uncompressed_3: .asciz "▌ ▐▌ ▐"
+logo_uncompressed_4: .asciz "▌ ▐▌ ▐"
+logo_uncompressed_5: .asciz "▘ ◥◤ ▝"
+
+#define opt_new_game 0
+#define opt_main_exit 1
+
+main_menu:
+.db opt_new_game
+.db default_options_flags
+.dw opt_new_game_label
+
+.db opt_main_exit
+.db default_options_flags
+.dw opt_exit_label
+
 main:
     ld a, 0
     ld (dde_should_exit), a
 
     call seed_random
     call register_campaign_extras
+
+    call rom_clear_screen
+    BLOCK_PRINT logo_compressed, 17, 2
+    PRINT_AT_LOCATION 4, 18, logo_uncompressed_3
+    PRINT_AT_LOCATION 5, 18, logo_uncompressed_4
+    PRINT_AT_LOCATION 6, 18, logo_uncompressed_5
+    PRINT_COMPRESSED_AT_LOCATION 1, 1, act_1_text
+
+    ld a, 2
+    ld hl, main_menu
+    ld b, 1
+    ld c, 2
+    call menu_ui
+
+    cp a, opt_main_exit
+    jp z, main_exit
 
     ld a, 4
     ld (party_size), a
@@ -37,5 +69,6 @@ main:
 
     call run_screen_controller
 
+main_exit:
     call rom_clear_screen
     ret

@@ -1,4 +1,10 @@
 {
+    "logo_compressed": [
+        "Baldur's",
+        "  Gate"
+    ],
+    "act_1_text": "Act 1",
+    "opt_new_game_label": "New Game",
     "opening_text_1": [
         "Among the bustling streets of Baldur's",
         "Gate, you scan the shop signs, seeking a",
