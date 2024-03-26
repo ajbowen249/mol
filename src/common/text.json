@@ -1,0 +1,12 @@
+{
+    "race_githyanki_label": "Githyanki",
+    "str_investigate": "Investigate",
+    "str_fight": "Fight",
+    "str_talk": "Talk",
+    "str_attack": "Attack!",
+    "str_turn_away": "Turn away",
+    "str_help": "Help",
+
+    "cambion_class_label": "Cambion",
+    "party_menu_label": "Party",
+}

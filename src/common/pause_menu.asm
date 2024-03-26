@@ -5,11 +5,6 @@
 #define opt_party 1
 #define opt_exit_game 2
 
-menu_label: .asciz "Pause"
-opt_resume_label: .asciz "Resume"
-opt_party_label: .asciz "Party"
-opt_exit_game_label: .asciz "Exit Game"
-
 menu:
 .db opt_resume
 .db default_options_flags
@@ -27,7 +22,7 @@ menu:
 
 pause_menu::
     call rom_clear_screen
-    PRINT_AT_LOCATION 1, 1, menu_label
+    PRINT_AT_LOCATION 1, 1, pause_menu_label
 
     ld a, pause_menu_options
     ld hl, menu

@@ -1,9 +1,6 @@
 .local
 #define opt_exit 5
 
-menu_label: .asciz "Party"
-opt_exit_label: .asciz "Exit"
-
 consolidated_menu:
 .block mi_data_size * 5, 0
 
@@ -40,7 +37,7 @@ party_menu::
     call setup_party_options
 
     call rom_clear_screen
-    PRINT_AT_LOCATION 1, 1, menu_label
+    PRINT_AT_LOCATION 1, 1, party_menu_label
 
     ld a, party_menu_options
     ld hl, menu
