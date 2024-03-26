@@ -92,7 +92,7 @@ exit_door:
     ret
 
 navigate:
-    EXIT_EXPLORATION ec_door, screen_id_crash_site
+    EXIT_EXPLORATION ec_door, screen_id_cs_crash
     ret
 
 mindflayer_dialog:

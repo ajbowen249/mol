@@ -6,7 +6,7 @@ player_party:
 
 party_size: .db 0
 
-last_room: .db screen_id_opening
+last_room: .db screen_id_cs_opening
 
 freed_us: .db 0
 killed_zhalk: .db 0

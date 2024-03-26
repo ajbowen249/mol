@@ -1,4 +1,4 @@
-#define screen_id_opening 11
+#define screen_id_cs_opening 11
 
 .local
 cs_opening::

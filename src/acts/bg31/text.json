@@ -34,6 +34,17 @@
         "Now is your moment to escape."
     ],
 
+    "crash_text_1": [
+        "You grasp the controls of the ship,",
+        "somehow imbued with knowledge of their",
+        "operation. The ship teleports away from",
+        "the mountain it was on course to hit,",
+        "and careens over a river outside the",
+        "city. It breaks up, leaving you in free-",
+        "fall. A portal opens below you, and you",
+        "skid to a stop on the ground."
+    ],
+
     "us_dialog_intro_1": [
         "You see an elf on",
         "the table with his",

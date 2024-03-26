@@ -9,6 +9,7 @@
 #include "./world/emerald_grove.asm"
 #include "./world/underdark.asm"
 #include "./cut_scenes/opening.asm"
+#include "./cut_scenes/crash.asm"
 
 screen_table:
 .dw 0
@@ -23,3 +24,4 @@ screen_table:
 .dw emerald_grove
 .dw underdark
 .dw cs_opening
+.dw cs_crash
