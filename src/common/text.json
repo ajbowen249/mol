@@ -14,5 +14,13 @@
     "pause_menu_label": "Pause",
     "opt_resume_label": "Resume",
     "opt_party_label": "Party",
-    "opt_exit_game_label": "Exit Game"
+    "opt_exit_game_label": "Exit Game",
+
+    "opt_create_character_label": "Create Character",
+    "opt_choose_origin_character_label": "Choose Origin Character",
+
+    "name_laezel": "Lae'zel",
+    "name_shadowheart": "Shadowheart",
+    "name_gale": "Gale",
+    "name_karlach": "Karlach"
 }

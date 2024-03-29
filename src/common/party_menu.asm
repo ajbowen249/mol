@@ -37,7 +37,7 @@ party_menu::
     call setup_party_options
 
     call rom_clear_screen
-    PRINT_AT_LOCATION 1, 1, party_menu_label
+    PRINT_COMPRESSED_AT_LOCATION 1, 1, party_menu_label
 
     ld a, party_menu_options
     ld hl, menu

@@ -13,6 +13,7 @@
 #include "./dialog/dialog.asm"
 #include "./screens/screen_table.asm"
 #include "./encounters/encounter_table.asm"
+#include "./new_game_menu.asm"
 
 logo_uncompressed_3: .asciz "▌ ▐▌ ▐"
 logo_uncompressed_4: .asciz "▌ ▐▌ ▐"
@@ -53,8 +54,7 @@ main:
     cp a, opt_main_exit
     jp z, main_exit
 
-    ld a, 4
-    ld (party_size), a
+    call new_game_menu
 
     ld hl, screen_table
     ld bc, encounter_table
