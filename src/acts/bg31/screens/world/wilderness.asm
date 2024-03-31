@@ -1,5 +1,9 @@
 #define screen_id_wilderness 5
 
+; TODO: This was originally the wilderness that lead to the Goblin Camp Entrance and the Risen Road, with the original
+; plan being to populate it with the blighted village, etc.
+; That was cut for space, so make this an abridged version of the wilderness and camp entrance.
+
 .local
 screen_data:
 screen_background:
@@ -27,7 +31,7 @@ screen_start_y: .db 4
 screen_interactables:
     DEFINE_INTERACTABLE to_environs, in_door, $01, 4, 20
     DEFINE_INTERACTABLE to_goblin_camp_entrance, in_door, $01, 6, 1
-    DEFINE_INTERACTABLE to_risen_road, in_door, $01, 1, 4
+    DEFINE_INTERACTABLE blank_3, 0, 0, 0, 0
     DEFINE_INTERACTABLE blank_4, 0, 0, 0, 0
     DEFINE_INTERACTABLE blank_5, 0, 0, 0, 0
     DEFINE_INTERACTABLE blank_6, 0, 0, 0, 0
@@ -56,10 +60,7 @@ on_interact:
     jp z, exit_to_environs
 
     cp a, 1
-    jp z, exit_to_goblin_camp_entrance
-
-    cp a, 2
-    jp z, exit_to_risen_road
+    jp z, exit_to_goblin_camp
 
     ret
 
@@ -67,12 +68,8 @@ exit_to_environs:
     EXIT_EXPLORATION ec_door, screen_id_emerald_grove_environs
     ret
 
-exit_to_goblin_camp_entrance:
-    EXIT_EXPLORATION ec_door, screen_id_goblin_camp_entrance
-    ret
-
-exit_to_risen_road:
-    EXIT_EXPLORATION ec_door, screen_id_risen_road
+exit_to_goblin_camp:
+    EXIT_EXPLORATION ec_door, screen_id_goblin_camp
     ret
 
 .endlocal
