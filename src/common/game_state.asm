@@ -6,6 +6,9 @@ player_party:
 
 party_size: .db 0
 
+is_using_origin_character: .db 0
+selected_origin_character_index: .db 0
+
 last_room: .db screen_id_cs_opening
 
 freed_us: .db 0
