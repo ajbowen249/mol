@@ -1,4 +1,56 @@
 {
+    "logo_compressed": [
+        "Baldur's",
+        "  Gate"
+    ],
+    "act_1_text": "Act 1",
+    "opt_new_game_label": "New Game",
+    "opening_text_1": [
+        "Among the bustling streets of Baldur's",
+        "Gate, you scan the shop signs, seeking a",
+        "particular one for your errand. Your",
+        "attention is pulled to the crowd by",
+        "gasps. All you see is a small swirl of",
+        "particulate drifting in the air."
+    ],
+    "opening_text_2": [
+        "Suddenly, several people around you",
+        "disappear in puffs of smoke, and others",
+        "begin to scatter. You start to run, but",
+        "feel a strange sensation as you yourself",
+        "are taken."
+    ],
+    "opening_text_3": [
+        "When you awake, you are bound tightly,",
+        "and face to face with a terrifying",
+        "creature, roughly humanoid but with",
+        "tentacles dangling from its face.",
+        "It holds up a small, tadpole-like",
+        "creature, and places it on your face.",
+        "The tadpole wriggles under your eye lid,",
+        "and tears its way to its resting place."
+    ],
+    "opening_text_4": [
+        "You pass out from the pain.",
+        "   ",
+        "Some time later, you are jolted awake as",
+        "you are thrown to the floor by a violent",
+        "jerk. You are, apparently, on a ship,",
+        "which is now under attack.",
+        "Now is your moment to escape."
+    ],
+
+    "crash_text_1": [
+        "You grasp the controls of the ship,",
+        "somehow imbued with knowledge of their",
+        "operation. The ship teleports away from",
+        "the mountain it was on course to hit,",
+        "and careens over a river outside the",
+        "city. It breaks up, leaving you in free-",
+        "fall. A portal opens below you, and you",
+        "skid to a stop on the ground."
+    ],
+
     "us_dialog_intro_1": [
         "You see an elf on",
         "the table with his",

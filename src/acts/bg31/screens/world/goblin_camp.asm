@@ -91,7 +91,7 @@ on_interact:
     ret
 
 exit_to_camp:
-    EXIT_EXPLORATION ec_door, screen_id_goblin_camp_entrance
+    EXIT_EXPLORATION ec_door, screen_id_goblin_camp
     ret
 
 exit_to_underdark:

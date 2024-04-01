@@ -25,8 +25,8 @@ screen_title: .asciz "Crash Site"
 screen_start_x: .db 2 ; 1-indexed since it's screen coordinates!
 screen_start_y: .db 2
 screen_interactables:
-    DEFINE_INTERACTABLE to_grove, in_door, $01, 1, 13
-    DEFINE_INTERACTABLE blank_1, 0, 0, 0, 0
+    DEFINE_INTERACTABLE int_to_grove, in_door, $01, 1, 13
+    DEFINE_INTERACTABLE blank_2, 0, 0, 0, 0
     DEFINE_INTERACTABLE blank_3, 0, 0, 0, 0
     DEFINE_INTERACTABLE blank_4, 0, 0, 0, 0
     DEFINE_INTERACTABLE blank_5, 0, 0, 0, 0
@@ -52,10 +52,13 @@ get_interaction_prompt:
     ret
 
 on_interact:
-    ld a, ec_door
-    ld b, screen_id_emerald_grove_environs
-    call set_screen_exit_conditions
-    ld a, 1
+    cp a, 0
+    jp z, exit_to_grove
+
+    ret
+
+exit_to_grove:
+    EXIT_EXPLORATION ec_door, screen_id_emerald_grove_environs
     ret
 
 .endlocal

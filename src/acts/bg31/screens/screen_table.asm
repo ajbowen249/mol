@@ -1,13 +1,13 @@
-#include "./nautiloid.asm"
-#include "./nautiloid_bridge.asm"
-#include "./crash_site.asm"
-#include "./emerald_grove_environs.asm"
-#include "./wilderness.asm"
-#include "./risen_road.asm"
-#include "./goblin_camp_entrance.asm"
-#include "./goblin_camp.asm"
-#include "./emerald_grove.asm"
-#include "./underdark.asm"
+#include "./world/nautiloid.asm"
+#include "./world/nautiloid_bridge.asm"
+#include "./world/crash_site.asm"
+#include "./world/emerald_grove_environs.asm"
+#include "./world/wilderness.asm"
+#include "./world/goblin_camp.asm"
+#include "./world/emerald_grove.asm"
+#include "./world/underdark.asm"
+#include "./cut_scenes/opening.asm"
+#include "./cut_scenes/crash.asm"
 
 screen_table:
 .dw 0
@@ -16,8 +16,10 @@ screen_table:
 .dw crash_site
 .dw emerald_grove_environs
 .dw wilderness
-.dw risen_road
-.dw goblin_camp_entrance
+.dw 0
+.dw 0
 .dw goblin_camp
 .dw emerald_grove
 .dw underdark
+.dw cs_opening
+.dw cs_crash

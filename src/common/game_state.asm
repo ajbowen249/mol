@@ -1,12 +1,15 @@
 player_party:
-    ORIGIN_CHARACTER_LAEZEL party_member_0
-    ORIGIN_CHARACTER_SHADOWHEART party_member_1
-    ORIGIN_CHARACTER_GALE party_member_2
-    ORIGIN_CHARACTER_KARLACH party_member_3
+    EMPTY_CHARACTER party_member_0
+    EMPTY_CHARACTER party_member_1
+    EMPTY_CHARACTER party_member_2
+    EMPTY_CHARACTER party_member_3
 
 party_size: .db 0
 
-last_room: .db screen_id_goblin_camp
+is_using_origin_character: .db 0
+selected_origin_character_index: .db 0
+
+last_room: .db screen_id_cs_opening
 
 freed_us: .db 0
 killed_zhalk: .db 0

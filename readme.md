@@ -1,7 +1,7 @@
 # Mol
 
-![demo](/gh_media/goblin_camp.gif)
 ![demo](/gh_media/demo_1.gif)
+![demo](/gh_media/goblin_camp.gif)
 ![demo](/gh_media/zhalk_battle.gif)
 ![demo](/gh_media/menu_demo.gif)
 
