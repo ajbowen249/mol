@@ -16,7 +16,7 @@ screen_start_x: .db 13 ; 1-indexed since it's screen coordinates!
 screen_start_y: .db 7
 screen_interactables:
     DEFINE_INTERACTABLE to_crash_site, in_door, $01, 8, 13
-    DEFINE_INTERACTABLE to_wilderness, in_door, $01, 4, 1
+    DEFINE_INTERACTABLE to_blighted_village, in_door, $01, 4, 1
     DEFINE_INTERACTABLE to_grove, in_door, $01, 1, 4
     DEFINE_INTERACTABLE fight_1, in_door, $01, 2, 6
     DEFINE_INTERACTABLE fight_2, in_door, $01, 3, 2
@@ -48,7 +48,7 @@ on_interact:
     jp z,  exit_to_crash_site
 
     cp a, 1
-    jp z, exit_to_wilderness
+    jp z, exit_to_blighted_village
 
     cp a, 2
     jp z, exit_to_grove
@@ -57,13 +57,13 @@ on_interact:
 
     jp goblins_interact
 
-exit_to_wilderness:
+exit_to_blighted_village:
     ld a, 2
     ld (screen_start_x), a
 
     ld a, 4
     ld (screen_start_y), a
-    EXIT_EXPLORATION ec_door, screen_id_wilderness
+    EXIT_EXPLORATION ec_door, screen_id_blighted_village
     ret
 
 exit_to_crash_site:

@@ -75,7 +75,7 @@ talk_prompt:
 
 on_interact:
     cp a, 0
-    jp z, exit_to_camp
+    jp z, exit_to_blighted_village
 
     cp a, 1
     jp z, exit_to_underdark
@@ -90,8 +90,8 @@ on_interact:
     jp z, minthara_interact
     ret
 
-exit_to_camp:
-    EXIT_EXPLORATION ec_door, screen_id_goblin_camp
+exit_to_blighted_village:
+    EXIT_EXPLORATION ec_door, screen_id_blighted_village
     ret
 
 exit_to_underdark:
