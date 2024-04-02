@@ -3,12 +3,12 @@
 .local
 screen_data:
 screen_background:
-.asciz "┌─────┐~~~~~ ~~~~~~~"
+.asciz "┌─────┐£~~¶~ ~~£~~£~"
 .asciz "│     \         ~   "
 .asciz "│      \        ▛   "
-.asciz "│      │        ▐~  "
+.asciz "│      │        ▐¶  "
 .asciz "└─\               ▄ "
-.asciz "  └────~~~~~~~~~~~~~"
+.asciz "  └────            £"
 .asciz "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"
 .asciz "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"
 screen_title: .asciz "Crash Site"

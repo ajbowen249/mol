@@ -3,14 +3,14 @@
 .local
 screen_data:
 screen_background:
-.asciz "~~~~~~~~~~~~~~~~~~~~"
+.asciz "~££~~~£~~£~~~~~~¶~~¶"
 .asciz "~  옷        옷  옷   ~"
-.asciz "~    ~~~~~~~~~~~~~~~"
+.asciz "£    ~~¶~~£~~~~~£~~~"
 .asciz "~                  ~"
 .asciz "~ 왓 ▗▂▂▂     ▓▓   ㅑ~"
-.asciz "~ ▚ ▞왓 ▐     ▓▓    ~"
-.asciz "~ ▞ ▚              ~"
-.asciz "~~~ ~~~~~~~~~~~~~~~~"
+.asciz "£ ▚ ▞왓 ▐     ▓▓    ~"
+.asciz "~ ▞ ▚              £"
+.asciz "~¶~ ~~¶~£~~¶~~£££~~~"
 screen_title: .asciz "Emerald Grove"
 .db 0
 .db 0

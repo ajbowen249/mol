@@ -3,14 +3,14 @@
 .local
 screen_data:
 screen_background:
-.asciz "~~~█~~~~~~~~~~#▜▓▓▓▓"
-.asciz "~~왓왓왓     ~~~##▝▀▜▓▓"
+.asciz "~~¶█¶~~£££~£~~#▜▓▓▓▓"
+.asciz "~~왓왓왓     ~£~##▝▀▜▓▓"
 .asciz "~            ~~##▐▓▓"
 .asciz "              ~##▐▓▓"
-.asciz "~             ~##▐█▓"
-.asciz "~~           ~###▐▓▓"
-.asciz "~~~~~~~~     ~#▗▂▟▓▓"
-.asciz "~~~~~~~~~~~~ ~~▐▓▓▓▓"
+.asciz "~             ¶##▐█▓"
+.asciz "~£           ~###▐▓▓"
+.asciz "¶~~¶~£~~     ~#▗▂▟▓▓"
+.asciz "~~£~¶¶~~£~~~ ~¶▐▓▓▓▓"
 screen_title: .asciz "EmeraldGroveEnvirons"
 screen_start_x: .db 13 ; 1-indexed since it's screen coordinates!
 screen_start_y: .db 7
