@@ -6,8 +6,8 @@ screen_background:
 .asciz "███████████████████ "
 .asciz "███◤      \     /◥█ "
 .asciz "██◤        \───/  ◥ "
-.asciz "█◤∩                 "
-.asciz "█◣    왓왓            "
+.asciz "█◤∩               ▐ "
+.asciz "█◣    왓왓          ▐ "
 .asciz "██◣        /───\  ◢ "
 .asciz "███◣      /     \◢█ "
 .asciz "███████████████████ "
@@ -19,16 +19,16 @@ screen_title: .asciz "Nautiloid Bridge"
 screen_start_x: .db 18 ; 1-indexed since it's screen coordinates!
 screen_start_y: .db 4
 screen_interactables:
-    DEFINE_INTERACTABLE door_1, in_door, $01, 4, 19
-    DEFINE_INTERACTABLE door_2, in_door, $01, 5, 19
-    DEFINE_INTERACTABLE navigation_button, in_button, 0, 4, 3
-    DEFINE_INTERACTABLE trigger_mf_convo_1, in_door, $01, 4, 12
-    DEFINE_INTERACTABLE trigger_mf_convo_2, in_door, $01, 5, 12
-    DEFINE_INTERACTABLE int_zhalk_fight, in_npc, 0, 5, 7
-    DEFINE_INTERACTABLE blank_7, 0, 0, 0, 0
-    DEFINE_INTERACTABLE blank_8, 0, 0, 0, 0
-    DEFINE_INTERACTABLE blank_9, 0, 0, 0, 0
-    DEFINE_INTERACTABLE blank_0, 0, 0, 0, 0
+    DEFINE_INTERACTABLE navigation_button, in_button, iflags_normal, 4, 3
+    DEFINE_INTERACTABLE trigger_mf_convo_1, in_door, iflags_door, 4, 12
+    DEFINE_INTERACTABLE trigger_mf_convo_2, in_door, iflags_door, 5, 12
+    DEFINE_INTERACTABLE int_zhalk_fight, in_npc, iflags_normal, 5, 7
+    DEFINE_INTERACTABLE blank_5, 0, iflags_normal, 0, 0
+    DEFINE_INTERACTABLE blank_6, 0, iflags_normal, 0, 0
+    DEFINE_INTERACTABLE blank_7, 0, iflags_normal, 0, 0
+    DEFINE_INTERACTABLE blank_8, 0, iflags_normal, 0, 0
+    DEFINE_INTERACTABLE blank_9, 0, iflags_normal, 0, 0
+    DEFINE_INTERACTABLE blank_10, 0, iflags_normal, 0, 0
 screen_get_interaction_prompt: .dw get_interaction_prompt
 screen_interact_callback: .dw on_interact
 screen_menu_callback: .dw pause_menu
@@ -46,10 +46,10 @@ nautiloid_bridge::
     ret
 
 get_interaction_prompt:
-    cp a, 2
+    cp a, 0
     jp z, nav_prompt
 
-    cp a, 5
+    cp a, 3
     jp z, zhalk_prompt
 
     ld hl, empty_prompt
@@ -65,30 +65,17 @@ zhalk_prompt:
 
 on_interact:
     cp a, 0
-    jp z, exit_door
-
-    cp a, 1
-    jp z, exit_door
-
-    cp a, 2
     jp z, navigate
 
+    cp a, 1
+    jp z, mindflayer_dialog
+
+    cp a, 2
+    jp z, mindflayer_dialog
+
     cp a, 3
-    jp z, mindflayer_dialog
-
-    cp a, 4
-    jp z, mindflayer_dialog
-
-    cp a, 5
     jp z, zhalk_fight
 
-    ret
-
-exit_door:
-    ld a, ec_door
-    ld b, screen_id_nautiloid
-    call set_screen_exit_conditions
-    ld a, 1
     ret
 
 navigate:

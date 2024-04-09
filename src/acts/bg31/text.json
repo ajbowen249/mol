@@ -40,43 +40,6 @@
         "Now is your moment to escape."
     ],
 
-    "crash_text_1": [
-        "You grasp the controls of the ship,",
-        "somehow imbued with knowledge of their",
-        "operation. The ship teleports away from",
-        "the mountain it was on course to hit,",
-        "and careens over a river outside the",
-        "city. It breaks up, leaving you in free-",
-        "fall. A portal opens below you, and you",
-        "skid to a stop on the ground."
-    ],
-
-    "us_dialog_intro_1": [
-        "You see an elf on",
-        "the table with his",
-        "brain exposed."
-    ],
-    "us_dialog_intro_2": [
-        "In your mind, you",
-        "hear it cry, 'Free",
-        "Us!'"
-    ],
-    "us_label_prise_free": "[D]Gently prise it",
-    "us_label_smash_skull": "[S]Smash the skull",
-    "us_label_leave_alone": "Leave it alone",
-    "us_dialog_outro_fail": [
-        "'Aaahhhh!'",
-        "The creature's",
-        "thoughts fade away."
-    ],
-    "us_dialog_outro_success": [
-        "'Thank you!'",
-        "A brain with legs",
-        "emerges from the",
-        "skull, and scampers",
-        "ahead."
-    ],
-
     "mindflayer_captain_intro": [
         "You see a mindflayer",
         "locked in combat",
@@ -84,6 +47,81 @@
         "'Get to the",
         "transponder! I'll",
         "hold them off.'"
+    ],
+
+    "crash_text_1": [
+        "You grasp the controls of the ship,",
+        "somehow imbued with knowledge of their",
+        "use. The ship teleports away from the",
+        "mountain it was on course to hit, and",
+        "careens over the River Chionthar outside",
+        "the city. It breaks up, leaving you in",
+        "free-fall. You mysteriously stop just",
+        "above the ground and float down gently."
+    ],
+
+    "recruit_shadowheart_text_1": [
+        "You are met by a half-elf who calls",
+        "herself Shadowheart. She was also on the",
+        "ship, and infected with their parasite.",
+        "Like you, she must return to Baldur's",
+        "Gate."
+    ],
+
+    "shadowheart_cut_scene_1": [
+        "You feel a stir in your pouch as a",
+        "mysterious artefact shakes violently."
+    ],
+
+    "shadowheart_cut_scene_2": [
+        "All you can remember about it is that",
+        "you must return it to Baldur's Gate."
+    ],
+
+    "recruit_shadowheart_text_2": [
+        "A mysterious artefact leaps",
+        "from her pouch. You don't",
+        "pry, but get the feeling you",
+        "should travel together."
+    ],
+
+    "str_recruit_party_full": [
+        "Your party is full."
+    ],
+
+    "recruit_ask_he": [
+        "May he join you?"
+    ],
+
+    "recruit_ask_she": [
+        "May she join you?"
+    ],
+
+    "recruit_gale_text_1": [
+        "You meet a wizard",
+        "named Gale from the",
+        "ship. He is also on",
+        "his way back to",
+        "Baldur's Gate."
+    ],
+
+    "recruit_karlach_text_1": [
+        "A Tiefling barbarian",
+        "named Karlach hides",
+        "out among the trees.",
+        "She is also a",
+        "survivor of the",
+        "Mindflayer ship."
+    ],
+
+    "recruit_laezel_text_1": [
+        "You watch a Gith-",
+        "yanki fighter slay",
+        "the last of a group",
+        "of goblins. She",
+        "introduces herself",
+        "as Lae'zel, and she",
+        "was on the ship."
     ],
 
     "gag_dialog_intro_1": [

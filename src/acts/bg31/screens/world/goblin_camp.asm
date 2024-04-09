@@ -24,16 +24,16 @@ screen_title: .asciz "Goblin Camp"
 screen_start_x: .db 10 ; 1-indexed since it's screen coordinates!
 screen_start_y: .db 7
 screen_interactables:
-    DEFINE_INTERACTABLE to_goblin_camp_entrance, in_door, $01, 8, 10
-    DEFINE_INTERACTABLE underdark_ladder, in_button, 0, 3, 2
-    DEFINE_INTERACTABLE int_dror_ragzlin, in_npc, 0, 3, 10
-    DEFINE_INTERACTABLE int_priestess_gut, in_npc, 0, 5, 2
-    DEFINE_INTERACTABLE int_minthara, in_npc, 0, 2, 18
-    DEFINE_INTERACTABLE blank_6, 0, 0, 0, 0
-    DEFINE_INTERACTABLE blank_7, 0, 0, 0, 0
-    DEFINE_INTERACTABLE blank_8, 0, 0, 0, 0
-    DEFINE_INTERACTABLE blank_9, 0, 0, 0, 0
-    DEFINE_INTERACTABLE blank_0, 0, 0, 0, 0
+    DEFINE_INTERACTABLE to_goblin_camp_entrance, in_door, iflags_door, 8, 10
+    DEFINE_INTERACTABLE underdark_ladder, in_button, iflags_normal, 3, 2
+    DEFINE_INTERACTABLE int_dror_ragzlin, in_npc, iflags_normal, 3, 10
+    DEFINE_INTERACTABLE int_priestess_gut, in_npc, iflags_normal, 5, 2
+    DEFINE_INTERACTABLE int_minthara, in_npc, iflags_normal, 2, 18
+    DEFINE_INTERACTABLE blank_6, 0, iflags_normal, 0, 0
+    DEFINE_INTERACTABLE blank_7, 0, iflags_normal, 0, 0
+    DEFINE_INTERACTABLE blank_8, 0, iflags_normal, 0, 0
+    DEFINE_INTERACTABLE blank_9, 0, iflags_normal, 0, 0
+    DEFINE_INTERACTABLE blank_0, 0, iflags_normal, 0, 0
 screen_get_interaction_prompt: .dw get_interaction_prompt
 screen_interact_callback: .dw on_interact
 screen_menu_callback: .dw pause_menu

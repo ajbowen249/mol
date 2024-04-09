@@ -15,16 +15,16 @@ screen_title: .asciz "EmeraldGroveEnvirons"
 screen_start_x: .db 13 ; 1-indexed since it's screen coordinates!
 screen_start_y: .db 7
 screen_interactables:
-    DEFINE_INTERACTABLE to_crash_site, in_door, $01, 8, 13
-    DEFINE_INTERACTABLE to_blighted_village, in_door, $01, 4, 1
-    DEFINE_INTERACTABLE to_grove, in_door, $01, 1, 4
-    DEFINE_INTERACTABLE fight_1, in_door, $01, 2, 6
-    DEFINE_INTERACTABLE fight_2, in_door, $01, 3, 2
-    DEFINE_INTERACTABLE fight_3, in_door, $01, 3, 3
-    DEFINE_INTERACTABLE fight_4, in_door, $01, 3, 4
-    DEFINE_INTERACTABLE fight_5, in_door, $01, 3, 5
-    DEFINE_INTERACTABLE fight_6, in_door, $01, 3, 6
-    DEFINE_INTERACTABLE blank_10, 0, 0, 0, 0
+    DEFINE_INTERACTABLE to_crash_site, in_door, iflags_door, 8, 13
+    DEFINE_INTERACTABLE to_blighted_village, in_door, iflags_door, 4, 1
+    DEFINE_INTERACTABLE to_grove, in_door, iflags_door, 1, 4
+    DEFINE_INTERACTABLE fight_1, in_door, iflags_door, 2, 6
+    DEFINE_INTERACTABLE fight_2, in_door, iflags_door, 3, 2
+    DEFINE_INTERACTABLE fight_3, in_door, iflags_door, 3, 3
+    DEFINE_INTERACTABLE fight_4, in_door, iflags_door, 3, 4
+    DEFINE_INTERACTABLE fight_5, in_door, iflags_door, 3, 5
+    DEFINE_INTERACTABLE fight_6, in_door, iflags_door, 3, 6
+    DEFINE_INTERACTABLE blank_10, 0, iflags_normal, 0, 0
 screen_get_interaction_prompt: .dw get_interaction_prompt
 screen_interact_callback: .dw on_interact
 screen_menu_callback: .dw pause_menu

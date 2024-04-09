@@ -2,6 +2,7 @@
 
 ![demo](/gh_media/demo_1.gif)
 ![demo](/gh_media/goblin_camp.gif)
+![demo](/gh_media/recruit_demo.gif)
 ![demo](/gh_media/zhalk_battle.gif)
 ![demo](/gh_media/menu_demo.gif)
 
@@ -16,8 +17,6 @@ Mol should be seen as a piece of "interactive fanart." Other recent demake proje
 - It's on a niche platform with a long-defunct parent company.
 
 For now, this is the flagship project driving further development of `DDE`. In the event this does get taken down (despite my _ironclad_ reasoning above), that library should be unaffected, as, on its own, it's a valid OGL-SRD 5.1 use case. All references to WotC/Larian IP and other SRD no-nos are contained to this repository. I've got a few ideas on where I could take `DDE` if this gets Lamberted, like more-advanced `80` family machines or an original campaign.
-
-As a final shameless plug, if this _does_ get the attention of the right companies to issue a cease-and-desist in the first place, expect my immediate cooperation... and, I'm open for employment 😉
 
 ## Building
 

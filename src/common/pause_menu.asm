@@ -22,7 +22,7 @@ menu:
 
 pause_menu::
     call rom_clear_screen
-    PRINT_AT_LOCATION 1, 1, pause_menu_label
+    PRINT_COMPRESSED_AT_LOCATION 1, 1, pause_menu_label
 
     ld a, pause_menu_options
     ld hl, menu

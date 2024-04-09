@@ -1,4 +1,4 @@
-#define class_mc_cambion 32
+#define class_mc_cambion 16
 
     DEFINE_PLAYER monster_class_cambion, 15, 13, 14, 13, 12, 14, race_monster, class_mc_cambion, 1, "Cambion"
 .db 0

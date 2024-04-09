@@ -1,4 +1,3 @@
-#include "./us.asm"
 #include "./mindflayer_captain.asm"
 #include "./dror_ragzlin.asm"
 #include "./priestess_gut.asm"
@@ -8,3 +7,4 @@
 #include "./kagha.asm"
 #include "./grove_attack.asm"
 #include "./grymforge_guard.asm"
+#include "./recruiting/recruit_dialog.asm"

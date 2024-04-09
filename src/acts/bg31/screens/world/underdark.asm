@@ -26,16 +26,16 @@ screen_title: .asciz "Underdark"
 screen_start_x: .db 17 ; 1-indexed since it's screen coordinates!
 screen_start_y: .db 7
 screen_interactables:
-    DEFINE_INTERACTABLE int_duergar_guard, in_npc, 0, 8, 2
-    DEFINE_INTERACTABLE int_camp_ladder, in_button, 0, 7, 19
-    DEFINE_INTERACTABLE blank_3, 0, 0, 0, 0
-    DEFINE_INTERACTABLE blank_4, 0, 0, 0, 0
-    DEFINE_INTERACTABLE blank_5, 0, 0, 0, 0
-    DEFINE_INTERACTABLE blank_6, 0, 0, 0, 0
-    DEFINE_INTERACTABLE blank_7, 0, 0, 0, 0
-    DEFINE_INTERACTABLE blank_8, 0, 0, 0, 0
-    DEFINE_INTERACTABLE blank_9, 0, 0, 0, 0
-    DEFINE_INTERACTABLE blank_10, 0, 0, 0, 0
+    DEFINE_INTERACTABLE int_duergar_guard, in_npc, iflags_normal, 8, 2
+    DEFINE_INTERACTABLE int_camp_ladder, in_button, iflags_normal, 7, 19
+    DEFINE_INTERACTABLE blank_3, 0, iflags_normal, 0, 0
+    DEFINE_INTERACTABLE blank_4, 0, iflags_normal, 0, 0
+    DEFINE_INTERACTABLE blank_5, 0, iflags_normal, 0, 0
+    DEFINE_INTERACTABLE blank_6, 0, iflags_normal, 0, 0
+    DEFINE_INTERACTABLE blank_7, 0, iflags_normal, 0, 0
+    DEFINE_INTERACTABLE blank_8, 0, iflags_normal, 0, 0
+    DEFINE_INTERACTABLE blank_9, 0, iflags_normal, 0, 0
+    DEFINE_INTERACTABLE blank_10, 0, iflags_normal, 0, 0
 screen_get_interaction_prompt: .dw get_interaction_prompt
 screen_interact_callback: .dw on_interact
 screen_menu_callback: .dw pause_menu

@@ -20,7 +20,7 @@ cs_opening::
 
     ld a, ec_door
     ld (last_screen_exit_code), a
-    ld a, screen_id_nautiloid
+    ld a, screen_id_nautiloid_bridge
     ld (last_screen_exit_argument), a
     ret
 .endlocal
