@@ -97,6 +97,14 @@
         "May she join you?"
     ],
 
+    "recruit_gale_text_1": [
+        "You meet a wizard",
+        "named Gale from the",
+        "ship. He is also on",
+        "his way back to",
+        "Baldur's Gate."
+    ],
+
 
     "gag_dialog_intro_1": [
         "A cadre of Goblins",

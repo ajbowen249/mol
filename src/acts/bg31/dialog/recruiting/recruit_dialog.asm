@@ -62,3 +62,5 @@ dont_recruit:
     ld a, 0
     ret
 .endlocal
+
+#include "./recruit_gale.asm"
