@@ -114,6 +114,15 @@
         "Mindflayer ship."
     ],
 
+    "recruit_laezel_text_1": [
+        "You watch a Gith-",
+        "yanki fighter slay",
+        "the last of a group",
+        "of goblins. She",
+        "introduces herself",
+        "as Lae'zel, and she",
+        "was on the ship."
+    ],
 
     "gag_dialog_intro_1": [
         "A cadre of Goblins",

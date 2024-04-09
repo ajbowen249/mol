@@ -8,7 +8,7 @@ screen_background:
 .asciz " ┐ ┌ ▓▓~~옷 ██ ⌂    ~"
 .asciz "▓│ │▓▓▓▓~~          "
 .asciz " ┘ └  └─┘  ⌂ ◢◣    ~"
-.asciz "~            ██⌂   ~"
+.asciz "~            ██⌂  옷~"
 .asciz "▓▓    ┌─┐       ~£¶~"
 .asciz " ▓▓~~~ ▓ ~~£~¶~£    "
 screen_title: .asciz "Blighted Village"
@@ -22,7 +22,7 @@ screen_interactables:
     DEFINE_INTERACTABLE to_environs, in_door, iflags_door, 4, 20
     DEFINE_INTERACTABLE to_goblin_camp, in_door, iflags_door, 2, 3
     DEFINE_INTERACTABLE int_recruit_karlach, in_npc, iflags_normal, 3, 10
-    DEFINE_INTERACTABLE blank_4, 0, iflags_normal, 0, 0
+    DEFINE_INTERACTABLE int_recruit_laezel, in_npc, iflags_normal, 6, 19
     DEFINE_INTERACTABLE blank_5, 0, iflags_normal, 0, 0
     DEFINE_INTERACTABLE blank_6, 0, iflags_normal, 0, 0
     DEFINE_INTERACTABLE blank_7, 0, iflags_normal, 0, 0
@@ -67,6 +67,9 @@ on_interact:
     cp a, 2
     jp z, recruit_karlach
 
+    cp a, 3
+    jp z, recruit_laezel
+
     ret
 
 exit_to_environs:
@@ -102,8 +105,25 @@ recruit_karlach:
 recruit_karlach_done:
     ret
 
+recruit_laezel:
+    call dialog_recruit_laezel
+    cp a, 0
+    jp z, recruit_laezel_done
+
+    ld a, 19
+    ld (screen_start_x), a
+
+    ld a, 5
+    ld (screen_start_y), a
+    EXIT_EXPLORATION ec_door, screen_id_blighted_village
+    ret
+
+recruit_laezel_done:
+    ret
+
 check_game_state:
     call check_karlach
+    call check_laezel
     ret
 
 check_karlach:
@@ -114,6 +134,16 @@ check_karlach:
 
 have_karlach:
     CLEAR_INTERACTABLE int_recruit_karlach, screen_background
+    ret
+
+check_laezel:
+    ld a, opt_oc_laezel
+    call does_party_contain_origin_character_a
+    jp nz, have_laezel
+    ret
+
+have_laezel:
+    CLEAR_INTERACTABLE int_recruit_laezel, screen_background
     ret
 
 .endlocal

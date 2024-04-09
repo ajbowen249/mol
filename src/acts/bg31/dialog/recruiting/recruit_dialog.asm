@@ -65,3 +65,4 @@ dont_recruit:
 
 #include "./recruit_gale.asm"
 #include "./recruit_karlach.asm"
+#include "./recruit_laezel.asm"
