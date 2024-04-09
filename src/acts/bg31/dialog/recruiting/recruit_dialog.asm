@@ -64,3 +64,4 @@ dont_recruit:
 .endlocal
 
 #include "./recruit_gale.asm"
+#include "./recruit_karlach.asm"

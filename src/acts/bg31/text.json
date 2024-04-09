@@ -105,6 +105,15 @@
         "Baldur's Gate."
     ],
 
+    "recruit_karlach_text_1": [
+        "A Tiefling barbarian",
+        "named Karlach hides",
+        "out among the trees.",
+        "She is also a",
+        "survivor of the",
+        "Mindflayer ship."
+    ],
+
 
     "gag_dialog_intro_1": [
         "A cadre of Goblins",
