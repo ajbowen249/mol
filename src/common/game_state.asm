@@ -9,6 +9,12 @@ party_size: .db 0
 is_using_origin_character: .db 0
 selected_origin_character_index: .db 0
 
+recruited_characters:
+recruited_laezel: .db 0
+recruited_shadowheart: .db 0
+recruited_gale: .db 0
+recruited_karlach: .db 0
+
 last_room: .db screen_id_cs_opening
 
 freed_us: .db 0

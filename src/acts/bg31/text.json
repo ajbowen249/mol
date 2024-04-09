@@ -61,6 +61,19 @@
     ],
 
 
+    "str_recruit_party_full": [
+        "Your party is full."
+    ],
+
+    "recruit_ask_he": [
+        "May he join you?"
+    ],
+
+    "recruit_ask_she": [
+        "May she join you?"
+    ],
+
+
     "gag_dialog_intro_1": [
         "A cadre of Goblins",
         "is attacking a group",

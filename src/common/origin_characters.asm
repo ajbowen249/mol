@@ -70,3 +70,85 @@ enable_default_origin_character_menu::
     ld (opt_oc_done_flags), a
     ret
 .endlocal
+
+.local
+; "recruits" the origin character in a
+; returns early if the party is full
+recruit_origin_character::
+    ld b, a
+
+    ld a, (party_size)
+    cp a, 4
+    jp z, recruit_origin_character_end
+
+    ld hl, origin_character_table
+    ld a, 2
+    call get_array_item
+    ld bc, (hl)
+    push bc
+
+    ld a, (party_size)
+    ld b, a
+    ld a, pl_data_size
+    ld hl, player_party
+    call get_array_item
+
+    ld bc, hl
+    pop hl
+    ld a, pl_data_size
+    call copy_hl_bc
+
+    ld a, (party_size)
+    inc a
+    ld (party_size), a
+    ld (screen_controller_party_size), a
+
+recruit_origin_character_end:
+    ret
+.endlocal
+
+.local
+is_player_using_origin_character_a::
+    ld b, a
+
+    ld a, (is_using_origin_character)
+    cp a, 0
+    jp z, not_using_character
+
+    ld a, (selected_origin_character_index)
+    cp a, b
+    jp nz, not_using_character
+
+    ld a, 1
+    ret
+
+not_using_character:
+    ld a, 0
+    ret
+.endlocal
+
+.local
+does_party_contain_origin_character_a::
+    ld b, 0
+    ld c, a
+
+    push bc
+    call is_player_using_origin_character_a
+    pop bc
+
+    cp a, 0
+    jp nz, is_using_character
+
+    ld hl, recruited_characters
+    add hl, bc
+    ld a, (hl)
+    cp a, 0
+    jp nz, is_using_character
+
+    ld a, 0
+    ret
+
+is_using_character:
+    ld a, 1
+    ret
+.endlocal

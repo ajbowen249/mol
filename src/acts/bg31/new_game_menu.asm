@@ -40,19 +40,13 @@ new_game_menu::
     ld c, 2
     ld hl, common_consolidated_menu
     call menu_ui
-
     ld (selected_origin_character_index), a
 
-    ld hl, origin_character_table
-    ld b, a
-    ld a, 2
-    call get_array_item
-    ld bc, (hl)
-    ld hl, bc
+    ld a, 0
+    ld (party_size), a
 
-    ld bc, party_member_0
-    ld a, pl_data_size
-    call copy_hl_bc
+    ld a, (selected_origin_character_index)
+    call recruit_origin_character
 
     ld a, 1
     ld (is_using_origin_character), a
@@ -69,10 +63,9 @@ create_character:
     ld hl, party_member_0
     call character_wizard
 
-new_game_menu_done:
-
     ld a, 1
     ld (party_size), a
 
+new_game_menu_done:
     ret
 .endlocal
