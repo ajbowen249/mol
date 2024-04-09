@@ -22,16 +22,16 @@ screen_title: .asciz "Emerald Grove"
 screen_start_x: .db 4 ; 1-indexed since it's screen coordinates!
 screen_start_y: .db 7
 screen_interactables:
-    DEFINE_INTERACTABLE to_environs, in_door, $01, 8, 4
-    DEFINE_INTERACTABLE int_zevlor_auto_dialog, in_npc, $01, 5, 4
-    DEFINE_INTERACTABLE int_kagha, in_npc, 0, 6, 6
-    DEFINE_INTERACTABLE blank_4, 0, 0, 0, 0
-    DEFINE_INTERACTABLE blank_5, 0, 0, 0, 0
-    DEFINE_INTERACTABLE blank_6, 0, 0, 0, 0
-    DEFINE_INTERACTABLE blank_7, 0, 0, 0, 0
-    DEFINE_INTERACTABLE blank_8, 0, 0, 0, 0
-    DEFINE_INTERACTABLE blank_9, 0, 0, 0, 0
-    DEFINE_INTERACTABLE blank_10, 0, 0, 0, 0
+    DEFINE_INTERACTABLE to_environs, in_door, iflags_door, 8, 4
+    DEFINE_INTERACTABLE int_zevlor_auto_dialog, in_npc, iflags_door, 5, 4
+    DEFINE_INTERACTABLE int_kagha, in_npc, iflags_normal, 6, 6
+    DEFINE_INTERACTABLE blank_4, 0, iflags_normal, 0, 0
+    DEFINE_INTERACTABLE blank_5, 0, iflags_normal, 0, 0
+    DEFINE_INTERACTABLE blank_6, 0, iflags_normal, 0, 0
+    DEFINE_INTERACTABLE blank_7, 0, iflags_normal, 0, 0
+    DEFINE_INTERACTABLE blank_8, 0, iflags_normal, 0, 0
+    DEFINE_INTERACTABLE blank_9, 0, iflags_normal, 0, 0
+    DEFINE_INTERACTABLE blank_10, 0, iflags_normal, 0, 0
 screen_get_interaction_prompt: .dw get_interaction_prompt
 screen_interact_callback: .dw on_interact
 screen_menu_callback: .dw pause_menu

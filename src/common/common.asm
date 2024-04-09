@@ -6,9 +6,6 @@
 #include "./monsters.asm"
 #include "./pause_menu.asm"
 
-common_consolidated_menu:
-.block mi_data_size * 5, 0
-
 .local
 register_campaign_extras::
     call register_races
