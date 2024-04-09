@@ -1,4 +1,3 @@
-#include "./world/nautiloid.asm"
 #include "./world/nautiloid_bridge.asm"
 #include "./world/crash_site.asm"
 #include "./world/emerald_grove_environs.asm"
@@ -11,7 +10,7 @@
 
 screen_table:
 .dw 0
-.dw nautiloid
+.dw 0
 .dw nautiloid_bridge
 .dw crash_site
 .dw emerald_grove_environs

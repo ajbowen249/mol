@@ -40,43 +40,6 @@
         "Now is your moment to escape."
     ],
 
-    "crash_text_1": [
-        "You grasp the controls of the ship,",
-        "somehow imbued with knowledge of their",
-        "operation. The ship teleports away from",
-        "the mountain it was on course to hit,",
-        "and careens over a river outside the",
-        "city. It breaks up, leaving you in free-",
-        "fall. A portal opens below you, and you",
-        "skid to a stop on the ground."
-    ],
-
-    "us_dialog_intro_1": [
-        "You see an elf on",
-        "the table with his",
-        "brain exposed."
-    ],
-    "us_dialog_intro_2": [
-        "In your mind, you",
-        "hear it cry, 'Free",
-        "Us!'"
-    ],
-    "us_label_prise_free": "[D]Gently prise it",
-    "us_label_smash_skull": "[S]Smash the skull",
-    "us_label_leave_alone": "Leave it alone",
-    "us_dialog_outro_fail": [
-        "'Aaahhhh!'",
-        "The creature's",
-        "thoughts fade away."
-    ],
-    "us_dialog_outro_success": [
-        "'Thank you!'",
-        "A brain with legs",
-        "emerges from the",
-        "skull, and scampers",
-        "ahead."
-    ],
-
     "mindflayer_captain_intro": [
         "You see a mindflayer",
         "locked in combat",
@@ -85,6 +48,18 @@
         "transponder! I'll",
         "hold them off.'"
     ],
+
+    "crash_text_1": [
+        "You grasp the controls of the ship,",
+        "somehow imbued with knowledge of their",
+        "use. The ship teleports away from the",
+        "mountain it was on course to hit, and",
+        "careens over the River Chionthar outside",
+        "the city. It breaks up, leaving you in",
+        "free-fall. You mysteriously stop just",
+        "above the ground and float down gently."
+    ],
+
 
     "gag_dialog_intro_1": [
         "A cadre of Goblins",
