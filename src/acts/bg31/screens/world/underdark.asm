@@ -28,7 +28,7 @@ screen_start_y: .db 7
 screen_interactables:
     DEFINE_INTERACTABLE int_duergar_guard, in_npc, iflags_normal, 8, 2
     DEFINE_INTERACTABLE int_camp_ladder, in_button, iflags_normal, 7, 19
-    DEFINE_INTERACTABLE blank_3, 0, iflags_normal, 0, 0
+    DEFINE_INTERACTABLE int_to_end, in_door, iflags_door, 8, 2
     DEFINE_INTERACTABLE blank_4, 0, iflags_normal, 0, 0
     DEFINE_INTERACTABLE blank_5, 0, iflags_normal, 0, 0
     DEFINE_INTERACTABLE blank_6, 0, iflags_normal, 0, 0
@@ -70,6 +70,9 @@ on_interact:
     cp a, 1
     jp z, take_ladder
 
+    cp a, 2
+    jp z, exit_to_outro
+
     ret
 
 talk_to_guard:
@@ -89,6 +92,10 @@ talk_guard_done:
 
 take_ladder:
     EXIT_EXPLORATION ec_door, screen_id_goblin_camp
+    ret
+
+exit_to_outro:
+    EXIT_EXPLORATION ec_door, screen_id_cs_act_1_end
     ret
 
 check_game_state:

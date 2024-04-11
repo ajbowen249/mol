@@ -318,6 +318,17 @@
         "your party."
     ],
 
+    "end_text_1": [
+        "The party presses on, following the road",
+        "to Baldur's Gate that cuts through the",
+        "treacherous Shadow-Cursed lands, past",
+        "the mysterious Moonrise Towers."
+    ],
+
+    "end_text_2": [
+        "End of Act 1"
+    ],
+
     "zhalk_combat_name": "Cmdr Zhalk",
     "dror_combat_name": "D. Ragzlin",
     "minthara_name": "Minthara",

@@ -9,6 +9,7 @@
 #include "./cut_scenes/opening.asm"
 #include "./cut_scenes/crash.asm"
 #include "./cut_scenes/shadowheart_intro.asm"
+#include "./cut_scenes/act_1_end.asm"
 
 screen_table:
 .dw 0
@@ -24,3 +25,4 @@ screen_table:
 .dw underdark
 .dw cs_opening
 .dw cs_crash
+.dw cs_act_1_end
