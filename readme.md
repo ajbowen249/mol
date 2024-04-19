@@ -30,8 +30,8 @@ The `dungeon-delver-engine` repo has a two-step process with a loader script fol
 
 ### Virtual-T
 
-Using the [Virtual-T](https://sourceforge.net/projects/virtualt/) emulator, first run `clear 256,45560`. Then, using the `Memory Editor` tool, load the output hex file starting at address `$B200`.
+Using the [Virtual-T](https://sourceforge.net/projects/virtualt/) emulator, first run `clear 256,45568`. Then, using the `Memory Editor` tool, load the output hex file starting at address `$B200`.
 
 #### Once Loaded
 
-Once the binary is loaded into memory through any method, you can run it with `call 45560`.
+Once the binary is loaded into memory through any method, you can run it with `call 45568`.
