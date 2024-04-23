@@ -6,66 +6,59 @@
     "act_1_text": "Act 1",
     "opt_new_game_label": "New Game",
     "opening_text_1": [
-        "Among the bustling streets of Baldur's",
-        "Gate, you scan the shop signs, seeking a",
-        "particular one for your errand. Your",
-        "attention is pulled to the crowd by",
-        "gasps. All you see is a small swirl of",
-        "particulate drifting in the air."
+        "As you navigate the bustling streets of",
+        "Baldur's Gate, your attention is pulled",
+        "to the crowd by gasps. You see a swirl",
+        "of ashy particulate settling in the air."
     ],
     "opening_text_2": [
-        "Suddenly, several people around you",
-        "disappear in puffs of smoke, and others",
-        "begin to scatter. You start to run, but",
-        "feel a strange sensation as you yourself",
+        "Suddenly, people around you disappear in",
+        "puffs of smoke, and others scatter. You",
+        "run, but feel a strange sensation as you",
         "are taken."
     ],
     "opening_text_3": [
         "When you awake, you are bound tightly,",
         "and face to face with a terrifying",
-        "creature, roughly humanoid but with",
-        "tentacles dangling from its face.",
-        "It holds up a small, tadpole-like",
-        "creature, and places it on your face.",
-        "The tadpole wriggles under your eye lid,",
-        "and tears its way to its resting place."
+        "creature; humanoid but with tentacles",
+        "dangling from its face. It holds up a",
+        "small creature, and places it on your",
+        "face. The tadpole wriggles under your",
+        "eye, and tears its way to its resting",
+        "place."
     ],
     "opening_text_4": [
         "You pass out from the pain.",
         "   ",
-        "Some time later, you are jolted awake as",
-        "you are thrown to the floor by a violent",
-        "jerk. You are, apparently, on a ship,",
-        "which is now under attack.",
-        "Now is your moment to escape."
+        "Later, you are jolted awake as you're",
+        "thrown to the floor. You are,",
+        "apparently, on a ship, and it's under",
+        "attack. Now is your moment to escape."
     ],
 
     "mindflayer_captain_intro": [
-        "You see a mindflayer",
-        "locked in combat",
-        "with a Cambion.",
+        "You see a Mindflayer",
+        "fighting a Cambion.",
         "'Get to the",
         "transponder! I'll",
         "hold them off.'"
     ],
 
     "crash_text_1": [
-        "You grasp the controls of the ship,",
-        "somehow imbued with knowledge of their",
-        "use. The ship teleports away from the",
-        "mountain it was on course to hit, and",
-        "careens over the River Chionthar outside",
-        "the city. It breaks up, leaving you in",
-        "free-fall. You mysteriously stop just",
-        "above the ground and float down gently."
+        "You grasp the controls, somehow knowing",
+        "what to do. The ship teleports, just",
+        "missing a mountain, an careens over the",
+        "River Chionthar outside the city. It",
+        "breaks up, leaving you in free-fall.",
+        "Mysteriously, you stop just above the",
+        "ground, and float down gently."
     ],
 
     "recruit_shadowheart_text_1": [
-        "You are met by a half-elf who calls",
-        "herself Shadowheart. She was also on the",
-        "ship, and infected with their parasite.",
-        "Like you, she must return to Baldur's",
-        "Gate."
+        "You are met by a half-elf calling",
+        "herself Shadowheart. Like you, she was",
+        "taken near Baldur's Gate, and infected",
+        "with the Mindflayers' parasite."
     ],
 
     "shadowheart_cut_scene_1": [
@@ -74,15 +67,15 @@
     ],
 
     "shadowheart_cut_scene_2": [
-        "All you can remember about it is that",
-        "you must return it to Baldur's Gate."
+        "All you can remember is that you must",
+        "return it to Baldur's Gate."
     ],
 
     "recruit_shadowheart_text_2": [
         "A mysterious artefact leaps",
         "from her pouch. You don't",
-        "pry, but get the feeling you",
-        "should travel together."
+        "pry, but feel you should",
+        "travel together."
     ],
 
     "str_recruit_party_full": [
@@ -152,10 +145,10 @@
     ],
     "zevlor_dialog_3": [
         "The grove is home to",
-        "the druids. Some of",
-        "them are kind, or at",
-        "least sympathetic.",
-        "Others are less so."
+        "the druids. Some are",
+        "kind, or at least",
+        "sympathetic. Others",
+        "are not."
     ],
     "zevlor_dialog_leaders_alive": [
         "The goblins at the",
