@@ -34,3 +34,5 @@ killed_minthara: .db 0
 minthara_started_attack: .db 0
 
 killed_nere: .db 0
+
+party_xp: .db 0

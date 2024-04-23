@@ -25,3 +25,96 @@ register_races:
 
     ret
 .endlocal
+
+.local
+; Note: The SRD does actually have an XP scale and a way to calculate the reward for an encounter.
+; Keeping it custom to make balance simpler, and also to keep XP in 1 byte for simple compares.
+
+#define level_2_xp 34
+#define level_3_xp 55
+#define level_4_xp 89
+#define level_5_xp 144
+#define level_6_xp 255
+
+xp_scale:
+.db level_2_xp
+.db level_3_xp
+.db level_4_xp
+.db level_5_xp
+.db level_6_xp
+
+#define defined_levels 5
+
+; Adds A experience points to the party, increasing the level if needed.
+; Returns non-zero in A if the level was changed.
+add_experience_points::
+    ld b, a
+    ld a, (party_xp)
+    add a, b
+    ld (party_xp), a
+
+    ld e, a
+
+    ld d, 0
+find_level_loop:
+    ld hl, xp_scale
+    ld b, 0
+    ld c, d
+    add hl, bc
+    ld a, (hl)
+    ld b, a
+    ld a, e
+
+    cp a, b
+    jp c, found_level
+
+    inc d
+    jp find_level_loop
+
+found_level:
+    inc d
+    ld b, d
+
+    ld a, (party_member_0_level)
+    cp a, b
+    jp nz, set_level
+    ld a, 0
+    ret
+
+set_level:
+    ld a, b
+    ld (party_member_0_level), a
+    ld (party_member_1_level), a
+    ld (party_member_2_level), a
+    ld (party_member_3_level), a
+
+    ld a, 1
+    ret
+.endlocal
+
+.local
+; Adds A experience points, and if the party advances a level, notifies at position HL
+add_xp_and_notify::
+    push hl
+    call add_experience_points
+    pop hl
+    cp a, 0
+    jp nz, notify_level
+    ret
+
+notify_level:
+    call rom_set_cursor
+
+    ld hl, level_up_notification
+    call print_compressed_string
+
+    ld a, (party_member_0_level)
+    ld d, 0
+    ld e, a
+    call de_to_decimal_string
+
+    ld hl, bc
+    call print_string
+    call await_any_keypress
+    ret
+.endlocal
