@@ -104,6 +104,10 @@ recruit_origin_character::
     ld (screen_controller_party_size), a
 
 recruit_origin_character_end:
+    ld a, (party_member_0_level)
+    ld (party_member_1_level), a
+    ld (party_member_2_level), a
+    ld (party_member_3_level), a
     ret
 .endlocal
 
