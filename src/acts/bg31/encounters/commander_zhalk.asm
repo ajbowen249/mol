@@ -30,6 +30,11 @@ encounter_commander_zhalk::
     ld a, 1
     ld (killed_zhalk), a
 
+    ld a, level_2_xp
+    ld h, 1
+    ld l, 1
+    call add_xp_and_notify
+
 end:
     ret
 .endlocal
