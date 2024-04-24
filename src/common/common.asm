@@ -43,9 +43,7 @@ register_races:
 .local
 award_goblin_general_xp::
     ld a, goblin_general_xp
-    ld h, 1
-    ld l, 1
-    call add_xp_and_notify
+    call add_xp_and_notify_on_victory_screen
     ret
 .endlocal
 
@@ -109,6 +107,13 @@ set_level:
 .local
 ; Adds A experience points, and if the party advances a level, notifies at position HL
 add_xp_and_notify::
+    ; hacky, but this late it's better than adding the check everywhere we call this
+    ld b, a
+    ld a, (dde_should_exit)
+    cp a, 0
+    jp nz, add_xp_and_notify_done
+    ld a, b
+
     push hl
     call add_experience_points
     pop hl
@@ -130,5 +135,14 @@ notify_level:
     ld hl, bc
     call print_string
     call await_any_keypress
+add_xp_and_notify_done:
+    ret
+.endlocal
+
+.local
+add_xp_and_notify_on_victory_screen::
+    ld h, 10
+    ld l, 5
+    call add_xp_and_notify
     ret
 .endlocal

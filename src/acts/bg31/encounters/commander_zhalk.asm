@@ -31,9 +31,7 @@ encounter_commander_zhalk::
     ld (killed_zhalk), a
 
     ld a, level_2_xp
-    ld h, 1
-    ld l, 1
-    call add_xp_and_notify
+    call add_xp_and_notify_on_victory_screen
 
 end:
     ret

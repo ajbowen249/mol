@@ -34,9 +34,7 @@ encounter_goblins_at_the_gate::
     ld (killed_goblins_at_the_gate), a
 
     ld a, level_2_xp
-    ld h, 1
-    ld l, 1
-    call add_xp_and_notify
+    call add_xp_and_notify_on_victory_screen
 
 end:
     ret
