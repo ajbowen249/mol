@@ -37,6 +37,9 @@ register_races:
 
 #define goblin_general_xp level_4_xp / 3 + 1
 
+#define complete_goblin_kills_xp goblin_general_xp * 3 + level_2_xp
+#define grove_party_xp level_5_xp - complete_goblin_kills_xp
+
 .local
 award_goblin_general_xp::
     ld a, goblin_general_xp

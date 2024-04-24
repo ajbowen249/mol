@@ -17,7 +17,6 @@ recruited_karlach: .db 0
 
 last_room: .db 0
 
-freed_us: .db 0
 killed_zhalk: .db 0
 
 killed_goblins_at_the_gate: .db 0
