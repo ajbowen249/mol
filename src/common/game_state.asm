@@ -1,3 +1,4 @@
+game_state_begin:
 player_party:
     EMPTY_CHARACTER party_member_0
     EMPTY_CHARACTER party_member_1
@@ -35,3 +36,5 @@ minthara_started_attack: .db 0
 killed_nere: .db 0
 
 party_xp: .db 0
+
+game_state_end: .db 0

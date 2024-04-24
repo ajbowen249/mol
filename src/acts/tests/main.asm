@@ -80,8 +80,37 @@ xp_tests:
 
     ret
 
+game_state_tests:
+    ld a, 123
+    ; not comprehensive, just a sampling
+    ld (party_size), a
+    ld (killed_dror_ragzlin), a
+    ld (helped_dror_question), a
+    ld (killed_minthara), a
+    ld (party_xp), a
+
+.MACRO RESET_GAME_STATE_TEST_EXPECT &VAL
+    ld a, (party_size)
+.expect a = &VAL
+    ld a, (killed_dror_ragzlin)
+.expect a = &VAL
+    ld a, (helped_dror_question)
+.expect a = &VAL
+    ld a, (killed_minthara)
+.expect a = &VAL
+    ld a, (party_xp)
+.expect a = &VAL
+.ENDM
+
+    RESET_GAME_STATE_TEST_EXPECT 123
+    call reset_game_state
+    RESET_GAME_STATE_TEST_EXPECT 0
+
+    ret
+
 test_start:
     call xp_tests
+    call game_state_tests
     ret
 
 test_entry:

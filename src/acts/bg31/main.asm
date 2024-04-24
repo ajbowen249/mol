@@ -37,6 +37,7 @@ main:
 
     call seed_random
     call register_campaign_extras
+    call reset_game_state
 
     call rom_clear_screen
     BLOCK_PRINT logo_compressed, 17, 2
