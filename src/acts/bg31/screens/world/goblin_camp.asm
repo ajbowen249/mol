@@ -91,10 +91,20 @@ on_interact:
     ret
 
 exit_to_blighted_village:
+    ld a, 7
+    ld (screen_start_y), a
+    ld a, 10
+    ld (screen_start_x), a
+
     EXIT_EXPLORATION ec_door, screen_id_blighted_village
     ret
 
 exit_to_underdark:
+    ld a, 3
+    ld (screen_start_y), a
+    ld a, 4
+    ld (screen_start_x), a
+
     EXIT_EXPLORATION ec_door, screen_id_underdark
     ret
 
