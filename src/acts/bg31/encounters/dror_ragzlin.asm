@@ -40,7 +40,7 @@ encounter_dror_ragzlin::
     ld a, 1
     ld (killed_dror_ragzlin), a
 
-    call award_goblin_general_xp
+    call award_goblin_general_kill_xp
 
 end:
     ret

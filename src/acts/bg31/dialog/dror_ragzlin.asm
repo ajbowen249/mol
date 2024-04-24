@@ -81,6 +81,9 @@ ask_success:
 
     call await_any_keypress
     call clear_exploration_message_area
+    call award_goblin_general_help_xp
+    call clear_exploration_message_area
+
     ld a, 0
     ret
 .endlocal

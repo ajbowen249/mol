@@ -24,9 +24,7 @@ dialog_kagha::
     ; this will total you up to level 5.
     call clear_exploration_message_area
     ld a, grove_party_xp
-    ld h, 21
-    ld l, 2
-    call add_xp_and_notify
+    call add_xp_and_notify_on_dialog_screen
 
 kagha_done:
     call clear_exploration_message_area

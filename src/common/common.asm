@@ -35,15 +35,26 @@ register_races:
 #define level_5_xp 144
 #define level_6_xp 255
 
-#define goblin_general_xp level_4_xp / 3 + 1
+#define goblin_general_help_xp level_3_xp / 3 + 1
+#define goblin_general_kill_xp level_4_xp / 3 + 1
 
-#define complete_goblin_kills_xp goblin_general_xp * 3 + level_2_xp
+#define complete_goblin_kills_xp goblin_general_kill_xp * 3 + level_2_xp
 #define grove_party_xp level_5_xp - complete_goblin_kills_xp
 
+#define complete_goblin_help_xp goblin_general_help_xp * 3
+#define grove_kill_xp level_4_xp - complete_goblin_help_xp
+
 .local
-award_goblin_general_xp::
-    ld a, goblin_general_xp
+award_goblin_general_kill_xp::
+    ld a, goblin_general_kill_xp
     call add_xp_and_notify_on_victory_screen
+    ret
+.endlocal
+
+.local
+award_goblin_general_help_xp::
+    ld a, goblin_general_help_xp
+    call add_xp_and_notify_on_dialog_screen
     ret
 .endlocal
 
@@ -143,6 +154,14 @@ add_xp_and_notify_done:
 add_xp_and_notify_on_victory_screen::
     ld h, 10
     ld l, 5
+    call add_xp_and_notify
+    ret
+.endlocal
+
+.local
+add_xp_and_notify_on_dialog_screen::
+    ld h, 21
+    ld l, 2
     call add_xp_and_notify
     ret
 .endlocal

@@ -36,6 +36,9 @@ encounter_grove_leaders::
     ld a, 1
     ld (defeated_grove), a
 
+    ld a, grove_kill_xp
+    call add_xp_and_notify_on_victory_screen
+
 end:
     ret
 .endlocal

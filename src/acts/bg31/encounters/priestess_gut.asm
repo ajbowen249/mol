@@ -30,7 +30,7 @@ encounter_priestess_gut::
     ld a, 1
     ld (killed_priestess_gut), a
 
-    call award_goblin_general_xp
+    call award_goblin_general_kill_xp
 
 end:
     ret

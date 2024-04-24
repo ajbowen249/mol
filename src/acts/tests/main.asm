@@ -66,7 +66,7 @@ xp_tests:
 
     ; these are #define constants, but you can't use parentheses in expressions,
     ; so this makes sure I get what I think they should be.
-    ld a, goblin_general_xp
+    ld a, goblin_general_kill_xp
 .expect a = 30
 
     ld a, complete_goblin_kills_xp
@@ -74,6 +74,9 @@ xp_tests:
 
     ld a, grove_party_xp
 .expect a = 20
+
+    ld a, grove_kill_xp
+.expect a = 32
 
     ret
 
