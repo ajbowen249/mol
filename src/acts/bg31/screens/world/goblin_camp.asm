@@ -124,6 +124,7 @@ gut_interact:
     jp z, gut_done
 
     EXIT_EXPLORATION ec_encounter, encounter_id_priestess_gut
+    ret
 
 gut_done:
     call check_game_state
