@@ -26,7 +26,6 @@ register_races:
     ret
 .endlocal
 
-.local
 ; Note: The SRD does actually have an XP scale and a way to calculate the reward for an encounter.
 ; Keeping it custom to make balance simpler, and also to keep XP in 1 byte for simple compares.
 
@@ -36,6 +35,18 @@ register_races:
 #define level_5_xp 144
 #define level_6_xp 255
 
+#define goblin_general_xp level_4_xp / 3 + 1
+
+.local
+award_goblin_general_xp::
+    ld a, goblin_general_xp
+    ld h, 1
+    ld l, 1
+    call add_xp_and_notify
+    ret
+.endlocal
+
+.local
 xp_scale:
 .db level_2_xp
 .db level_3_xp
