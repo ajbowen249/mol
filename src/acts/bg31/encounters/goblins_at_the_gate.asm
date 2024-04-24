@@ -33,6 +33,11 @@ encounter_goblins_at_the_gate::
     ld a, 1
     ld (killed_goblins_at_the_gate), a
 
+    ld a, level_2_xp
+    ld h, 1
+    ld l, 1
+    call add_xp_and_notify
+
 end:
     ret
 .endlocal
