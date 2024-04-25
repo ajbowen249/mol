@@ -113,13 +113,14 @@ check_goblins_at_the_gate:
     ret
 
 clear_goblins:
-    ld a, 0
-    ld (fight_1_row), a
-    ld (fight_2_row), a
-    ld (fight_3_row), a
-    ld (fight_4_row), a
-    ld (fight_5_row), a
-    ld (fight_6_row), a
+    ld a, (fight_1_flags)
+    and a, $7f
+    ld (fight_1_flags), a
+    ld (fight_2_flags), a
+    ld (fight_3_flags), a
+    ld (fight_4_flags), a
+    ld (fight_5_flags), a
+    ld (fight_6_flags), a
 
     ld a, " "
     ld hl, screen_background
@@ -138,4 +139,11 @@ clear_goblins:
 
     ret
 
+reset_emerald_grove_environs::
+    RESET_SCREEN screen_data, 13, 7
+    ld a, "왓"
+    ld (screen_background + 23), a
+    ld (screen_background + 24), a
+    ld (screen_background + 25), a
+    ret
 .endlocal

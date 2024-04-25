@@ -164,4 +164,15 @@ check_game_state:
     CLEAR_GRAPHIC_IF_FLAG have_brand_of_the_absolute, 3, 3, screen_background
     ret
 
+reset_goblin_camp::
+    RESET_SCREEN screen_data, 10, 7
+    ld a, "왓"
+    ld (screen_background + 38), a
+    ld (screen_background + 51), a
+    ld (screen_background + 85), a
+
+    ld a, "│"
+    ld (screen_background + 44), a
+    ret
+
 .endlocal

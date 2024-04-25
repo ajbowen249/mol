@@ -95,4 +95,9 @@ zhalk_fight:
     EXIT_EXPLORATION ec_encounter, encounter_id_nautiloid_zhalk
     ret
 
+reset_nautiloid_bridge::
+    RESET_SCREEN screen_data, 18, 4
+    ld a, "왓"
+    ld (screen_background + 90), a
+    ret
 .endlocal

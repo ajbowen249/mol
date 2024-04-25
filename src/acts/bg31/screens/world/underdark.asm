@@ -10,7 +10,7 @@ screen_background:
 .asciz " ▓▓▓▓▓▓ ▓▓▓  ▓▓ ▓▓▓▓"
 .asciz "▛ㅑ▔▜▓  €      ┌ ───┐"
 .asciz "▌           €     H│"
-.asciz "▙왓▂▟▓  €      └────┘"
+.asciz "▙옷▂▟▓  €      └────┘"
 screen_title: .asciz "Underdark"
 .db 0
 .db 0
@@ -100,6 +100,11 @@ exit_to_outro:
 
 check_game_state:
     CLEAR_INTERACTABLE_IF_FLAG killed_nere, int_duergar_guard, screen_background
+    ret
 
+reset_underdark::
+    RESET_SCREEN screen_data, 17, 7
+    ld a, "옷"
+    ld (screen_background + 148), a
     ret
 .endlocal

@@ -41,5 +41,7 @@ loop:
     cp a, 0
     jp nz, loop
 
+    ld a, 1
+    ld (party_member_0_level), a
     ret
 .endlocal

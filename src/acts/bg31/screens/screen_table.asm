@@ -26,3 +26,13 @@ screen_table:
 .dw cs_opening
 .dw cs_crash
 .dw cs_act_1_end
+
+reset_all_screens:
+    call reset_nautiloid_bridge
+    call reset_crash_site
+    call reset_emerald_grove_environs
+    call reset_blighted_village
+    call reset_goblin_camp
+    call reset_emerald_grove
+    call reset_underdark
+    ret
