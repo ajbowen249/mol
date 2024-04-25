@@ -12,10 +12,15 @@ encounter_nere::
     ld a, 10
     call copy_hl_bc
 
-    ld a, 5
+    ld a, 19
     ld (enemy_player_1_level), a
 
-    ld a, 1
+    ld hl, monster_duergar
+    ld bc, enemy_player_2
+    ld a, pl_data_size
+    call copy_hl_bc
+
+    ld a, 2
     ld (enemy_party_size), a
 
     call start_encounter
