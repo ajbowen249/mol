@@ -8,8 +8,9 @@
     "opening_text_1": [
         "As you navigate the bustling streets of",
         "Baldur's Gate, your attention is pulled",
-        "to the crowd by gasps. You see a swirl",
-        "of ashy particulate settling in the air."
+        "to the crowd by gasps. All you see is a",
+        "swirl of particulate settling in the",
+        "air."
     ],
     "opening_text_2": [
         "Suddenly, people around you disappear in",
@@ -20,7 +21,7 @@
     "opening_text_3": [
         "When you awake, you are bound tightly,",
         "and face to face with a terrifying",
-        "creature; humanoid but with tentacles",
+        "creature; humanoid, but with tentacles",
         "dangling from its face. It holds up a",
         "small creature, and places it on your",
         "face. The tadpole wriggles under your",
@@ -47,11 +48,18 @@
     "crash_text_1": [
         "You grasp the controls, somehow knowing",
         "what to do. The ship teleports, just",
-        "missing a mountain, an careens over the",
+        "missing a mountain, and careens over the",
         "River Chionthar outside the city. It",
         "breaks up, leaving you in free-fall.",
         "Mysteriously, you stop just above the",
         "ground, and float down gently."
+    ],
+
+    "recruit_shadowheart_text_2": [
+        "A mysterious artefact leaps",
+        "from her pouch. You don't",
+        "pry, but feel you should",
+        "travel together."
     ],
 
     "recruit_shadowheart_text_1": [
@@ -69,13 +77,6 @@
     "shadowheart_cut_scene_2": [
         "All you can remember is that you must",
         "return it to Baldur's Gate."
-    ],
-
-    "recruit_shadowheart_text_2": [
-        "A mysterious artefact leaps",
-        "from her pouch. You don't",
-        "pry, but feel you should",
-        "travel together."
     ],
 
     "str_recruit_party_full": [
@@ -186,10 +187,11 @@
         "will stop. Else, I",
         "suggest you leave."
     ],
+
     "kagha_dialog_leaders_dead": [
         "Kagha calls off the",
         "rite. That evening,",
-        "a group of Teiflings",
+        "a group of Tieflings",
         "and Druids join your",
         "camp to revel in the",
         "goblins' defeat."
