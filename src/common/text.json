@@ -23,5 +23,7 @@
     "name_laezel": "Lae'zel",
     "name_shadowheart": "Shadowheart",
     "name_gale": "Gale",
-    "name_karlach": "Karlach"
+    "name_karlach": "Karlach",
+
+    "level_up_notification": "Party attains lvl"
 }

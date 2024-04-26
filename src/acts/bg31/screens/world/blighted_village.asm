@@ -146,4 +146,11 @@ have_laezel:
     CLEAR_INTERACTABLE int_recruit_laezel, screen_background
     ret
 
+reset_blighted_village::
+    RESET_SCREEN screen_data, 19, 4
+    ld a, "옷"
+    ld (screen_background + 51), a
+    ld (screen_background + 123), a
+    ret
+
 .endlocal

@@ -1,5 +1,6 @@
 # Mol
 
+![demo](/gh_media/nere_battle.gif)
 ![demo](/gh_media/demo_1.gif)
 ![demo](/gh_media/goblin_camp.gif)
 ![demo](/gh_media/recruit_demo.gif)

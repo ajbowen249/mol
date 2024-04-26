@@ -6,7 +6,7 @@
 .db 0
 
 .local
-    CAMPAIGN_MONSTER_DESCRIPTOR monster_descriptor_cambion, class_mc_cambion, monster_size_medium, 14, 2, 1, 2, 1, 1, 2, cambion_damage_func
+    CAMPAIGN_MONSTER_DESCRIPTOR monster_descriptor_cambion, class_mc_cambion, monster_size_medium, 14, cambion_damage_func
 
 cambion_damage_func:
     ; Scimitar

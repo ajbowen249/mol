@@ -30,6 +30,8 @@ encounter_minthara::
     ld a, 1
     ld (killed_minthara), a
 
+    call award_goblin_general_kill_xp
+
 end:
     ret
 .endlocal

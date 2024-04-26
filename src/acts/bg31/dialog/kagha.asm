@@ -20,6 +20,12 @@ dialog_kagha::
     BLOCK_PRINT kagha_dialog_leaders_dead, 21, 2
     call stub_menu
 
+    ; If you killed the leaders AND the goblins at the gate AND came all the way back here,
+    ; this will total you up to level 5.
+    call clear_exploration_message_area
+    ld a, grove_party_xp
+    call add_xp_and_notify_on_dialog_screen
+
 kagha_done:
     call clear_exploration_message_area
     ret

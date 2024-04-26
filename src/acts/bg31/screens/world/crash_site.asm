@@ -139,9 +139,7 @@ check_shadowheart:
     jp z, dont_have_shadowheart
 
 have_shadowheart:
-    ld a, 0
-    ld (int_recruit_shadowheart_row), a
-    ld (int_recruit_shadowheart_col), a
+    CLEAR_INTERACTABLE int_recruit_shadowheart, screen_background
 
     ld hl, screen_data + 71
     ld a, " "
@@ -155,10 +153,12 @@ check_pc_shadowheart:
     call is_player_using_origin_character_a
     cp a, 0
 
-    jp nz, check_pc_shadowheart_done
+    jp nz, player_is_using_shadowheart
     CLEAR_INTERACTABLE int_shadowheart_cut_scene, screen_background
+    ret
 
-check_pc_shadowheart_done:
+player_is_using_shadowheart:
+    CLEAR_INTERACTABLE int_recruit_shadowheart, screen_background
     ret
 
 check_gale:
@@ -169,6 +169,13 @@ check_gale:
 
 have_gale:
     CLEAR_INTERACTABLE int_recruit_gale, screen_background
+    ret
+
+reset_crash_site::
+    RESET_SCREEN screen_data, 2, 2
+    ld a, "옷"
+    ld (screen_background + 71), a
+    ld (screen_background + 58), a
     ret
 
 .endlocal

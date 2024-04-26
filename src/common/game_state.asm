@@ -1,8 +1,9 @@
+game_state_begin:
 player_party:
-    EMPTY_CHARACTER party_member_0
-    EMPTY_CHARACTER party_member_1
-    EMPTY_CHARACTER party_member_2
-    EMPTY_CHARACTER party_member_3
+    ALLOCATE_PLAYER party_member_0
+    ALLOCATE_PLAYER party_member_1
+    ALLOCATE_PLAYER party_member_2
+    ALLOCATE_PLAYER party_member_3
 
 party_size: .db 0
 
@@ -15,9 +16,8 @@ recruited_shadowheart: .db 0
 recruited_gale: .db 0
 recruited_karlach: .db 0
 
-last_room: .db screen_id_cs_opening
+last_room: .db 0
 
-freed_us: .db 0
 killed_zhalk: .db 0
 
 killed_goblins_at_the_gate: .db 0
@@ -34,3 +34,7 @@ killed_minthara: .db 0
 minthara_started_attack: .db 0
 
 killed_nere: .db 0
+
+party_xp: .db 0
+
+game_state_end: .db 0

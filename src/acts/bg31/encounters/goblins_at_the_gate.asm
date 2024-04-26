@@ -33,6 +33,9 @@ encounter_goblins_at_the_gate::
     ld a, 1
     ld (killed_goblins_at_the_gate), a
 
+    ld a, level_2_xp
+    call add_xp_and_notify_on_victory_screen
+
 end:
     ret
 .endlocal

@@ -1,11 +1,11 @@
-    DEFINE_PLAYER origin_character_laezel, 17, 13, 14, 11, 12, 8, race_githyanki, class_fighter, 1, "Lae'zel"
+    DEFINE_PLAYER origin_character_laezel, 17, 13, 15, 10, 12, 8, race_githyanki, class_fighter, 1, "Lae'zel"
 .db 0
 .db 0
 .db 0
 
-    DEFINE_PLAYER origin_character_shadowheart, 12, 14, 14, 10, 16, 10, race_half_elf, class_cleric, 1, "Shadwheart"
+    DEFINE_PLAYER origin_character_shadowheart, 13, 13, 14, 10, 17, 18, race_half_elf, class_cleric, 1, "Shadwheart"
 
-    DEFINE_PLAYER origin_character_gale, 9, 14, 15, 16, 11, 13, race_human, class_wizard, 1, "Gale"
+    DEFINE_PLAYER origin_character_gale, 8, 13, 15, 17, 10, 12, race_human, class_wizard, 1, "Gale"
 .db 0
 .db 0
 .db 0
@@ -13,7 +13,7 @@
 .db 0
 .db 0
 
-    DEFINE_PLAYER origin_character_karlach, 17, 13, 14, 11, 12, 8, race_tiefling, class_barbarian, 1, "Karlach"
+    DEFINE_PLAYER origin_character_karlach, 17, 13, 15, 8, 12, 10, race_tiefling, class_barbarian, 1, "Karlach"
 .db 0
 .db 0
 .db 0
@@ -30,10 +30,6 @@ origin_character_table:
 .dw origin_character_shadowheart
 .dw origin_character_gale
 .dw origin_character_karlach
-
-.macro EMPTY_CHARACTER &LABEL
-    DEFINE_PLAYER &LABEL, 0, 0, 0, 0, 0, 0, race_human, class_fighter, 1, "          "
-.endm
 
 choose_origin_character_menu:
 .db opt_oc_laezel
@@ -104,6 +100,10 @@ recruit_origin_character::
     ld (screen_controller_party_size), a
 
 recruit_origin_character_end:
+    ld a, (party_member_0_level)
+    ld (party_member_1_level), a
+    ld (party_member_2_level), a
+    ld (party_member_3_level), a
     ret
 .endlocal
 

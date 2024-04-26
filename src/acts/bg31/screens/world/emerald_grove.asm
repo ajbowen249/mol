@@ -107,9 +107,20 @@ check_game_state:
     ld (screen_background + 33), a
     ld (screen_background + 36), a
     ld (screen_background + 86), a
-    ld (screen_background + 102), a
+    ld (screen_background + 110), a
 
 check_game_state_done:
     ret
 
+reset_emerald_grove::
+    RESET_SCREEN screen_data, 4, 7
+    ld a, "왓"
+    ld (screen_background + 86), a
+    ld (screen_background + 110), a
+
+    ld a, "옷"
+    ld (screen_background + 24), a
+    ld (screen_background + 33), a
+    ld (screen_background + 36), a
+    ret
 .endlocal

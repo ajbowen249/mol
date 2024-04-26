@@ -91,10 +91,20 @@ on_interact:
     ret
 
 exit_to_blighted_village:
+    ld a, 7
+    ld (screen_start_y), a
+    ld a, 10
+    ld (screen_start_x), a
+
     EXIT_EXPLORATION ec_door, screen_id_blighted_village
     ret
 
 exit_to_underdark:
+    ld a, 3
+    ld (screen_start_y), a
+    ld a, 4
+    ld (screen_start_x), a
+
     EXIT_EXPLORATION ec_door, screen_id_underdark
     ret
 
@@ -124,6 +134,7 @@ gut_interact:
     jp z, gut_done
 
     EXIT_EXPLORATION ec_encounter, encounter_id_priestess_gut
+    ret
 
 gut_done:
     call check_game_state
@@ -151,6 +162,17 @@ check_game_state:
 
     CLEAR_GRAPHIC_IF_FLAG killed_priestess_gut, 3, 3, screen_background
     CLEAR_GRAPHIC_IF_FLAG have_brand_of_the_absolute, 3, 3, screen_background
+    ret
+
+reset_goblin_camp::
+    RESET_SCREEN screen_data, 10, 7
+    ld a, "왓"
+    ld (screen_background + 38), a
+    ld (screen_background + 51), a
+    ld (screen_background + 85), a
+
+    ld a, "│"
+    ld (screen_background + 44), a
     ret
 
 .endlocal

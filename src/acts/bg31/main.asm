@@ -37,6 +37,8 @@ main:
 
     call seed_random
     call register_campaign_extras
+    call reset_game_state
+    call reset_all_screens
 
     call rom_clear_screen
     BLOCK_PRINT logo_compressed, 17, 2
@@ -62,7 +64,8 @@ main:
     ld a, (party_size)
     call configure_screen_controller
 
-    ld a, (last_room)
+    ld a, screen_id_cs_opening
+    ld (last_room), a
     ld b, a
     ld a, ec_door
     call set_screen_exit_conditions
