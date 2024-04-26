@@ -1,7 +1,7 @@
 enemy_party:
-    DEFINE_PLAYER enemy_player_1, 0, 0, 0, 0, 0, 0, 0, 0, 0, "          "
-    DEFINE_PLAYER enemy_player_2, 0, 0, 0, 0, 0, 0, 0, 0, 0, "          "
-    DEFINE_PLAYER enemy_player_3, 0, 0, 0, 0, 0, 0, 0, 0, 0, "          "
-    DEFINE_PLAYER enemy_player_4, 0, 0, 0, 0, 0, 0, 0, 0, 0, "          "
+    ALLOCATE_PLAYER enemy_player_1
+    ALLOCATE_PLAYER enemy_player_2
+    ALLOCATE_PLAYER enemy_player_3
+    ALLOCATE_PLAYER enemy_player_4
 
 enemy_party_size: .db 0

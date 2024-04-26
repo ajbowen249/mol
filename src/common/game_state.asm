@@ -1,9 +1,9 @@
 game_state_begin:
 player_party:
-    EMPTY_CHARACTER party_member_0
-    EMPTY_CHARACTER party_member_1
-    EMPTY_CHARACTER party_member_2
-    EMPTY_CHARACTER party_member_3
+    ALLOCATE_PLAYER party_member_0
+    ALLOCATE_PLAYER party_member_1
+    ALLOCATE_PLAYER party_member_2
+    ALLOCATE_PLAYER party_member_3
 
 party_size: .db 0
 
