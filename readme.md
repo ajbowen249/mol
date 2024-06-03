@@ -1,5 +1,9 @@
 # Mol
 
+Demo and Making Of:
+
+[![making of video](http://img.youtube.com/vi/zW9-hpuNDQQ/0.jpg)](http://www.youtube.com/watch?v=zW9-hpuNDQQ)
+
 ![demo](/gh_media/nere_battle.gif)
 ![demo](/gh_media/demo_1.gif)
 ![demo](/gh_media/goblin_camp.gif)
