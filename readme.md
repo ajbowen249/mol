@@ -23,20 +23,27 @@ Mol should be seen as a piece of "interactive fanart." Other recent demake proje
 
 For now, this is the flagship project driving further development of `DDE`. In the event this does get taken down (despite my _ironclad_ reasoning above), that library should be unaffected, as, on its own, it's a valid OGL-SRD 5.1 use case. All references to WotC/Larian IP and other SRD no-nos are contained to this repository. I've got a few ideas on where I could take `DDE` if this gets Lamberted, like more-advanced `80` family machines or an original campaign.
 
-## Building
-
-This project uses [zasm](https://k1.spdns.de/Develop/Projects/zasm/Documentation/index.html), [make](https://www.gnu.org/software/make/manual/make.html), and [python 3](https://www.python.org/), and assumes all are in your `PATH`. First, pull down the engine with `git submodule update --init`, and then build with `make`. The campaign is split up into acts, and each act should yield a `bg3<act>.hex` file under `build`. Currently, only the first act exists.
-
 ## Running
 
-### Physical Model 100
+The [Releases](https://github.com/ajbowen249/mol/releases/tag/v1.0.1) page should have the latest build of the project. You should see both `.co` and `.hex` files for each act (currently just act 1).
 
-The `dungeon-delver-engine` repo has a two-step process with a loader script followed by a native loader program. Refer to the `dungeon-delver-engine` docs for that process.
+### From Cassette
+
+Thanks to [majick](https://github.com/majick), the build script produces a `.co`-formatted file binary file. This file is too large to work in the Model 100's built-in storage, but can be loaded up through the cassette interface. This is currently only confirmed working on [CloudT](https://bitchin100.com/CloudT/#!/M100Display), but should, theoretically, work on a stock Model 100 when loaded through the cassette interface as well. To run it on CloudT:
+
+1. Enter BASIC, and run `clear 256,45568`
+2. Click "Choose File," and select `bg31.co`
+3. Run `cloadm`
+4. When it's done loading, run `call 45568`
+
+### Physical Model 100 with Just a Serial Cable
+
+If all you have is a stock Model 100 and a serial cable to connect to a modern PC, then the `dungeon-delver-engine` repo has a two-step process with a loader script followed by a native loader program that can help you out. Refer to the `dungeon-delver-engine` docs for that process.
 
 ### Virtual-T
 
-Using the [Virtual-T](https://sourceforge.net/projects/virtualt/) emulator, first run `clear 256,45568`. Then, using the `Memory Editor` tool, load the output hex file starting at address `$B200`.
+Using the [Virtual-T](https://sourceforge.net/projects/virtualt/) emulator, first run `clear 256,45568`. Then, using the `Memory Editor` tool, load the output `.hex` file starting at address `$B200`. Once that is done, you can run it with `call 45568`.
 
-#### Once Loaded
+## Building
 
-Once the binary is loaded into memory through any method, you can run it with `call 45568`.
+This project uses [`zasm`](https://k1.spdns.de/Develop/Projects/zasm/Documentation/index.html), [`make`](https://www.gnu.org/software/make/manual/make.html), [`python 3`](https://www.python.org/), and [`perl`](https://www.perl.org/), and assumes all are in your `PATH`. First, pull down the engine with `git submodule update --init`, and then build with `make`. The campaign is split up into acts, and each act should yield `bg3<act>.hex` and `bg3<act>.co` files under `build`. Currently, only the first act exists.
