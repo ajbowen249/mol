@@ -36,6 +36,19 @@ Thanks to [majick](https://github.com/majick), the build script produces a `.co`
 3. Run `cloadm`
 4. When it's done loading, run `call 45568`
 
+### Physical Model 100/102 From Disk or TPDD Emulation
+
+The `.co` binary can be loaded into memory via disk, on physical hardware. The easiest method is to use an emulated TPDD, such as [dl2/dlplus](https://github.com/bkw777/dl2) or [LaddieAlpha](http://bitchin100.com/wiki/index.php?title=LaddieCon#LaddieAlpha), with TS-DOS in ROM or with some other small DOS bootstrapped via `dl`
+
+Assuming TS-DOS, since that's the most common:
+1. Enter TS-DOS and press `F5` to enable DOS-ON mode
+2. Exit to MENU
+3. Enter BASIC and run `CLEAR 256, 45568`
+4. Run `LOADM "0:bg31.co"`
+5. When it's done loading, run `CALL 45568`
+
+This method has been tested to work on physical hardware.
+
 ### Physical Model 100 with Just a Serial Cable
 
 If all you have is a stock Model 100 and a serial cable to connect to a modern PC, then the `dungeon-delver-engine` repo has a two-step process with a loader script followed by a native loader program that can help you out. Refer to the `dungeon-delver-engine` docs for that process.
