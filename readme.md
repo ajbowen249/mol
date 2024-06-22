@@ -25,7 +25,7 @@ For now, this is the flagship project driving further development of `DDE`. In t
 
 ## Running
 
-The [Releases](https://github.com/ajbowen249/mol/releases/tag/v1.0.1) page should have the latest build of the project. You should see both `.co` and `.hex` files for each act (currently just act 1).
+The [Releases](https://github.com/ajbowen249/mol/releases) page should have the latest build of the project. You should see both `.co` and `.hex` files for each act (currently just act 1).
 
 ### From Cassette
 
