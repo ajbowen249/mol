@@ -1,7 +1,6 @@
 ; Unit tests
 
-.org $B200
-
+#include "../../../build/generated/bg31/generated_header.asm"
 #include "../../../build/generated/bg31/compressed_text.asm"
 #include "../../common/common.asm"
 
