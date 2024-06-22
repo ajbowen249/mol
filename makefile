@@ -1,6 +1,6 @@
 ZASM := "zasm"
 PYTHON := "python"
-DDE := ./dungeon-delver-engine
+DDE := ./dde
 DDE_TOOLS := $(DDE)/tools
 
 SRC_DIR := ./src
