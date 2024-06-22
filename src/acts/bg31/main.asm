@@ -1,7 +1,7 @@
 ; Dungeon Delver Engine Test Campaign
 ; This is a CRPG built on the Dungeon Delver Engine
 
-.org $B200
+#include "../../../build/generated/bg31/generated_header.asm"
 
 ; Keep this at the top; this is the entry point
     call main

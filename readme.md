@@ -59,4 +59,10 @@ Using the [Virtual-T](https://sourceforge.net/projects/virtualt/) emulator, firs
 
 ## Building
 
-This project uses [`zasm`](https://k1.spdns.de/Develop/Projects/zasm/Documentation/index.html), [`make`](https://www.gnu.org/software/make/manual/make.html), [`python 3`](https://www.python.org/), and [`perl`](https://www.perl.org/), and assumes all are in your `PATH`. First, pull down the engine with `git submodule update --init`, and then build with `make`. The campaign is split up into acts, and each act should yield `bg3<act>.hex` and `bg3<act>.co` files under `build`. Currently, only the first act exists.
+This project requires [`zasm`](https://k1.spdns.de/Develop/Projects/zasm/Documentation/index.html) and [`python 3`](https://www.python.org/). It also requires the `dungeon-delver-engine` submodule to be present, which you can get with `git submodule update --init`.
+
+The build system is [`waf`](https://waf.io/), which itself is built on Python, and the `waf` "executable" is versioned alongside this project. To use `waf`, you can invoke it with `./waf` on *nix platforms, or use `./waf.bat` on Windows. It's recommended, especially if you use other `waf` projects, to set up an alias to make invocation simpler (such as `alias waf=./waf`).
+
+When you first check the project out (or after pulling down updates), you'll first want to run `waf configure`, which will set up some paths and ensure it can find `zasm`. This step will fail if `zasm` is not in your `PATH`, or if your python version is below 3.
+
+After that, simply run `waf` to build all outputs and run unit tests. You'll usually only need to run `waf configure` after changes to the build script.
