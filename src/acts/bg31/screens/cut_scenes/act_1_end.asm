@@ -2,12 +2,16 @@
 
 .local
 cs_act_1_end::
-    call rom_clear_screen
+    call clear_screen
     BLOCK_PRINT end_text_1, 1, 1
     call await_any_keypress
 
-    call rom_clear_screen
+    call clear_screen
+#if dde_platform == platform_trs80_m100
     BLOCK_PRINT end_text_2, 14, 4
+#elif dde_platform == platform_zx_spectrum
+    BLOCK_PRINT end_text_2, 10, 12
+#endif
     call await_any_keypress
 
     ld a, 1

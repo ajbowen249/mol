@@ -15,19 +15,19 @@ interact_choice: .db 0
 
 ; returns non-zero in A if the player should start battle
 dialog_grymforge_guard::
-    BLOCK_PRINT grymforge_guard_dialog_intro_1, 21, 2
+    BLOCK_PRINT_EXPLORATION_MESSAGE grymforge_guard_dialog_intro_1
     call stub_menu
 
     call clear_exploration_message_area
-    BLOCK_PRINT grymforge_guard_dialog_intro_2, 21, 2
+    BLOCK_PRINT_EXPLORATION_MESSAGE grymforge_guard_dialog_intro_2
     call stub_menu
 
     call clear_exploration_message_area
 
     ld a, 2
     ld hl, grymforge_guard_menu
-    ld b, 21
-    ld c, 5
+    ld b, ex_message_col
+    ld c, ex_message_row + 4
     call menu_ui
 
     cp a, gguard_opt_help
@@ -39,11 +39,11 @@ dialog_grymforge_guard::
 
 help_grymforge:
     call clear_exploration_message_area
-    BLOCK_PRINT grymforge_guard_dialog_help_1, 21, 2
+    BLOCK_PRINT_EXPLORATION_MESSAGE grymforge_guard_dialog_help_1
     call stub_menu
 
     call clear_exploration_message_area
-    BLOCK_PRINT grymforge_guard_dialog_help_2, 21, 2
+    BLOCK_PRINT_EXPLORATION_MESSAGE grymforge_guard_dialog_help_2
     call stub_menu
 
     ld a, 1
