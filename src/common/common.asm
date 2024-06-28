@@ -1,3 +1,4 @@
+#include "../../build/platform_api.asm"
 #include "../../dde/src/engine/dde.asm"
 #include "./constants.asm"
 #include "./origin_characters.asm"
@@ -133,7 +134,7 @@ add_xp_and_notify::
     ret
 
 notify_level:
-    call rom_set_cursor
+    call set_cursor_hl
 
     ld hl, level_up_notification
     call print_compressed_string
@@ -152,16 +153,20 @@ add_xp_and_notify_done:
 
 .local
 add_xp_and_notify_on_victory_screen::
+#if dde_platform == platform_trs80_m100
     ld h, 10
-    ld l, 5
+#elif dde_platform == platform_zx_spectrum
+    ld h, 6
+#endif
+    ld l, ba_end_msg_row + 1
     call add_xp_and_notify
     ret
 .endlocal
 
 .local
 add_xp_and_notify_on_dialog_screen::
-    ld h, 21
-    ld l, 2
+    ld h, ex_message_col
+    ld l, ex_message_row + 1
     call add_xp_and_notify
     ret
 .endlocal

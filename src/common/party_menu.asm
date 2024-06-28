@@ -33,7 +33,7 @@ party_label_3: .dw 0
 party_menu::
     call setup_party_options
 
-    call rom_clear_screen
+    call clear_screen
     PRINT_COMPRESSED_AT_LOCATION 1, 1, party_menu_label
 
     ld a, party_menu_options

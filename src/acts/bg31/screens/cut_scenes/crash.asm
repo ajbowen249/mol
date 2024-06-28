@@ -2,7 +2,7 @@
 
 .local
 cs_crash::
-    call rom_clear_screen
+    call clear_screen
     BLOCK_PRINT crash_text_1, 1, 1
     call await_any_keypress
 

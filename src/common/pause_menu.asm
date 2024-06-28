@@ -21,7 +21,7 @@ menu:
 #define pause_menu_options 3
 
 pause_menu::
-    call rom_clear_screen
+    call clear_screen
     PRINT_COMPRESSED_AT_LOCATION 1, 1, pause_menu_label
 
     ld a, pause_menu_options

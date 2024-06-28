@@ -1,13 +1,11 @@
 ; Dungeon Delver Engine Test Campaign
 ; This is a CRPG built on the Dungeon Delver Engine
 
-#include "../../../build/generated/bg31/generated_header.asm"
-
 ; Keep this at the top; this is the entry point
     call main
     ret
 
-#include "../../../build/generated/bg31/compressed_text.asm"
+    INCLUDE_GENERATED_TEXT
 #include "../../common/common.asm"
 #include "./global_data.asm"
 #include "./dialog/dialog.asm"
@@ -21,6 +19,16 @@ logo_uncompressed_5: .asciz "▘ ◥◤ ▝"
 
 #define opt_new_game 0
 #define opt_main_exit 1
+
+#if dde_platform == platform_trs80_m100
+#define MM_LOGO_ROW 2
+#define MM_LOGO_COL 17
+#define MM_MENU_ROW 2
+#elif dde_platform == platform_zx_spectrum
+#define MM_LOGO_ROW 4
+#define MM_LOGO_COL 12
+#define MM_MENU_ROW 10
+#endif
 
 main_menu:
 .db opt_new_game
@@ -40,17 +48,17 @@ main:
     call reset_game_state
     call reset_all_screens
 
-    call rom_clear_screen
-    BLOCK_PRINT logo_compressed, 17, 2
-    PRINT_AT_LOCATION 4, 18, logo_uncompressed_3
-    PRINT_AT_LOCATION 5, 18, logo_uncompressed_4
-    PRINT_AT_LOCATION 6, 18, logo_uncompressed_5
+    call clear_screen
+    BLOCK_PRINT logo_compressed, MM_LOGO_COL, MM_LOGO_ROW
+    PRINT_AT_LOCATION MM_LOGO_ROW + 2, MM_LOGO_COL + 1, logo_uncompressed_3
+    PRINT_AT_LOCATION MM_LOGO_ROW + 3, MM_LOGO_COL + 1, logo_uncompressed_4
+    PRINT_AT_LOCATION MM_LOGO_ROW + 4, MM_LOGO_COL + 1, logo_uncompressed_5
     PRINT_COMPRESSED_AT_LOCATION 1, 1, act_1_text
 
     ld a, 2
     ld hl, main_menu
     ld b, 1
-    ld c, 2
+    ld c, MM_MENU_ROW
     call menu_ui
 
     cp a, opt_main_exit
@@ -73,5 +81,5 @@ main:
     call run_screen_controller
 
 main_exit:
-    call rom_clear_screen
+    call clear_screen
     ret

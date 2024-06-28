@@ -5,15 +5,15 @@ dialog_zevlor_after_gag::
     ld (spoke_with_zevlor_after_gag), a
 
     call clear_exploration_message_area
-    BLOCK_PRINT zevlor_dialog_1, 21, 2
+    BLOCK_PRINT_EXPLORATION_MESSAGE zevlor_dialog_1
     call stub_menu
 
     call clear_exploration_message_area
-    BLOCK_PRINT zevlor_dialog_2, 21, 2
+    BLOCK_PRINT_EXPLORATION_MESSAGE zevlor_dialog_2
     call stub_menu
 
     call clear_exploration_message_area
-    BLOCK_PRINT zevlor_dialog_3, 21, 2
+    BLOCK_PRINT_EXPLORATION_MESSAGE zevlor_dialog_3
     call stub_menu
 
     call clear_exploration_message_area
@@ -22,14 +22,14 @@ dialog_zevlor_after_gag::
     cp a, 0
     jp z, leaders_alive
 
-    BLOCK_PRINT zevlor_dialog_leaders_dead, 21, 2
+    BLOCK_PRINT_EXPLORATION_MESSAGE zevlor_dialog_leaders_dead
     call stub_menu
     call clear_exploration_message_area
 
     ret
 
 leaders_alive:
-    BLOCK_PRINT zevlor_dialog_leaders_alive, 21, 2
+    BLOCK_PRINT_EXPLORATION_MESSAGE zevlor_dialog_leaders_alive
     call stub_menu
     call clear_exploration_message_area
     ret

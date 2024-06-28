@@ -1,7 +1,6 @@
 ; Unit tests
 
-#include "../../../build/generated/bg31/generated_header.asm"
-#include "../../../build/generated/bg31/compressed_text.asm"
+    INCLUDE_GENERATED_TEXT
 #include "../../common/common.asm"
 
 rom_file_end:

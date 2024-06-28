@@ -15,8 +15,8 @@ show_basic_recruit_dialog::
 
     pop hl
     ld a, d
-    ld b, 21
-    ld c, 2
+    ld b, ex_message_col
+    ld c, ex_message_row + 1
     call block_print
     call await_any_keypress
     call clear_exploration_message_area
@@ -27,12 +27,12 @@ show_basic_recruit_dialog::
 
     ld hl, (prompt_text_location)
     ld bc, hl
-    PRINT_COMPRESSED_AT_LOCATION 2, 21, bc
+    PRINT_COMPRESSED_AT_LOCATION ex_message_row + 1, ex_message_col, bc
 
     ld a, 2
     ld hl, opt_yes_no
-    ld b, 21
-    ld c, 3
+    ld b, ex_message_col
+    ld c, ex_message_row + 2
     call menu_ui
 
     cp a, 1
@@ -54,7 +54,7 @@ show_basic_recruit_dialog::
     ret
 
 recruit_party_full:
-    BLOCK_PRINT str_recruit_party_full, 21, 2
+    BLOCK_PRINT_EXPLORATION_MESSAGE str_recruit_party_full
     call await_any_keypress
 
 dont_recruit:

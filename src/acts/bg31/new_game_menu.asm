@@ -15,7 +15,7 @@ new_game_root:
 #define new_game_root_options 2
 
 new_game_menu::
-    call rom_clear_screen
+    call clear_screen
     PRINT_COMPRESSED_AT_LOCATION 1, 1, opt_new_game_label
 
     ld a, new_game_root_options
@@ -27,7 +27,7 @@ new_game_menu::
     cp a, opt_root_create_character
     jp z, create_character
 
-    call rom_clear_screen
+    call clear_screen
     PRINT_COMPRESSED_AT_LOCATION 1, 1, opt_choose_origin_character_label
 
     call enable_default_origin_character_menu

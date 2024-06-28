@@ -2,19 +2,19 @@
 
 .local
 cs_opening::
-    call rom_clear_screen
+    call clear_screen
     BLOCK_PRINT opening_text_1, 1, 1
     call await_any_keypress
 
-    call rom_clear_screen
+    call clear_screen
     BLOCK_PRINT opening_text_2, 1, 1
     call await_any_keypress
 
-    call rom_clear_screen
+    call clear_screen
     BLOCK_PRINT opening_text_3, 1, 1
     call await_any_keypress
 
-    call rom_clear_screen
+    call clear_screen
     BLOCK_PRINT opening_text_4, 1, 1
     call await_any_keypress
 
