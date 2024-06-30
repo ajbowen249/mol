@@ -1,6 +1,3 @@
-#define screen_id_cs_act_1_end 13
-
-.local
 cs_act_1_end::
     call clear_screen
     BLOCK_PRINT end_text_1, 1, 1
@@ -22,4 +19,3 @@ cs_act_1_end::
     ld a, screen_id_underdark
     ld (last_screen_exit_argument), a
     ret
-.endlocal

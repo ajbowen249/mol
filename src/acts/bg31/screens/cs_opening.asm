@@ -1,6 +1,3 @@
-#define screen_id_cs_opening 11
-
-.local
 cs_opening::
     call clear_screen
     BLOCK_PRINT opening_text_1, 1, 1
@@ -23,4 +20,3 @@ cs_opening::
     ld a, screen_id_nautiloid_bridge
     ld (last_screen_exit_argument), a
     ret
-.endlocal

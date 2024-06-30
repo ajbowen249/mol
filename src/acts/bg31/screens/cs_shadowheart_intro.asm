@@ -1,7 +1,3 @@
-#define screen_id_cs_shadowheart_intro 7
-
-.local
-
 #if dde_platform == platform_trs80_m100
 #define SH_INTRO_ARTEFACT_SPRITE_ROW 3
 #define SH_INTRO_ARTEFACT_SPRITE_COL 18
@@ -35,4 +31,3 @@ cs_shadowheart_intro::
     ld a, screen_id_crash_site
     ld (last_screen_exit_argument), a
     ret
-.endlocal

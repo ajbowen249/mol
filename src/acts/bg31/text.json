@@ -260,6 +260,8 @@
         "goblins' defeat."
     ],
 
+    "underdark_ladder_prompt": "Ladder to Underdark",
+
     "gut_dialog_intro_1": [
         "'Now, here's someone",
         "special. The",
@@ -342,6 +344,8 @@
         "Zevlor and Kagha",
         "stand against you."
     ],
+
+    "label_ladder_up": "Ladder to camp",
 
     "grymforge_guard_dialog_intro_1": [
         "A Duergar dwarf",
