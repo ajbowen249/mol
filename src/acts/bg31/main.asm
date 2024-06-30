@@ -9,7 +9,8 @@
 #include "../../common/common.asm"
 #include "./global_data.asm"
 #include "./dialog/dialog.asm"
-#include "./screens/screen_table.asm"
+    INCLUDE_SCREEN_TABLE
+#include "./screens/screen_helpers.asm"
 #include "./encounters/encounter_table.asm"
 #include "./new_game_menu.asm"
 

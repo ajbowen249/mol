@@ -1,7 +1,3 @@
-#define screen_id_cs_recruit_shadowheart 6
-
-.local
-
 #if dde_platform == platform_trs80_m100
 #define SH_RECRUIT_ARTEFACT_SPRITE_ROW 5
 #define SH_RECRUIT_ARTEFACT_SPRITE_COL 7
@@ -43,4 +39,3 @@ cs_recruit_shadowheart::
     ld a, screen_id_crash_site
     ld (last_screen_exit_argument), a
     ret
-.endlocal

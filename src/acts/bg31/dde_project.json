@@ -1,0 +1,412 @@
+{
+    "name": "bg31",
+    "menu_label": "pause_menu",
+    "player_party_label": "player_party",
+    "party_size_label": "party_size",
+    "screens": [
+        { "name": "empty", "is_custom": true },
+        {
+            "name": "nautiloid_bridge",
+            "title": "Nautiloid Bridge",
+            "init": true,
+            "background": [
+                "███████████████████ ",
+                "███◤      \\     /◥█ ",
+                "██◤        \\───/  ◥ ",
+                "█◤∩               ▐ ",
+                "█◣    왓왓          ▐ ",
+                "██◣        /───\\  ◢ ",
+                "███◣      /     \\◢█ ",
+                "███████████████████ "
+            ],
+            "start_location": { "col": 18, "row": 4 },
+            "interactables": [
+                {
+                    "label": "navigation_button",
+                    "type": "in_button",
+                    "flags": "iflags_normal",
+                    "prompt_label": "navigation_prompt",
+                    "location": { "col": 3, "row": 4 },
+                    "action": {
+                        "type": "exit",
+                        "exit_code": "ec_door",
+                        "exit_id": "screen_id_cs_crash"
+                    }
+                },
+                {
+                    "label": "trigger_mf_convo_1",
+                    "type": "in_door",
+                    "flags": "iflags_door",
+                    "location": { "col": 12, "row": 4 },
+                    "action": {
+                        "type": "call",
+                        "call_label": "dialog_mindflayer_captain"
+                    }
+                },
+                {
+                    "label": "trigger_mf_convo_2",
+                    "type": "in_door",
+                    "flags": "iflags_door",
+                    "location": { "col": 12, "row": 5 },
+                    "action": {
+                        "type": "call",
+                        "call_label": "dialog_mindflayer_captain"
+                    }
+                },
+                {
+                    "label": "zhalk_fight",
+                    "type": "in_npc",
+                    "flags": "iflags_normal",
+                    "prompt_label": "str_fight",
+                    "location": { "col": 7, "row": 5 },
+                    "action": {
+                        "type": "exit",
+                        "exit_code": "ec_encounter",
+                        "exit_id": "encounter_id_nautiloid_zhalk",
+                        "store_location": { "col": 7, "row": 4 }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "crash_site",
+            "title": "Crash Site",
+            "init": true,
+            "background": [
+                "┌─────┐£~~¶~ ~~£~~£~",
+                "│     \\         ~   ",
+                "│      \\        옷▛  ",
+                "│      │옷       ▐¶  ",
+                "└─\\               ▄ ",
+                "  └────            £",
+                "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓",
+                "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"
+            ],
+            "start_location": { "col": 2, "row": 2 },
+            "interactables": [
+                {
+                    "label": "to_grove",
+                    "type": "in_door",
+                    "flags": "iflags_door",
+                    "location": { "col": 13, "row": 1 },
+                    "action": {
+                        "type": "exit",
+                        "exit_code": "ec_door",
+                        "exit_id": "screen_id_emerald_grove_environs",
+                        "store_location": { "col": 13, "row": 2 }
+                    }
+                },
+                {
+                    "label": "recruit_shadowheart",
+                    "type": "in_door",
+                    "flags": "iflags_door",
+                    "location": { "col": 8, "row": 5 },
+                    "action": {
+                        "type": "exit",
+                        "exit_code": "ec_door",
+                        "exit_id": "screen_id_cs_recruit_shadowheart",
+                        "store_location": { "col": 9, "row": 5 }
+                    }
+                },
+                {
+                    "label": "recruit_gale",
+                    "type": "in_npc",
+                    "flags": "iflags_normal",
+                    "prompt_label": "str_talk",
+                    "location": { "col": 17, "row": 3 }
+                },
+                {
+                    "label": "shadowheart_cut_scene",
+                    "type": "in_door",
+                    "flags": "iflags_door",
+                    "location": { "col": 8, "row": 5 },
+                    "action": {
+                        "type": "exit",
+                        "exit_code": "ec_door",
+                        "exit_id": "screen_id_cs_shadowheart_intro",
+                        "store_location": { "col": 9, "row": 5 }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "emerald_grove_environs",
+            "title": "EmeraldGroveEnvirons",
+            "init": true,
+            "background": [
+                "~~¶█¶~~£££~£~~#▜▓▓▓▓",
+                "~~왓왓왓     ~£~##▝▀▜▓▓",
+                "~            ~~##▐▓▓",
+                "              ~##▐▓▓",
+                "~             ¶##▐█▓",
+                "~£           ~###▐▓▓",
+                "¶~~¶~£~~     ~#▗▂▟▓▓",
+                "~~£~¶¶~~£~~~ ~¶▐▓▓▓▓"
+            ],
+            "start_location": { "col": 13, "row": 7 },
+            "interactables": [
+                {
+                    "label": "to_crash_site",
+                    "type": "in_door",
+                    "flags": "iflags_door",
+                    "location": { "col": 13, "row": 8 },
+                    "action": {
+                        "type": "exit",
+                        "exit_code": "ec_door",
+                        "exit_id": "screen_id_crash_site",
+                        "store_location": { "col": 13, "row": 7 }
+                    }
+                },
+                {
+                    "label": "to_blighted_village",
+                    "type": "in_door",
+                    "flags": "iflags_door",
+                    "location": { "col": 1, "row": 4 },
+                    "action": {
+                        "type": "exit",
+                        "exit_code": "ec_door",
+                        "exit_id": "screen_id_blighted_village",
+                        "store_location": { "col": 2, "row": 4 }
+                    }
+                },
+                {
+                    "label": "to_grove",
+                    "type": "in_door",
+                    "flags": "iflags_door",
+                    "location": { "col": 4, "row": 1 },
+                    "action": {
+                        "type": "exit",
+                        "exit_code": "ec_door",
+                        "exit_id": "screen_id_emerald_grove",
+                        "store_location": { "col": 4, "row": 2 }
+                    }
+                },
+                { "label": "fight_1", "type": "in_door", "flags": "iflags_door", "location": { "col": 6, "row": 2 } },
+                { "label": "fight_2", "type": "in_door", "flags": "iflags_door", "location": { "col": 2, "row": 3 } },
+                { "label": "fight_3", "type": "in_door", "flags": "iflags_door", "location": { "col": 3, "row": 3 } },
+                { "label": "fight_4", "type": "in_door", "flags": "iflags_door", "location": { "col": 4, "row": 3 } },
+                { "label": "fight_5", "type": "in_door", "flags": "iflags_door", "location": { "col": 5, "row": 3 } },
+                { "label": "fight_6", "type": "in_door", "flags": "iflags_door", "location": { "col": 6, "row": 3 } }
+            ]
+        },
+        {
+            "name": "blighted_village",
+            "title": "Blighted Village",
+            "init": true,
+            "background": [
+                " ◢⌂◣ ~~~£~   ~~~£~¶~",
+                " ▛ ▜ ~£~ £¶◢◣   ⌂  ¶",
+                " ┐ ┌ ▓▓~~옷 ██ ⌂    ~",
+                "▓│ │▓▓▓▓~~          ",
+                " ┘ └  └─┘  ⌂ ◢◣    ~",
+                "~            ██⌂  옷~",
+                "▓▓    ┌─┐       ~£¶~",
+                " ▓▓~~~ ▓ ~~£~¶~£    "
+            ],
+            "start_location": { "col": 19, "row": 4 },
+            "interactables": [
+                {
+                    "label": "to_environs",
+                    "type": "in_door",
+                    "flags": "iflags_door",
+                    "location": { "col": 20, "row": 4 },
+                    "action": {
+                        "type": "exit",
+                        "exit_code": "ec_door",
+                        "exit_id": "screen_id_emerald_grove_environs",
+                        "store_location": { "col": 19, "row": 4 }
+                    }
+                },
+                {
+                    "label": "to_goblin_camp",
+                    "type": "in_door",
+                    "flags": "iflags_door",
+                    "location": { "col": 3, "row": 2 },
+                    "action": {
+                        "type": "exit",
+                        "exit_code": "ec_door",
+                        "exit_id": "screen_id_goblin_camp",
+                        "store_location": { "col": 3, "row": 3 }
+                    }
+                },
+                {
+                    "label": "recruit_karlach",
+                    "type": "in_npc",
+                    "flags": "iflags_normal",
+                    "prompt_label": "str_talk",
+                    "location": { "col": 10, "row": 3 }
+                },
+                {
+                    "label": "recruit_laezel",
+                    "type": "in_npc",
+                    "flags": "iflags_normal",
+                    "prompt_label": "str_talk",
+                    "location": { "col": 19, "row": 6 }
+                }
+            ]
+        },
+        { "name": "cs_recruit_shadowheart", "is_custom": true },
+        { "name": "cs_shadowheart_intro", "is_custom": true },
+        {
+            "name": "goblin_camp",
+            "title": "Goblin Camp",
+            "init": true,
+            "background": [
+                "◢██████████████████◣",
+                "█─┬──┐  ┌─┐  │   왓 █",
+                "█H│  │  │왓│  │     █",
+                "█─┘  │       │  ┌──█",
+                "█왓       ────┘    ⌂█",
+                "█    │          │ 옷█",
+                "◥████████ █████████◤",
+                "       ◥█ █◤        "
+            ],
+            "start_location": { "col": 10, "row": 7 },
+            "interactables": [
+                {
+                    "label": "to_blighted_village",
+                    "type": "in_door",
+                    "flags": "iflags_door",
+                    "location": { "col": 10, "row": 8 },
+                    "action": {
+                        "type": "exit",
+                        "exit_code": "ec_door",
+                        "exit_id": "screen_id_blighted_village",
+                        "store_location": { "col": 10, "row": 7 }
+                    }
+                },
+                {
+                    "label": "underdark_ladder",
+                    "type": "in_button",
+                    "flags": "iflags_normal",
+                    "prompt_label": "underdark_ladder_prompt",
+                    "location": { "col": 2, "row": 3 },
+                    "action": {
+                        "type": "exit",
+                        "exit_code": "ec_door",
+                        "exit_id": "screen_id_underdark",
+                        "store_location": { "col": 4, "row": 3 }
+                    }
+                },
+                {
+                    "label": "dror_ragzlin",
+                    "type": "in_npc",
+                    "flags": "iflags_normal",
+                    "prompt_label": "str_talk",
+                    "location": { "col": 10, "row": 3 }
+                },
+                {
+                    "label": "priestess_gut",
+                    "type": "in_npc",
+                    "flags": "iflags_normal",
+                    "prompt_label": "str_talk",
+                    "location": { "col": 2, "row": 5 }
+                },
+                {
+                    "label": "minthara",
+                    "type": "in_npc",
+                    "flags": "iflags_normal",
+                    "prompt_label": "str_talk",
+                    "location": { "col": 18, "row": 2 }
+                }
+            ]
+        },
+        {
+            "name": "emerald_grove",
+            "title": "Emerald Grove",
+            "init": true,
+            "background": [
+                "~££~~~£~~£~~~~~~¶~~¶",
+                "~  옷        옷  옷   ~",
+                "£    ~~¶~~£~~~~~£~~~",
+                "~                  ~",
+                "~ 왓 ▗▂▂▂     ▓▓   ㅑ~",
+                "£ ▚ ▞왓 ▐     ▓▓    ~",
+                "~ ▞ ▚              £",
+                "~¶~ ~~¶~£~~¶~~£££~~~"
+            ],
+            "start_location": { "col": 4, "row": 7 },
+            "interactables": [
+                {
+                    "label": "to_environs",
+                    "type": "in_door",
+                    "flags": "iflags_door",
+                    "location": { "col": 4, "row": 8 },
+                    "action": {
+                        "type": "exit",
+                        "exit_code": "ec_door",
+                        "exit_id": "screen_id_emerald_grove_environs"
+                    }
+                },
+                {
+                    "label": "zevlor_auto_dialog",
+                    "type": "in_npc",
+                    "flags": "iflags_door",
+                    "location": { "col": 4, "row": 5 }
+                },
+                {
+                    "label": "kagha",
+                    "type": "in_npc",
+                    "flags": "iflags_normal",
+                    "prompt_label": "str_talk",
+                    "location": { "col": 6, "row": 6 },
+                    "action": {
+                        "type": "call",
+                        "call_label": "dialog_kagha"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "underdark",
+            "title": "Underdark",
+            "init": true,
+            "background": [
+                " ▓▓  €           €  ",
+                " ▓▓        ▓▓       ",
+                " ▓▓   €       ▓  €  ",
+                " ▓▓                 ",
+                " ▓▓▓▓▓▓ ▓▓▓  ▓▓ ▓▓▓▓",
+                "▛ㅑ▔▜▓  €      ┌ ───┐",
+                "▌           €     H│",
+                "▙옷▂▟▓  €      └────┘"
+            ],
+            "start_location": { "col": 17, "row": 7 },
+            "interactables": [
+                {
+                    "label": "duergar_guard",
+                    "type": "in_npc",
+                    "flags": "iflags_normal",
+                    "prompt_label": "str_talk",
+                    "location": { "col": 2, "row": 8 }
+                },
+                {
+                    "label": "camp_ladder",
+                    "type": "in_button",
+                    "flags": "iflags_normal",
+                    "prompt_label": "label_ladder_up",
+                    "location": { "col": 19, "row": 7 },
+                    "action": {
+                        "type": "exit",
+                        "exit_code": "ec_door",
+                        "exit_id": "screen_id_goblin_camp"
+                    }
+                },
+                {
+                    "label": "to_end",
+                    "type": "in_door",
+                    "flags": "iflags_door",
+                    "location": { "col": 2, "row": 8 },
+                    "action": {
+                        "type": "exit",
+                        "exit_code": "ec_door",
+                        "exit_id": "screen_id_cs_act_1_end"
+                    }
+                }
+            ]
+        },
+        { "name": "cs_opening", "is_custom": true },
+        { "name": "cs_crash", "is_custom": true },
+        { "name": "cs_act_1_end", "is_custom": true }
+    ]
+}
