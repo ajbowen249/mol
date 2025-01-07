@@ -1,5 +1,5 @@
 # Mol
-Mol is a Baldur's Gate 3 Demake for the Tandy TRS-80 Model 100 and ZX Spectrum, built on the [Dungeon Delver Engine](https://github.com/ajbowen249/dungeon-delver-engine).
+Mol is a Baldur's Gate 3 "Demake" for the Tandy TRS-80 Model 100 and ZX Spectrum, built on my [Dungeon Delver Engine](https://github.com/ajbowen249/dungeon-delver-engine). Feel free to use it for your own game and use this project for reference!
 
 Demo and Making Of:
 
