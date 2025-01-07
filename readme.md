@@ -3,7 +3,7 @@ Mol is a Baldur's Gate 3 Demake for the Tandy TRS-80 Model 100 and ZX Spectrum, 
 
 Demo and Making Of:
 
-[![making of video](http://img.youtube.com/vi/zW9-hpuNDQQ/0.jpg)](http://www.youtube.com/watch?v=zW9-hpuNDQQ)
+[![making of video](https://img.youtube.com/vi/zW9-hpuNDQQ/0.jpg)](http://www.youtube.com/watch?v=zW9-hpuNDQQ)
 
 ![demo](/gh_media/nere_battle.gif)
 ![demo](/gh_media/demo_1.gif)
